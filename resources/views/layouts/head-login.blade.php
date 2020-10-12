@@ -28,7 +28,7 @@
           <li><a href="salas-creadas">Salas Creadas</a></li>
             @if (Route::has('login'))
                     @auth 
-                      <li><a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 underline">Perfil</a></li>
+                      <li><a href="{{ url('/user/profile') }}" class="text-sm text-gray-700 underline">Perfil</a></li>
                     @else
                         <li><a href="{{ route('login') }}" class="text-sm text-gray-700 underline">Login</a></li>
                         @if (Route::has('register'))
