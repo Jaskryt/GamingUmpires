@@ -18,7 +18,7 @@ Route::get('/', function () {
 });
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('menu-usuario');
+    return view('sala/menu-usuario');
 })->name('dashboard');
 
 //si desea ir al dashboard utilize este link
@@ -31,8 +31,48 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 
 Route::view('/home','home')->name('home');
 Route::view('/prueba','prueba')->name('prueba');
-Route::view('/menu-usuario','menu-usuario')->name('menu-usuario');
-Route::view('/seleccion-juego','/seleccion-juego')->name('seleccion-juego');
-Route::view('/salas-creadas','/salas-creadas')->name('salas-creadas');
-Route::view('/creacion-sala-dota2','/creacion-sala-dota2')->name('creacion-sala-dota2');
-Route::view('/creacion-sala-wow','creacion-sala-wow')->name('creacion-sala-wow');
+Route::view('/menu-usuario','sala/menu-usuario')->name('menu-usuario');
+Route::view('/seleccion-juego','sala/seleccion-juego')->name('seleccion-juego');
+Route::view('sala/seleccion-juego','sala/seleccion-juego')->name('seleccion-juego-sala');
+Route::view('/salas-creadas','sala/salas-creadas')->name('salas-creadas');
+Route::view('sala/salas-creadas','sala/salas-creadas')->name('salas-creadas-sala');
+Route::view('/creacion-sala-dota2','sala/creacion-sala-dota2')->name('creacion-sala-dota2');
+Route::view('/creacion-sala-wow','sala/creacion-sala-wow')->name('creacion-sala-wow');
+
+//recibe los datos  desde creacion-sala-dota2
+Route::post('/sala/addModelSala','App\Http\Controllers\salaController@index')->name('add-Model-Sala');
+//recibe los datos  desde el controlador salaController@index 
+Route::view('/sala/creacion-equipos-sala-dota2','sala/creacion-equipos-sala-dota2')->name('creacion-equipos-sala-dota2');
+
+//recibe los datos desde creacion-equipos-sala-dota2
+Route::post('/sala/addModelEquipos','App\Http\Controllers\equiposdota2Controller@index')->name('add-Model-Equipos');
+//recibe los datos desde el controlador equiposdota2Controller@index
+Route::view('/sala/revicion-sala-dota2','sala/revicion-sala-dota2')->name('revicion-sala-dota2');
+
+
+//recibe los datos desde revision-sala-dota2
+Route::post('/sala/crearTorneo','App\Http\Controllers\salaController@create')->name('createSalaDota2');
+//recibe los datos desde el controlador equiposdota2Controller@index
+Route::view('/sala/revicion-sala-dota2','sala/revicion-sala-dota2')->name('revicion-sala-dota2');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
