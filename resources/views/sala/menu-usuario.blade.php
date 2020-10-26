@@ -6,10 +6,7 @@
 <html>
 
 <body>
-  <section id="hero">
-
-  </section>
- 
+  <section id="hero"></section>
  
 </body>
 </html>
