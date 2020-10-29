@@ -55,6 +55,12 @@ Route::post('/sala/crearTorneo','App\Http\Controllers\salaController@create')->n
 //recibe los datos desde el controlador equiposdota2Controller@index
 Route::view('/sala/revicion-sala-dota2','sala/revicion-sala-dota2')->name('revicion-sala-dota2');
 
+//recibe el codigo de la sala y presenta los detalles de la partida desde salas-creadas
+Route::post('/sala/detalles-partida-dota2/{id}','App\Http\Controllers\detallesController@index')->name('detalles-sala-dota2');
+Route::view('/sala/detalles-show-dota2','sala/detalles-partida-dota2')->name('detalles-show-dota2');
+
+
+
 
 
 
