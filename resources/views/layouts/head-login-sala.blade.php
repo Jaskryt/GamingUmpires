@@ -12,6 +12,7 @@
     <link href="../lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <link href="../lib/animate/animate.min.css" rel="stylesheet">
     <link href="../css/style-login.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>
     <header id="header">
@@ -27,7 +28,7 @@
           <li><a href="seleccion-juego">Crear Sala</a></li>
           <li><a href="salas-creadas">Salas Creadas</a></li>
             @if (Route::has('login'))
-                    @auth 
+                    @auth
                       <li><a href="{{ url('/user/profile') }}" class="text-sm text-gray-700 underline">Perfil</a></li>
                     @else
                         <li><a href="{{ route('login') }}" class="text-sm text-gray-700 underline">Login</a></li>

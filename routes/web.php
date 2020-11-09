@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SalawowController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,11 +38,11 @@ Route::view('sala/seleccion-juego','sala/seleccion-juego')->name('seleccion-jueg
 Route::view('/salas-creadas','sala/salas-creadas')->name('salas-creadas');
 Route::view('sala/salas-creadas','sala/salas-creadas')->name('salas-creadas-sala');
 Route::view('/creacion-sala-dota2','sala/creacion-sala-dota2')->name('creacion-sala-dota2');
-Route::view('/creacion-sala-wow','sala/creacion-sala-wow')->name('creacion-sala-wow');
+
 
 //recibe los datos  desde creacion-sala-dota2
 Route::post('/sala/addModelSala','App\Http\Controllers\salaController@index')->name('add-Model-Sala');
-//recibe los datos  desde el controlador salaController@index 
+//recibe los datos  desde el controlador salaController@index
 Route::view('/sala/creacion-equipos-sala-dota2','sala/creacion-equipos-sala-dota2')->name('creacion-equipos-sala-dota2');
 
 //recibe los datos desde creacion-equipos-sala-dota2
@@ -60,8 +61,11 @@ Route::post('/sala/detalles-partida-dota2/{id}','App\Http\Controllers\detallesCo
 Route::view('/sala/detalles-show-dota2','sala/detalles-partida-dota2')->name('detalles-show-dota2');
 
 
+//salas world of warcraft
+Route::get('/torneo-wow', [SalawowController::class, 'index'])->name('RCrearTorneo');
+Route::post('/torneo-wow-registrado', [SalawowController::class, 'create'])->name('RAñadirTorneo');
 
-
+//Route::view('/creacion-sala-wow','sala/creacion-sala-wow')->name('creacion-sala-wow');
 
 
 
