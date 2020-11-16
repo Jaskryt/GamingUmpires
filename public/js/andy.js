@@ -53,9 +53,6 @@ function crearCard(){
 		input5.setAttribute("tipe","text");
 		input5.setAttribute("name","name"+card+"_5");
 
-		var input5 = document.createElement('ecuip');
-		input5.setAttribute("value", ""+card+"");
-
 		bodycaja.appendChild(equipoNom);
 		bodycaja.appendChild(equipoInput);
 		bodycaja.appendChild(integrantes);

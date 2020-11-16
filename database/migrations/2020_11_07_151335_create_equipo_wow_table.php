@@ -16,8 +16,6 @@ class CreateEquipoWowTable extends Migration
         Schema::create('equipos_wow', function (Blueprint $table) {
             $table->id();
             $table->string("nombreSEquipo");
-            $table->unsignedBigInteger('jugador');
-            $table->foreign("jugador")->references('id')->on('jugadores_wow');
         });
     }
 

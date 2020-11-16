@@ -28,11 +28,11 @@ class salaController extends Controller
 
         //codigo del usuario
         $codigoUS=auth()->id();
-        //para la imagen 
-         
+        //para la imagen
+
          $archivo;
 
-         if($_FILES['logo']['error']>0){    
+         if($_FILES['logo']['error']>0){
             echo '<script language="javascript">alert("error al cargar el archivos");</script>';
          }else{
             $permitidos= array("image/gif","image/png","image/jpg");
@@ -58,7 +58,7 @@ class salaController extends Controller
             }
          }
 
-         //creamos nuestro objeto sala y 
+         //creamos nuestro objeto sala y
          $sala=new sala;
          $sala->codigo_Usuario=$codigoUS;
          $sala->nombre_Torneo= request('nombreTorneo');
@@ -85,7 +85,7 @@ class salaController extends Controller
         $sala->codigo_Usuario=$request->codigo_Usuario;
         $sala->nombre_Torneo= $request->nombre_Torneo;
         $sala->logo= $request->logo;
-        $sala->tipo_Eliminacion=$request->tipo_Eliminacion; 
+        $sala->tipo_Eliminacion=$request->tipo_Eliminacion;
         $sala->modo_Juego= $request->modo_Juego;
         $sala->numero_Equipos= $request->numero_Equipos;
         $sala->equipo_ganador= $request->equipo_ganador;
@@ -118,7 +118,7 @@ class salaController extends Controller
                 $equipo->codigo_Sala=$codigoSala;
                 $equipo->nombre_Equipo=$listaEquipos[$i-1];
                 $equipo->save();
-                for ($j=1; $j <=5 ; $j++) { 
+                for ($j=1; $j <=5 ; $j++) {
                         $jugador=new jugadores_dota_2;
                         //recibiendo la ultima tabla creada anteriormente
                         $equipos = DB::table('equipos_dota_2')
@@ -141,7 +141,7 @@ class salaController extends Controller
                 }
          }
 
-        
+
          return view('/sala/salas-creadas');
     }
 

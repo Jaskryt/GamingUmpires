@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\salaswow;
 use App\Models\jugadores_wow;
 use App\Models\equipos_wow;
+use App\Models\partida_wow;
 use Illuminate\Support\Facades\storage;
 use Illuminate\Support\Facades\DB;
 
@@ -28,21 +29,20 @@ class SalawowController extends Controller
      */
     public function create(request $request)
     {
-        //dd($request->all());
-                 $salas = DB::table('jugadores_wow')
-                        ->where("nickname","=",'sas')
-                        ->first();
         request()->validate([
             'logo'=>['max:2000','mimes:jpeg,bmp,png','required'],
-         ]);
+        ]);
+
+        $equipos_wow_array = array();
+        $jugadores_wow_array = array();
 
         $salaswow=new salaswow;
         $salaswow->nombreSala= request('nombreTorneo');
         $archivo;
         $user= auth()->id();
-         if($_FILES['logo']['error']>0){
+        if($_FILES['logo']['error']>0){
             echo '<script language="javascript">alert("error al cargar el archivos");</script>';
-         }else{
+        }else{
             $permitidos= array("image/gif","image/png","image/jpg");
             $limite_kb=10000;
             if(in_array($_FILES['logo']['type'],$permitidos) && $_FILES['logo']['size'] <= $limite_kb*1024){
@@ -66,53 +66,74 @@ class SalawowController extends Controller
             }else{
                  echo '<script language="javascript">alert("tamaño o formato invalido");</script>';
             }
-         }
+        }
         $salaswow->logo= "../logo_pictures/".$user.'/'.$_FILES['logo']['name'];
         $salaswow->arbitro=$user;
         $salaswow->save();
          for($j=1;$j<=20;$j++){
-            for($i=1;$i<=5;$i++){
-                $compare = request('nombreEquipo'.$j);
-                if($compare!=null){
+            $equipo = request('nombreEquipo'.$j);
+            if($equipo!=null){
+                $nombreEquip = DB::table('equipos_wow')
+                        ->where("nombreSEquipo","=",$equipo)
+                        ->first();
+                if($nombreEquip==null){
+                    $equipos=new equipos_wow;
+                    $equipos->nombreSEquipo = $equipo;
+                    $equipos->save();
+                    $equipos_wow_array[] = $equipos->nombreSEquipo;
+                }
+                else{
+                    $equipos_wow_array[] = $nombreEquip->nombreSEquipo;
+                }
+                for($i=1;$i<=5;$i++){
                     $njugador=request('name'.$j.'_'.$i);
-                    $nombresito = DB::table('jugadores_wow')
+                    $nombreJuga = DB::table('jugadores_wow')
                         ->where("nickname","=",$njugador)
                         ->first();
-                    if($nombresito==null){
+                    if($nombreJuga==null){
                         $jugador=new jugadores_wow;
-                        $jugador->nickname= request('name'.$j.'_'.$i);
+                        $jugador->nickname= $njugador;
                         $jugador->save();
-
-
-                        $nickname = request('nombreEquipo'.$j);
-                        if($nickname!=null){
-                            $equipos=new equipos_wow;
-                            $equipos->nombreSEquipo = $nickname;
-                            $njugador=request('name'.$j.'_'.$i);
-                            $nuevo = DB::table('jugadores_wow')
-                                ->where("nickname","=",$njugador)
-                                ->first();
-                            $equipos->jugador = $nuevo->id;
-                            $equipos->save();
-                        }
+                        $jugadores_wow_array[] = $jugador->nickname;
                     }
                     else{
-                        $nickname = request('nombreEquipo'.$j);
-                        if($nickname!=null){
-                            $equipos=new equipos_wow;
-                            $equipos->nombreSEquipo = $nickname;
-                            $njugador=request('name'.$j.'_'.$i);
-                            $existente = DB::table('jugadores_wow')
-                                ->where("nickname","=",$njugador)
-                                ->first();
-                            $equipos->Jugador = $existente->id;
-                            $equipos->save();
-                        }
+                        $jugadores_wow_array[] = $nombreJuga->nickname;
                     }
                 }
             }
-
+            else{
+                $j=21;
+            }
         }
+        $fases = count($equipos_wow_array);
+        $fasesDiv = $fases/2;
+        $countEqui = 0;
+        $arraySorteado=array_rand($equipos_wow_array,$fases);
+        shuffle($arraySorteado);
+        for($a=0;$a<$fasesDiv;$a++){
+            $partida=new partida_wow;
+            $nSala = request('nombreTorneo');
+            $salaid = DB::table('salaswow')
+                        ->where("nombreSala","=",$nSala)
+                        ->first();
+            $partida->idsala = $salaid->id;
+            $partida->fase = $fasesDiv;
+            $equipo1 = $equipos_wow_array[$arraySorteado[$countEqui]];
+            $idequipoFirst = DB::table('equipos_wow')
+                        ->where("nombreSEquipo","=",$equipo1)
+                        ->first();
+            $partida->idequipo1 = $idequipoFirst->id;
+            $countEqui=$countEqui+1;
+            $equipo2 = $equipos_wow_array[$arraySorteado[$countEqui]];
+            $idequipoSecond = DB::table('equipos_wow')
+                        ->where("nombreSEquipo","=",$equipo2)
+                        ->first();
+            $partida->idequipo2 = $idequipoSecond->id;
+            $countEqui=$countEqui+1;
+            $partida->save();
+        }
+        return redirect()->route('Rsalas');
+        //return redirect()->route('Rfixturewow')->with('arrayTorneo',$countEqui);
     }
 
     /**

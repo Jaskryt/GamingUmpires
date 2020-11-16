@@ -35,7 +35,7 @@
 	<div id="card-package" class="card-body">
 	  	<div id="card-box1" class="row">
 	  			<div id="card1" class="col-xl-2">
-				    <div class="card">
+				    <div class="card fgjygv">
 				     	<div class="card-body">
 					        <h5 class="card-title">Nombre del Equipo 1:</h5>
 					        <input class="redisenio-imput-card" type="text" name="nombreEquipo1" value="{{ old('nombreEquipo1') }}">

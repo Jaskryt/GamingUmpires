@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SalawowController;
+use App\Http\Controllers\SalasCreadasController;
 
 /*
 |--------------------------------------------------------------------------
@@ -65,7 +66,7 @@ Route::view('/sala/detalles-show-dota2','sala/detalles-partida-dota2')->name('de
 Route::get('/torneo-wow', [SalawowController::class, 'index'])->name('RCrearTorneo');
 Route::post('/torneo-wow-registrado', [SalawowController::class, 'create'])->name('RAñadirTorneo');
 
-//Route::view('/creacion-sala-wow','sala/creacion-sala-wow')->name('creacion-sala-wow');
+Route::get('/salas-creadas', [SalasCreadasController::class, 'index'])->name('Rsalas');
 
 
 
