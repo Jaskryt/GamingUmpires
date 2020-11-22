@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\partida_wow;
+use Illuminate\Support\Facades\DB;
 
 class FixtureWowController extends Controller
 {
@@ -11,9 +13,75 @@ class FixtureWowController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($id)
     {
-        return view('salas-creadas');
+        $partidas = DB::table('partida_wow')
+                ->where("idsala","=",$id)
+                ->get();
+        $fixture ='';
+        $faseP2=0;
+        $count=1;
+        foreach($partidas as $partida){
+            $faseP1=$partida->fase;
+            if($faseP1!=$faseP2){
+                if($faseP2==0){
+                    $fixture.='
+                        <ul class="round round-'.$count.'">
+                            <li class="spacer">&nbsp;</li>
+                        ';
+                }
+                else{
+                    $fixture.='
+                        </ul>
+                        <ul class="round round-'.$count.'">
+                            <li class="spacer">&nbsp;</li>
+                        ';
+                }
+                $count=$count+1;
+            }
+            $equipo1 = DB::table('equipos_wow')
+                ->where("id","=",$partida->idequipo1)
+                ->first();
+            $equipo2 = DB::table('equipos_wow')
+                ->where("id","=",$partida->idequipo2)
+                ->first();
+            $fixture.='
+                <li class="game game-top">'.$equipo1->nombreSEquipo.'<span>0</span></li>
+                <li class="game game-spacer">&nbsp;</li>
+                <li class="game game-bottom ">'.$equipo2->nombreSEquipo.'<span>0</span></li>
+
+                <li class="spacer">&nbsp;</li>
+                ';
+            $faseP2=$faseP1;
+        }
+        $fixture.='
+            </ul>
+            ';
+        if($faseP2!=1){
+            for($i=$faseP2;$i>1;$i--){
+                $fixture.='
+                    <ul class="round round-'.$count.'">
+                        <li class="spacer">&nbsp;</li>
+                    ';
+                for($j=0;$j<$i-1;$j++){
+                    $fixture.='
+                        <li class="game game-top"><span></span></li>
+                        <li class="game game-spacer">&nbsp;</li>
+                        <li class="game game-bottom "><span></span></li>
+
+                        <li class="spacer">&nbsp;</li>
+                        ';
+                }
+                $fixture.='
+                    </ul>
+                    ';
+                $count=$count+1;
+            }
+
+        }
+
+
+        return view('sala/sala-fixture-wow',compact('fixture'));
     }
 
     /**

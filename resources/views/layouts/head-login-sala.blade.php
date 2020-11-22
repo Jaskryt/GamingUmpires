@@ -26,7 +26,7 @@
         <ul class="nav-menu">
           <li class="menu-active"><a href="/menu-usuario">Inicio</a></li>
           <li><a href="seleccion-juego">Crear Sala</a></li>
-          <li><a href="salas-creadas">Salas Creadas</a></li>
+          <li><a href="{{ route('Rsalas') }}">Salas Creadas</a></li>
             @if (Route::has('login'))
                     @auth
                       <li><a href="{{ url('/user/profile') }}" class="text-sm text-gray-700 underline">Perfil</a></li>

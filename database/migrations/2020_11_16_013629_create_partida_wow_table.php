@@ -25,6 +25,7 @@ class CreatePartidaWowTable extends Migration
             $table->foreign('idequipo1')->references('id')->on('equipos_wow');
             $table->unsignedBigInteger('idequipo2');
             $table->foreign('idequipo2')->references('id')->on('equipos_wow');
+            $table->integer('nroPartida');
             /*$table->unsignedBigInteger('idafijos_fech');
             $table->foreign('idafijos_fech')->reference('id')->on('afijos_fecha_wow');*/
             /*$table->date('fecha');

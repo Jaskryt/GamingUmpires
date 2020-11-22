@@ -34,17 +34,17 @@ class salaController extends Controller
 
         //codigo del usuario
         $codigoUS=auth()->id();
-        //para la imagen 
-         
+        //para la imagen
+
          $archivo;
 
-         if($_FILES['logo']['error']>0){    
+         if($_FILES['logo']['error']>0){
             echo '<script language="javascript">alert("error al cargar el archivos");</script>';
          }else{
             $permitidos= array("image/gif","image/png","image/jpg");
             $limite_kb=10000;
             if(in_array($_FILES['logo']['type'],$permitidos) && $_FILES['logo']['size'] <= $limite_kb*1024){
-                $url='C:\laragon\www\GamingUmpires\public\logo_pictures/'.$codigoUS.'/';
+                $url='C:\laragon\www\ProyectoGulag\public\logo_pictures/'.$codigoUS.'/';
                 $archivo=$url.$_FILES['logo']['name'];
 
                 if(!file_exists($url)){
@@ -64,7 +64,7 @@ class salaController extends Controller
             }
          }
 
-         //creamos nuestro objeto sala y 
+         //creamos nuestro objeto sala y
          $sala=new sala;
          $sala->codigo_Usuario=$codigoUS;
          $sala->nombre_Torneo= request('nombreTorneo');
@@ -92,7 +92,7 @@ class salaController extends Controller
         $sala->codigo_Usuario=$request->codigo_Usuario;
         $sala->nombre_Torneo= $request->nombre_Torneo;
         $sala->logo= $request->logo;
-        $sala->tipo_Eliminacion=$request->tipo_Eliminacion; 
+        $sala->tipo_Eliminacion=$request->tipo_Eliminacion;
         $sala->modo_Juego= $request->modo_Juego;
         $sala->numero_Equipos= $request->numero_Equipos;
         $sala->equipo_Ganador= $request->equipo_ganador;
@@ -127,7 +127,7 @@ class salaController extends Controller
                 $equipo->codigo_Sala=$codigoSala;
                 $equipo->nombre_Equipo=$listaEquipos[$i-1];
                 $equipo->save();
-                for ($j=1; $j <=5 ; $j++) { 
+                for ($j=1; $j <=5 ; $j++) {
                         $jugador=new jugadores_dota_2;
                         //recibiendo la ultima tabla creada anteriormente
                         $equipos = DB::table('equipos_dota_2')
@@ -169,7 +169,7 @@ class salaController extends Controller
         switch ($cantidadE) {
              case 4:
                  //creando los primeros encuentros
-                 for ($i=1; $i <= 4 ; $i+=2) { 
+                 for ($i=1; $i <= 4 ; $i+=2) {
                       $equipon1='cuartosFinal'.$i;
                       $sumae2=$i+1;
                       $equipon2='cuartosFinal'.$sumae2;
@@ -180,7 +180,7 @@ class salaController extends Controller
                       $encuentros->equipo_2=$request->$equipon2;
                       $encuentros->equipo_Ganador='por verificar';
                       $encuentros->save();
-                      for ($j=1; $j <= $eliminacion; $j++) { 
+                      for ($j=1; $j <= $eliminacion; $j++) {
                           $detalles=new detalles_partida_dota2;
 
                           $encuentroLast = DB::table('encuentros_dota2')
@@ -204,7 +204,7 @@ class salaController extends Controller
                           $detalles->equipo_Ganador='por verificar';
                           $detalles->save();
                           $contJugador=0;
-                            for ($m=0; $m <10 ; $m++) { 
+                            for ($m=0; $m <10 ; $m++) {
                                 $DetalleJ=new info_jugador_dota2;
                                 $detalleLast = DB::table('detalles_partida_dota2')
                                             ->where("codigo_Encuentro","=",$codigoEnc)
@@ -226,7 +226,7 @@ class salaController extends Controller
                                       if ($m==5) {
                                           $contJugador=0;
                                       }
-                                }           
+                                }
 
                                 $equipoDatos = DB::table('equipos_dota_2')
                                             ->where("codigo_Sala","=",$codigoSala)
@@ -274,7 +274,7 @@ class salaController extends Controller
                  $encuentros->equipo_Ganador='por verificar';
                  $encuentros->save();
 
-                 for ($j=1; $j <= $eliminacion; $j++) { 
+                 for ($j=1; $j <= $eliminacion; $j++) {
                           $detalles=new detalles_partida_dota2;
 
                           $encuentroLast = DB::table('encuentros_dota2')
@@ -297,7 +297,7 @@ class salaController extends Controller
                           $detalles->numero_partida=$j;
                           $detalles->equipo_Ganador='por verificar';
                           $detalles->save();
-                            for ($m=0; $m <10 ; $m++) { 
+                            for ($m=0; $m <10 ; $m++) {
                                 $DetalleJ=new info_jugador_dota2;
                                 $detalleLast = DB::table('detalles_partida_dota2')
                                             ->where("codigo_Encuentro","=",$codigoEnc)
@@ -311,7 +311,7 @@ class salaController extends Controller
                                              $codigoDet=$pr;
                                                  $cont=false;
                                                 }
-                                            }          
+                                            }
                                 //adicion de la info de cada jugador
                                 $DetalleJ->codigo_DetalleP=$codigoDet;
                                 $DetalleJ->codigo_Jugador=1;
@@ -330,12 +330,12 @@ class salaController extends Controller
                                 $DetalleJ->save();
                             }
                       }
-                 
+
                  break;
             case 8:
 
                  //creando los primeros encuentros
-                 for ($i=1; $i <= 8 ; $i+=2) { 
+                 for ($i=1; $i <= 8 ; $i+=2) {
                       $equipon1='octavosFinal'.$i;
                       $sumae2=$i+1;
                       $equipon2='octavosFinal'.$sumae2;
@@ -346,7 +346,7 @@ class salaController extends Controller
                       $encuentros->equipo_2=$request->$equipon2;
                       $encuentros->equipo_Ganador='por verificar';
                       $encuentros->save();
-                      for ($k=1; $k <= $eliminacion; $k++) { 
+                      for ($k=1; $k <= $eliminacion; $k++) {
                           $detalles=new detalles_partida_dota2;
 
                           $encuentroLast = DB::table('encuentros_dota2')
@@ -372,14 +372,14 @@ class salaController extends Controller
                       }
                  }
                  //los demas encuentros
-                 for ($j=0; $j < 3 ; $j++) { 
+                 for ($j=0; $j < 3 ; $j++) {
                      $encuentros=new encuentros_dota2;
                      $encuentros->codigo_Sala=$codigoSala;
                      $encuentros->equipo_1=' ';
                      $encuentros->equipo_2=' ';
                      $encuentros->equipo_Ganador='por verificar';
                      $encuentros->save();
-                     for ($s=1; $s <= $eliminacion; $s++) { 
+                     for ($s=1; $s <= $eliminacion; $s++) {
                           $detalles=new detalles_partida_dota2;
 
                           $encuentroLast = DB::table('encuentros_dota2')
@@ -402,7 +402,7 @@ class salaController extends Controller
                           $detalles->numero_partida=$s;
                           $detalles->equipo_Ganador='por verificar';
                           $detalles->save();
-                          for ($m=0; $m <10 ; $m++) { 
+                          for ($m=0; $m <10 ; $m++) {
                                 $DetalleJ=new info_jugador_dota2;
                                 $detalleLast = DB::table('detalles_partida_dota2')
                                             ->where("codigo_Encuentro","=",$codigoEnc)
@@ -416,7 +416,7 @@ class salaController extends Controller
                                              $codigoDet=$pr;
                                                  $cont=false;
                                                 }
-                                            }          
+                                            }
                                 //adicion de la info de cada jugador
                                 $DetalleJ->codigo_DetalleP=$codigoDet;
                                 $DetalleJ->codigo_Jugador=1;
@@ -440,7 +440,7 @@ class salaController extends Controller
             case 16:
 
                  //creando los primeros encuentros
-                 for ($i=1; $i <= 16 ; $i+=2) { 
+                 for ($i=1; $i <= 16 ; $i+=2) {
                       $equipon1='clasificacion'.$i;
                       $sumae2=$i+1;
                       $equipon2='clasificacion'.$sumae2;
@@ -451,7 +451,7 @@ class salaController extends Controller
                       $encuentros->equipo_2=$request->$equipon2;
                       $encuentros->equipo_Ganador='por verificar';
                       $encuentros->save();
-                      for ($k=1; $k<= $eliminacion; $k++) { 
+                      for ($k=1; $k<= $eliminacion; $k++) {
                           $detalles=new detalles_partida_dota2;
 
                           $encuentroLast = DB::table('encuentros_dota2')
@@ -475,7 +475,7 @@ class salaController extends Controller
                           $detalles->equipo_Ganador='por verificar';
                           $detalles->save();
                            $contJugador=0;
-                            for ($m=0; $m <10 ; $m++) { 
+                            for ($m=0; $m <10 ; $m++) {
                                 $DetalleJ=new info_jugador_dota2;
                                 $detalleLast = DB::table('detalles_partida_dota2')
                                             ->where("codigo_Encuentro","=",$codigoEnc)
@@ -497,7 +497,7 @@ class salaController extends Controller
                                       if ($m==5) {
                                           $contJugador=0;
                                       }
-                                }           
+                                }
 
                                 $equipoDatos = DB::table('equipos_dota_2')
                                             ->where("codigo_Sala","=",$codigoSala)
@@ -538,14 +538,14 @@ class salaController extends Controller
                       }
                  }
                  //los demas encuentros
-                 for ($j=0; $j < 7 ; $j++) { 
+                 for ($j=0; $j < 7 ; $j++) {
                      $encuentros=new encuentros_dota2;
                      $encuentros->codigo_Sala=$codigoSala;
                      $encuentros->equipo_1=' ';
                      $encuentros->equipo_2=' ';
                      $encuentros->equipo_Ganador='por verificar';
                      $encuentros->save();
-                     for ($s=1; $s <= $eliminacion; $s++) { 
+                     for ($s=1; $s <= $eliminacion; $s++) {
                           $detalles=new detalles_partida_dota2;
 
                           $encuentroLast = DB::table('encuentros_dota2')
@@ -568,7 +568,7 @@ class salaController extends Controller
                           $detalles->numero_partida=$s;
                           $detalles->equipo_Ganador='por verificar';
                           $detalles->save();
-                          for ($m=0; $m <10 ; $m++) { 
+                          for ($m=0; $m <10 ; $m++) {
                                 $DetalleJ=new info_jugador_dota2;
                                 $detalleLast = DB::table('detalles_partida_dota2')
                                             ->where("codigo_Encuentro","=",$codigoEnc)
@@ -582,7 +582,7 @@ class salaController extends Controller
                                              $codigoDet=$pr;
                                                  $cont=false;
                                                 }
-                                            }          
+                                            }
                                 //adicion de la info de cada jugador
                                 $DetalleJ->codigo_DetalleP=$codigoDet;
                                 $DetalleJ->codigo_Jugador=1;

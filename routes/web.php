@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SalawowController;
 use App\Http\Controllers\SalasCreadasController;
+use App\Http\Controllers\FixtureWowController;
 
 /*
 |--------------------------------------------------------------------------
@@ -69,6 +70,7 @@ Route::post('/torneo-wow-registrado', [SalawowController::class, 'create'])->nam
 Route::get('/salas-creadas', [SalasCreadasController::class, 'index'])->name('Rsalas');
 
 
+Route::get('/fixture-wow-{idsala}', [FixtureWowController::class, 'index'])->name('RFixture');
 
 
 

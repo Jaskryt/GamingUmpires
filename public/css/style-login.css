@@ -295,6 +295,10 @@ h1, h2, h3, h4, h5, h6 {a
 .redisenio-img{
   width: 180px;
   height: 120px;
+  border-radius: 10px 0 0 10px;
+}
+.redisenio-img-content{
+  padding-left: 0;
 }
 .redisenio-imput-card{
   margin: 0 0 10px 0;
@@ -303,10 +307,14 @@ h1, h2, h3, h4, h5, h6 {a
   margin: 0 0 10px 0;
 }
 .redisenio-card-border{
-  background-image: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet);
+  background-image: linear-gradient(to right, yellow,blue,red,black);
 }
 .redisenio-card-center{
   background-color: #151515;
+  border-radius: 10px;
+}
+.texto-card{
+  color:white;
 }
 .card-plus-tamanio{
     height: 292px;

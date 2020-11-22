@@ -67,7 +67,7 @@ class SalawowController extends Controller
                  echo '<script language="javascript">alert("tamaño o formato invalido");</script>';
             }
         }
-        $salaswow->logo= "../logo_pictures/".$user.'/'.$_FILES['logo']['name'];
+        $salaswow->logo= "../logos_wow_torneos/".$user.'/'.$_FILES['logo']['name'];
         $salaswow->arbitro=$user;
         $salaswow->save();
          for($j=1;$j<=20;$j++){
@@ -129,6 +129,7 @@ class SalawowController extends Controller
                         ->where("nombreSEquipo","=",$equipo2)
                         ->first();
             $partida->idequipo2 = $idequipoSecond->id;
+            $partida->nroPartida = $a+1;
             $countEqui=$countEqui+1;
             $partida->save();
         }
