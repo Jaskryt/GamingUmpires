@@ -13,7 +13,7 @@ class detallesController extends Controller
      */
     public function index($id)
     {
-        return View('sala/detalles-partida-dota2')->with('id',$id);
+       return View('sala/detalles-partida-dota2')->with('id',$id);
     }
 
     /**

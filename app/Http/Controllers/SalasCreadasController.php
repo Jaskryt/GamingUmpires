@@ -80,7 +80,9 @@ class SalasCreadasController extends Controller
                         </div>
                         <div class="col-xl-3 align-self-center text-center">
                           <div class="mx-auto">
-                            <button class="btn btn-dark texto-card">Borrar Torneo</button>
+                          <form method="post" action="'.url("/sala/detalles-partida-dota2/".$indivSala->id).'">
+                            '.csrf_field().'
+                            <button type="submit" class="btn btn-dark texto-card">Ver Detalles</button></form>
                           </div>
                         </div>
                       </div>
@@ -88,6 +90,7 @@ class SalasCreadasController extends Controller
                   </li><br>
                   ';
             }
+
 
         return view('sala/salas-creadas',compact('li'),compact('li2'));
     }
