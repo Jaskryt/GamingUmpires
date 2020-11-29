@@ -1,0 +1,27 @@
+[
+	{
+		"id":0,
+		"name":"RAMA FÉRREA",
+		"img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/items/branches_lg.png"
+	},
+	{
+		"id":1,
+		"name":"ANILLO DE PROTECCIÓN",
+		"img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/items/ring_of_protection_lg.png"
+	},
+	{
+		"id":2,
+		"name":"PALO MÁGICO",
+		"img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/items/magic_stick_lg.png"
+	},
+	{
+		"id":3,
+		"name":"VARITA MÁGICA",
+		"img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/items/magic_wand_lg.png"
+	},
+	{
+		"id":4,
+		"name":"ANILLO DE BASILIUS",
+		"img":"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/items/ring_of_basilius_lg.png"
+	}
+]
