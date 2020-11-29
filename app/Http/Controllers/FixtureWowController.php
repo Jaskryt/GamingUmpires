@@ -47,7 +47,7 @@ class FixtureWowController extends Controller
                 ->first();
             $fixture.='
                 <li class="game game-top">'.$equipo1->nombreSEquipo.'<span>0</span></li>
-                <li class="game game-spacer">&nbsp;</li>
+                <a href="'.route('RMytic',$partida->id).'"><li class="game game-spacer">&nbsp;</li><li class="game game-spacer">&nbsp;</li></a></a>
                 <li class="game game-bottom ">'.$equipo2->nombreSEquipo.'<span>0</span></li>
 
                 <li class="spacer">&nbsp;</li>
@@ -58,17 +58,16 @@ class FixtureWowController extends Controller
             </ul>
             ';
         if($faseP2!=1){
-            for($i=$faseP2;$i>1;$i--){
+            for($i=($faseP2+1)/2;$i>0;$i--){
                 $fixture.='
                     <ul class="round round-'.$count.'">
-                        <li class="spacer">&nbsp;</li>
                     ';
                 for($j=0;$j<$i-1;$j++){
                     $fixture.='
+                        <li class="spacer">&nbsp;</li>
                         <li class="game game-top"><span></span></li>
-                        <li class="game game-spacer">&nbsp;</li>
+                        <li class="game game-spacer">&nbsp;</li><li class="game game-spacer">&nbsp;</li>
                         <li class="game game-bottom "><span></span></li>
-
                         <li class="spacer">&nbsp;</li>
                         ';
                 }

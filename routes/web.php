@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SalawowController;
 use App\Http\Controllers\SalasCreadasController;
 use App\Http\Controllers\FixtureWowController;
+use App\Http\Controllers\MyticSelectionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -72,7 +73,7 @@ Route::get('/salas-creadas', [SalasCreadasController::class, 'index'])->name('Rs
 
 Route::get('/fixture-wow-{idsala}', [FixtureWowController::class, 'index'])->name('RFixture');
 
-
+Route::get('/mytic-seleccion-wow-{idmytic}', [MyticSelectionController::class, 'index'])->name('RMytic');
 
 
 
