@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SalawowController;
 use App\Http\Controllers\SalasCreadasController;
 use App\Http\Controllers\FixtureWowController;
-use App\Http\Controllers\fixtureDota2Controller;
+use App\Http\Controllers\MyticSelectionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -65,6 +65,7 @@ Route::view('/sala/revicion-sala-dota2','sala/revicion-sala-dota2')->name('revic
 Route::post('/sala/detalles-partida-dota2/{id}','App\Http\Controllers\detallesController@index')->name('detalles-sala-dota2');
 Route::view('/sala/detalles-show-dota2','sala/detalles-partida-dota2')->name('detalles-show-dota2');
 
+
 //recibe a los 2 equipos y con eso recupera el codigo del encunetro, el cual utiliza para hallar el detalle del encuentro
 //y de esta manera obtener la info de la partida de los jugadores
 Route::get('/sala/fixture/{equipos}', [fixtureDota2Controller::class, 'index'])->name('fixturedota2');
@@ -73,6 +74,7 @@ Route::view('/sala/info-partida-dota2','sala/info-partida-dota2')->name('info-sh
 //recibe los datos actualizados de los jugadores
 Route::get('/sala/fixture/guardar/info', [fixtureDota2Controller::class, 'update'])->name('fixturedota2Update');
 //Route::view('/sala/info-partida-dota2','sala/info-partida-dota2')->name('info-show-dota2');
+
 
 //salas world of warcraft
 Route::get('/torneo-wow', [SalawowController::class, 'index'])->name('RCrearTorneo');
@@ -83,7 +85,7 @@ Route::get('/salas-creadas', [SalasCreadasController::class, 'index'])->name('Rs
 
 Route::get('/fixture-wow-{idsala}', [FixtureWowController::class, 'index'])->name('RFixture');
 
-
+Route::get('/mytic-seleccion-wow-{idmytic}', [MyticSelectionController::class, 'index'])->name('RMytic');
 
 
 
