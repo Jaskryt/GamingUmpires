@@ -9,18 +9,66 @@
 	  <link href="../css/style-sala.css" rel="stylesheet">
 </head>
 <body>
-	<section id="hero"></section> 
+	<section id="hero"></section>
 	<section>
 		<form method="post" action="{{ route('createSalaDota2') }}">
 			@csrf
 			<center>
+				<h1>Detalles de la sala</h1>
+				<input type="hidden" name="codigoUsuario" id="codigoUsuario" value="1">
+
+				<div class="row justify-content-center">
+					<div class="col-3">
+						<input type="text" readonly="readonly" name="nombreTorneo" class="form-control" id="nombreTorneo" style="text-align:center;"
+		 				value="{{ $sala['nombre_Torneo'] }}">
+					</div>
+				</div>
+		<br>
+				<div class="row justify-content-center">
+					<div class="col-3">
+						Logo: <img src="{{ $sala['logo'] }}" style="width: 200px; height: 200px;" name="logo" class="img-thumbnail" >
+					</div>
+				</div>
+		<br>
+				<div class="row justify-content-center">
+					<div class="col-3">
+						Tipo de Eliminacion:<input type="text" class="form-control" readonly="readonly" name="nombreTorneo"  id="nombreTorneo"
+		 				value="{{ $sala['tipo_Eliminacion'] }}">
+					</div>
+				</div>
+
+		<br>
+		 		<div class="row justify-content-center">
+					<div class="col-3">
+						Modo de Juego: <input type="text" class="form-control" readonly="readonly" name="nombreTorneo" id="nombreTorneo"
+		 				value="{{ $sala['modo_Juego'] }}">
+					</div>
+				</div>
+		<br>
+		 		<div class="row justify-content-center">
+					<div class="col-3">
+						Numero de Equipos: <input type="text" class="form-control" readonly="readonly" name="nombreTorneo" id="nombreTorneo"
+		 				value="{{ $sala['numero_Equipos'] }}">
+					</div>
+				</div>
+		<br>
+		 <div class="btn-group">
+		 	<button class="btn btn-success ">Crear Sala</button>
+		 	<a href="#" onclick="window.location.reload(true);" class="btn btn-warning ">Sortear Equipos</a><br>
+
+			<input type="button" onclick="ConfirmCancel()" class="btn btn-danger " value="Cancelar Creacion" />
+		 </div>
+		<br>
+		<br>
+		<br>
+		<h1>Fixture</h1>
 				<?php
 					use App\Models\equipos_dota_2;
 					use App\Models\jugadores_dota_2;
 
 					$equiposFixture = array($sala['numero_Equipos']);
 					//for para randomizar los equipos
-					for ($i=0; $i <$sala['numero_Equipos'] ; $i++) { 
+					for ($i=0; $i <$sala['numero_Equipos'] ; $i++) {
 						$controlador=0;
 							while ($controlador==0) {
 								$random=rand(1,$sala['numero_Equipos']);
@@ -58,7 +106,7 @@
 						    	<td><input type="text" name="Ganador"  readonly="readonly" placeholder="Ganador" ></td>
 						    </tr>
 						    <tr class="5">
-						    	<td><input type="text" name="cuartosFinal3" 
+						    	<td><input type="text" name="cuartosFinal3"
 						     	 			value="'.($listaEquipos[$equiposFixture[2]]->nombre_Equipo).'"></td>
 						    	<td></td><td><input type="text" name="semiFinalista2" readonly="readonly" placeholder="Semi-final" ></td>
 						    	<td></td><td></td>
@@ -67,7 +115,7 @@
 						    	<td></td><td><button>Ver Detalles</button></td><td></td><td></td><td></td>
 						    </tr>
 						    <tr class="7">
-						    	<td><input type="text" name="cuartosFinal4" 
+						    	<td><input type="text" name="cuartosFinal4"
 						     	 			value="'.($listaEquipos[$equiposFixture[3]]->nombre_Equipo).'"></td>
 						    	<td></td><td></td><td></td><td></td>
 						    </tr>
@@ -321,26 +369,8 @@
 							break;
 					}
 				?>
-			
-		<h1>Detalles de la sala</h1>
-		<input type="hidden" name="codigoUsuario" id="codigoUsuario" value="1">
-		<input type="text" readonly="readonly" name="nombreTorneo" id="nombreTorneo" 
-		 value="{{ $sala['nombre_Torneo'] }}"><br>
-
-		logo: <img src="{{ $sala['logo'] }}" style="width: 200px; height: 200px;" name="logo" ><br>
 
 
-		tipo de eliminacion:<input type="text" readonly="readonly" name="nombreTorneo" id="nombreTorneo" 
-		 value="{{ $sala['tipo_Eliminacion'] }}"><br>
-			
-		Modo de juego: <input type="text" readonly="readonly" name="nombreTorneo" id="nombreTorneo" 
-		 value="{{ $sala['modo_Juego'] }}"><br>
-
-		Numero de equipos: <input type="text" readonly="readonly" name="nombreTorneo" id="nombreTorneo" 
-		 value="{{ $sala['numero_Equipos'] }}"><br>
-		<a href="#" onclick="window.location.reload(true);">randomizar equipos</a><br>
-		<button>crear sala</button>
-		<input type="button" onclick="ConfirmCancel()" value="cancelar creacion" />
 
 
 			<!--envio de los equipos-->
@@ -350,7 +380,7 @@
 				$contArray=0;
 				for ($i=1; $i <= $sala['numero_Equipos'] ; $i++){
 		              	$arrayNombreEquipos[$i]=$listaEquipos[$i]->nombre_Equipo." ";
-		              	for ($j=1; $j <=5 ; $j++) { 
+		              	for ($j=1; $j <=5 ; $j++) {
 		              		$arrayNombreJugadores[$contArray]=$listaJugadores[$contArray]->nickname." ";
 		              		$contArray++;
 		              	}
@@ -363,7 +393,7 @@
   <form action="#">
 </section>
 <?php
-			
+
 			 //envio de informacion por debajo
 			//envio de la sala
  			  echo '<input type="hidden" value="'.$sala['codigo_Usuario'].'" name="codigo_Usuario">';
@@ -373,7 +403,7 @@
 			  echo '<input type="hidden" value="'.$sala['modo_Juego'].'" name="modo_Juego">';
 			  echo '<input type="hidden" value="'.$sala['numero_Equipos'].'" name="numero_Equipos">';
 			  echo '<input type="hidden" value="'.$sala['equipo_ganador'].'" name="equipo_ganador">';
-		   
+
 
 ?>
 </body>
@@ -390,7 +420,7 @@ function ConfirmCancel() {
 			window.location="/menu-usuario";
 		}
 
-	}		
+	}
 
 </script>
 @endsection

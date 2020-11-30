@@ -44,7 +44,7 @@ class salaController extends Controller
             $permitidos= array("image/gif","image/png","image/jpg");
             $limite_kb=10000;
             if(in_array($_FILES['logo']['type'],$permitidos) && $_FILES['logo']['size'] <= $limite_kb*1024){
-                $url='C:\laragon\www\ProyectoGulag\public\logo_pictures/'.$codigoUS.'/';
+                $url='C:\laragon\www\GamingUmpires\public\logo_pictures/'.$codigoUS.'/';
                 $archivo=$url.$_FILES['logo']['name'];
 
                 if(!file_exists($url)){

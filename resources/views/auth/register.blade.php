@@ -10,22 +10,22 @@
             @csrf
 
             <div>
-                <x-jet-label for="firstname" value="{{ __('Firstname') }}" />
+                <x-jet-label for="firstname" value="{{ __('Nombre') }}" />
                 <x-jet-input id="firstname" class="block mt-1 w-full" type="text" name="firstname" :value="old('firstname')" required autofocus autocomplete="firstname" />
             </div>
 
             <div>
-                <x-jet-label for="lastname" value="{{ __('Lastname') }}" />
+                <x-jet-label for="lastname" value="{{ __('Apellidos') }}" />
                 <x-jet-input id="lastname" class="block mt-1 w-full" type="text" name="lastname" :value="old('lastname')" required autofocus autocomplete="lastname" />
             </div>
 
             <div>
-                <x-jet-label for="name" value="{{ __('Name') }}" />
+                <x-jet-label for="name" value="{{ __('NickName') }}" />
                 <x-jet-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
             </div>
 
             <div class="mt-4">
-                <x-jet-label for="date" value="{{ __('Date') }}" />
+                <x-jet-label for="date" value="{{ __('Fecha de Nacimiento') }}" />
                 <x-jet-input id="date" class="block mt-1 w-full" type="date" name="date" :value="old('date')" required />
             </div>
 
@@ -35,12 +35,12 @@
             </div>
 
             <div class="mt-4">
-                <x-jet-label for="password" value="{{ __('Password') }}" />
+                <x-jet-label for="password" value="{{ __('Contraseña') }}" />
                 <x-jet-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="new-password" />
             </div>
 
             <div class="mt-4">
-                <x-jet-label for="password_confirmation" value="{{ __('Confirm Password') }}" />
+                <x-jet-label for="password_confirmation" value="{{ __('Confirmar Contraseña') }}" />
                 <x-jet-input id="password_confirmation" class="block mt-1 w-full" type="password" name="password_confirmation" required autocomplete="new-password" />
             </div>
 

@@ -10,6 +10,12 @@
     <div class="hero-container">
       <h1>Bienvenido a Gaming Umpires</h1>
       <h2>Plataforma para crear y administrar tus torneos de Videojuegos Online!!</h2>
+<h2>Código de Torneo</h2>
+      <form action="{{ route('buscaTorneo')}}" method="post" class="form-inline">
+        @csrf
+                <input type="text" placeholder="Buscar" name="searchText" class="form-control mr-sm-2">
+                <button type="submit" class="btn btn-dark">Buscar</button>
+          </form>
     </div>
   </section>
   <main id="main">
@@ -71,7 +77,7 @@
             <div class="box">
               <div class="icon"><a href=""><i class="fa fa-cog"></i></a></div>
               <h4 class="title"><a href="">Gestion de Partidas</a></h4>
-              <p class="description">Podra editar los detalles de la partida y colocar la informacion de manera en la cual 
+              <p class="description">Podra editar los detalles de la partida y colocar la informacion de manera en la cual
               la informacion respecto a los juegos sera visualmente comoda para los interesados</p>
             </div>
           </div>
@@ -96,7 +102,7 @@
             <div class="box">
               <div class="icon"><a href=""><i class="fa fa-download"></i></a></div>
               <h4 class="title"><a href="">Torneos Descargables</a></h4>
-              <p class="description">Podra descargar todo el progreso del torneo en un archivos .xlsx o PDF 
+              <p class="description">Podra descargar todo el progreso del torneo en un archivos .xlsx o PDF
               para visualizar el torneo sin conexion a internet</p>
             </div>
           </div>

@@ -53,6 +53,8 @@ Route::post('/sala/addModelEquipos','App\Http\Controllers\equiposdota2Controller
 //recibe los datos desde el controlador equiposdota2Controller@index
 Route::view('/sala/revicion-sala-dota2','sala/revicion-sala-dota2')->name('revicion-sala-dota2');
 
+//Recibe la key para buscar el torneo
+Route::post('/buscar-sala',[SalasCreadasController::class, 'search'])->name('buscaTorneo');
 
 //recibe los datos desde revision-sala-dota2
 Route::post('/sala/crearTorneo','App\Http\Controllers\salaController@create')->name('createSalaDota2');
@@ -64,7 +66,7 @@ Route::post('/sala/detalles-partida-dota2/{id}','App\Http\Controllers\detallesCo
 Route::view('/sala/detalles-show-dota2','sala/detalles-partida-dota2')->name('detalles-show-dota2');
 
 //recibe a los 2 equipos y con eso recupera el codigo del encunetro, el cual utiliza para hallar el detalle del encuentro
-//y de esta manera obtener la info de la partida de los jugadores 
+//y de esta manera obtener la info de la partida de los jugadores
 Route::get('/sala/fixture/{equipos}', [fixtureDota2Controller::class, 'index'])->name('fixturedota2');
 Route::view('/sala/info-partida-dota2','sala/info-partida-dota2')->name('info-show-dota2');
 

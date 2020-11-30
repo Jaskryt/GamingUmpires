@@ -24,7 +24,7 @@
                                     reader.readAsDataURL($refs.photo.files[0]);
                             " />
 
-                <x-jet-label for="photo" value="{{ __('Photo') }}" />
+                <x-jet-label for="photo" value="{{ __('Foto') }}" />
 
                 <!-- Current Profile Photo -->
                 <div class="mt-2" x-show="! photoPreview">
@@ -54,28 +54,28 @@
 
         <!-- Firstname -->
         <div class="col-span-6 sm:col-span-4">
-            <x-jet-label for="firstname" value="{{ __('Firstname') }}" />
+            <x-jet-label for="firstname" value="{{ __('Nombre') }}" />
             <x-jet-input id="firstname" type="text" class="mt-1 block w-full" wire:model.defer="state.firstname" autocomplete="firstname" />
             <x-jet-input-error for="firstname" class="mt-2" />
         </div>
 
         <!-- Lastname -->
         <div class="col-span-6 sm:col-span-4">
-            <x-jet-label for="lastname" value="{{ __('Lastname') }}" />
+            <x-jet-label for="lastname" value="{{ __('Apellido') }}" />
             <x-jet-input id="lastname" type="text" class="mt-1 block w-full" wire:model.defer="state.lastname" autocomplete="lastname" />
             <x-jet-input-error for="lastname" class="mt-2" />
         </div>
 
         <!-- Date -->
         <div class="col-span-6 sm:col-span-4">
-            <x-jet-label for="date" value="{{ __('Date') }}" />
+            <x-jet-label for="date" value="{{ __('Fecha de Nacimiento') }}" />
             <x-jet-input id="date" type="date" class="mt-1 block w-full" wire:model.defer="state.date" />
             <x-jet-input-error for="date" class="mt-2" />
         </div>
 
         <!-- Name -->
         <div class="col-span-6 sm:col-span-4">
-            <x-jet-label for="name" value="{{ __('Name') }}" />
+            <x-jet-label for="name" value="{{ __('NickName') }}" />
             <x-jet-input id="name" type="text" class="mt-1 block w-full" wire:model.defer="state.name" autocomplete="name" />
             <x-jet-input-error for="name" class="mt-2" />
         </div>

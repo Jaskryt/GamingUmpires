@@ -12,7 +12,7 @@
 </head>
 <body>
 <section id="hero"></section>
-
+<center>
 	<?php
 	         echo '<input type="hidden" id="id" value="'.$id.'">';
 			 $salaDatos = DB::table('sala_dota_2')
@@ -21,7 +21,7 @@
             //lista de los equipos y encuentros
              $encuentrosDatos = DB::table('encuentros_dota2')
                                             ->where("codigo_Sala","=",$id)
-                                            ->get();   
+                                            ->get();
              //convirtiendo el tipo de eliminacion a numero
              $eliminacion=1;
              if($salaDatos[0]->tipo_Eliminacion=='BO3'){
@@ -32,12 +32,12 @@
 
              //opciones para ver los detalles de una partida
              $options='';
-             for ($i=1; $i <=$eliminacion; $i++) { 
+             for ($i=1; $i <=$eliminacion; $i++) {
              	$options.='<option value="'.$i.'" >partida:'.$i.'</option>';
              }
 
              echo '<input type="hidden" id="numeroE" value="'.$salaDatos[0]->numero_Equipos.'">';
-             
+
 			//fixture de los equipos
 					switch ($salaDatos[0]->numero_Equipos) {
 						case 4:
@@ -98,7 +98,7 @@
 						    <tr class="2">
 						    	<td></td><td><button id="octavose1ye2">Ver Detalles</button>
 						    	<select id="matcho1vs2">'.$options.'</select></td>
-						    	<td><input type="text" name="cuartosFinal1" id="cuartosFinal1" readonly="readonly" placeholder="Cuartos de Final 1" 
+						    	<td><input type="text" name="cuartosFinal1" id="cuartosFinal1" readonly="readonly" placeholder="Cuartos de Final 1"
 						    	value="'.($encuentrosDatos[4]->equipo_1).'"></td>
 						    	<td></td><td></td><td></td><td></td>
 						    </tr>
@@ -120,9 +120,9 @@
 						    <tr class="6">
 								<td></td><td><button id="octavose3ye4">Ver Detalles</button>
 								<select id="matcho3vs4">'.$options.'</select></td>
-								<td><input type="text" name="cuartosFinal2" id="cuartosFinal2" readonly="readonly" placeholder="Cuartos de Final 1" 
+								<td><input type="text" name="cuartosFinal2" id="cuartosFinal2" readonly="readonly" placeholder="Cuartos de Final 1"
 								value="'.($encuentrosDatos[4]->equipo_2).'"></td>
-								<td></td><td><input type="text" name="semiFinalista1" id="semiFinalista1" readonly="readonly" placeholder="Semi-final" 
+								<td></td><td><input type="text" name="semiFinalista1" id="semiFinalista1" readonly="readonly" placeholder="Semi-final"
 								value="'.($encuentrosDatos[6]->equipo_1).'"></td>
 								<td></td><td></td>
 						    </tr>
@@ -135,7 +135,7 @@
 						    	<td></td><td></td><td></td><td></td><td></td>
 						    	<td><button id="semifinal">Ver Detalles</button>
 						    	<select id="matchsf">'.$options.'</select></td>
-						    	<td><input type="text" name="Ganador" readonly="readonly" placeholder="Ganador" 
+						    	<td><input type="text" name="Ganador" readonly="readonly" placeholder="Ganador"
 						    	value="'.($salaDatos[0]->equipo_Ganador).'"></td>
 						    </tr>
 						    <tr class="9">
@@ -146,7 +146,7 @@
 						    <tr class="10">
 								<td></td><td><button id="octavose5ye6">Ver Detalles</button>
 								<select id="matcho5vs6">'.$options.'</select></td>
-								<td><input type="text" name="cuartosFinal3" id="cuartosFinal3" readonly="readonly" placeholder="Cuartos de Final 2" 
+								<td><input type="text" name="cuartosFinal3" id="cuartosFinal3" readonly="readonly" placeholder="Cuartos de Final 2"
 								value="'.($encuentrosDatos[5]->equipo_1).'"></td>
 								<td></td><td><input type="text" name="semiFinalista2" id="semiFinalista2" readonly="readonly" placeholder="Semi-final"
 								value="'.($encuentrosDatos[6]->equipo_2).'" ></td>
@@ -223,8 +223,8 @@
 						    	<td><input type="text" name="clasificacion4" id="clasificacion4" readonly="readonly"
 							 	 			value="'.($encuentrosDatos[1]->equipo_2).'"></td>
 						    	<td></td><td></td><td></td>
-						    	<td><input type="text" name="cuartosFinal1" 
-						    	id="cuartosFinal1" readonly="readonly" placeholder="Cuartos de Final 1" 
+						    	<td><input type="text" name="cuartosFinal1"
+						    	id="cuartosFinal1" readonly="readonly" placeholder="Cuartos de Final 1"
 						    	value="'.($encuentrosDatos[12]->equipo_1).'"></td>
 						    	<td></td><td></td><td></td><td></td>
 						    </tr>
@@ -270,7 +270,7 @@
 						    	<td><input type="text" name="clasificacion8" id="clasificacion8" readonly="readonly"
 							 	 			value="'.($encuentrosDatos[3]->equipo_2).'"</td>
 						    	<td></td><td></td><td></td>
-						    	<td><input type="text" name="cuartosFinal2" id="cuartosFinal2"  readonly="readonly"placeholder="Cuartos de Final 1" 
+						    	<td><input type="text" name="cuartosFinal2" id="cuartosFinal2"  readonly="readonly"placeholder="Cuartos de Final 1"
 						    	value="'.($encuentrosDatos[12]->equipo_2).'"></td><td></td>
 						    	<td><input type="text" name="semiFinalista1" id="semiFinalista1" readonly="readonly" placeholder="Semi-final"
 						    	value="'.($encuentrosDatos[14]->equipo_1).'" ></td><td></td><td></td>
@@ -279,22 +279,22 @@
 						    	<td></td><td></td><td></td><td></td><td></td><td></td><td></td>
 						    	<td><button id="semifinal">Ver Detalles</button>
 						    	<select id="matchsf">'.$options.'</select></td>
-						    	<td><input type="text" name="Ganador" readonly="readonly" placeholder="Ganador" 
+						    	<td><input type="text" name="Ganador" readonly="readonly" placeholder="Ganador"
 						    	value="'.($salaDatos[0]->equipo_Ganador).'" ></td>
 						    </tr>
 						    <tr class="17">
 						    	<td><input type="text" name="clasificacion9" id="clasificacion9" readonly="readonly"
 							 	 			value="'.($encuentrosDatos[4]->equipo_1).'"></td>
 						    	<td></td><td></td><td></td>
-						    	<td><input type="text" name="cuartosFinal3" id="cuartosFinal3" readonly="readonly"  placeholder="Cuartos de Final 2" 
+						    	<td><input type="text" name="cuartosFinal3" id="cuartosFinal3" readonly="readonly"  placeholder="Cuartos de Final 2"
 						    	value="'.($encuentrosDatos[13]->equipo_1).'"></td><td></td>
-						    	<td><input type="text" name="semiFinalista2" id="semiFinalista2" readonly="readonly"  placeholder="Semi-final" 
+						    	<td><input type="text" name="semiFinalista2" id="semiFinalista2" readonly="readonly"  placeholder="Semi-final"
 						    	value="'.($encuentrosDatos[14]->equipo_2).'"></td><td></td><td></td>
 						    </tr>
 						    <tr class="18">
 						    	<td></td><td><button id="clasie9ye10">Ver Detalles</button>
 						    	<select id="matchcl9vs10">'.$options.'</select></td>
-						    	<td><input type="text" name="octavosFinal5" id="octavosFinal5" readonly="readonly" placeholder="Octavos de Final 3" 
+						    	<td><input type="text" name="octavosFinal5" id="octavosFinal5" readonly="readonly" placeholder="Octavos de Final 3"
 						    	value="'.($encuentrosDatos[10]->equipo_1).'"></td>
 						    	<td></td><td></td><td></td><td></td><td></td><td></td>
 						    </tr>
@@ -334,7 +334,7 @@
 						    	<td><input type="text" name="clasificacion13" id="clasificacion13" readonly="readonly"
 							 	 			value="'.($encuentrosDatos[6]->equipo_1).'"></td>
 						    	<td></td><td></td><td></td>
-						    	<td><input type="text" name="cuartosFinal4" id="cuartosFinal4" readonly="readonly" placeholder="Cuartos de Final 2" 
+						    	<td><input type="text" name="cuartosFinal4" id="cuartosFinal4" readonly="readonly" placeholder="Cuartos de Final 2"
 						    	value="'.($encuentrosDatos[13]->equipo_2).'"></td>
 						    	<td></td><td></td><td></td><td></td>
 						    </tr>
@@ -377,6 +377,7 @@
 							break;
 					}
 	?>
+	</center>
 </body>
 
 <!--script para los botones-->
@@ -525,7 +526,7 @@ if(document.getElementById("numeroE").value	==8){
 		window.location.href = "http://gamingumpires.test/sala/fixture/"+equipos1+"&&&"+equipos2+"&&&"+id+"&&&"+numeroEnc;
 	}
 
-	//final 
+	//final
 	document.getElementById("semifinal").onclick=function(){
 		var id=document.getElementById("id").value;
 		var equipos1=document.getElementById("semiFinalista1").value;

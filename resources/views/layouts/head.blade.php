@@ -23,12 +23,13 @@
 
       <nav id="nav-menu-container" >
         <ul class="nav-menu">
+
           <li class="menu-active"><a href="/">Inicio</a></li>
           <li><a href="#about">Acerca de</a></li>
           <li><a href="#services">Servicios</a></li>
           <li><a href="#team">Equipo</a></li>
             @if (Route::has('login'))
-                    @auth 
+                    @auth
                       <li><a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 underline">Dashboard</a></li>
                     @else
                         <li><a href="{{ route('login') }}" class="text-sm text-gray-700 underline">Login</a></li>
@@ -37,6 +38,7 @@
                         @endif
                     @endif
             @endif
+
         </ul>
       </nav>
     </div>
