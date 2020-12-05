@@ -11,7 +11,9 @@
     <div class="col-xl-6">
       <div class="card text-center">
         <div class="card-header">
-          DOTA 2
+         	<?php
+                echo $li4;
+            ?>
       </div>
       <div class="card-body">
           <h5 class="card-title">Panel de Control de Torneos Activos</h5>

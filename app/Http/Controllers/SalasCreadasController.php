@@ -100,10 +100,16 @@ class SalasCreadasController extends Controller
 
 public function search(Request $request){
     if($request){
-        $query = Request('searchText');
-        $torneo =DB::table('sala_dota_2')->where('id','=',$query)->first();
+
+        $var = $request->get('selectGame');
+        $li4 = '';
         $li3 = '';
-        $li3.='
+        if($var == 'D2'){
+          $li4 = 'DOTA 2';
+          $query = Request('searchText');
+          $torneo =DB::table('sala_dota_2')->where('id','=',$query)->first();
+          if(isset($torneo)){
+            $li3.='
                    <li class="list-group-item redisenio-card-border">
                     <a href="seleccion-juego">
                       <div class="row redisenio-card-center">
@@ -133,8 +139,55 @@ public function search(Request $request){
                     </a>
                   </li><br>
                   ';
-        return view('/buscaSala',compact('li3'));
+          }
+          else{
+            $li3 = 'No existe el Torneo o la ID es incorrecta';
+          }
+        }
+        if($var == 'WOW'){
+          $li4 = $var;
+          $query = Request('searchText');
+          $torneo =DB::table('salaswow')->where('id','=',$query)->first();
+          if(isset($torneo)){
+            $li3.='
+                   <li class="list-group-item redisenio-card-border">
+                    <a href="seleccion-juego">
+                      <div class="row redisenio-card-center">
+                        <div class="col-xl-3 redisenio-img-content">
+                          <img class="redisenio-img" src="'.$torneo->logo.'" alt="Card image">
+                        </div>
+                        <div class="col-xl-6 align-self-center text-center">
+                          <div class="row">
+                            <div class="mx-auto">
+                              <h4 class="texto-card">'.$torneo->nombre_Torneo.'</h4>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="mx-auto">
+                              <p class="card-text text-danger">Vencimiento del torneo: </p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-xl-3 align-self-center text-center">
+                          <div class="mx-auto">
+                          <form method="post" action="'.url("/sala/detalles-partida-dota2/".$torneo->id).'">
+                            '.csrf_field().'
+                            <button type="submit" class="btn btn-dark texto-card">Ver Detalles</button></form>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </li><br>
+                  ';
+                }
+                else{
+                  $li3 = 'No existe el Torneo o la ID es incorrecta';
+                }
+        }
+        return view('/buscaSala',compact('li3'),compact('li4'));
+
     }
+
 }
 
     /**
