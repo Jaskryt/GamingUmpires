@@ -5,6 +5,7 @@ use App\Http\Controllers\SalawowController;
 use App\Http\Controllers\SalasCreadasController;
 use App\Http\Controllers\FixtureWowController;
 use App\Http\Controllers\MyticSelectionController;
+use App\Http\Controllers\fixtureDota2Controller;
 
 /*
 |--------------------------------------------------------------------------
@@ -70,6 +71,9 @@ Route::view('/sala/detalles-show-dota2','sala/detalles-partida-dota2')->name('de
 //y de esta manera obtener la info de la partida de los jugadores
 Route::get('/sala/fixture/{equipos}', [fixtureDota2Controller::class, 'index'])->name('fixturedota2');
 Route::view('/sala/info-partida-dota2','sala/info-partida-dota2')->name('info-show-dota2');
+
+//informacion de la partida pera para un usuario no logeado - externo
+Route::view('/sala/info-partida-dota2-externo','sala/info-partida-dota2-externo')->name('info-show-dota2-ex');
 
 //recibe los datos actualizados de los jugadores
 Route::get('/sala/fixture/guardar/info', [fixtureDota2Controller::class, 'update'])->name('fixturedota2Update');

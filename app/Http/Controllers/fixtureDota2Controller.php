@@ -23,7 +23,7 @@ class fixtureDota2Controller extends Controller
     public function index($equipos)
     {
         $ArrayEquipos= explode("&&&", $equipos);
-        //tabla de encuentros
+        //tabla de encuentros---7,8,9
         $encuentrosTable = DB::table('encuentros_dota2')
                         ->where("codigo_Sala","=",$ArrayEquipos[2])
                         ->where("equipo_1","=",$ArrayEquipos[0])
@@ -39,12 +39,55 @@ class fixtureDota2Controller extends Controller
         $infoTable = DB::table('info_jugador_dota2')
                         ->where("codigo_DetalleP","=",$detallesTable[0]->id) 
                         ->get();
+        //actualizando equipos a los ganadores
+        $equipo1= DB::table('equipos_dota_2')
+                        ->where("codigo_Sala","=",$ArrayEquipos[2])
+                        ->where("nombre_Equipo","=",$ArrayEquipos[0])  
+                        ->get();
 
-        return View('sala/info-partida-dota2')
+        $equipo2= DB::table('equipos_dota_2')
+                        ->where("codigo_Sala","=",$ArrayEquipos[2])
+                        ->where("nombre_Equipo","=",$ArrayEquipos[1])  
+                        ->get();
+
+        $jugadoresE1=DB::table('jugadores_dota_2')
+                        ->where("codigo_Equipo","=",$equipo1[0]->id)  
+                        ->get();
+        $jugadoresE2=DB::table('jugadores_dota_2')
+                        ->where("codigo_Equipo","=",$equipo2[0]->id)  
+                        ->get();
+
+        //for para la actualizacion del equipo1
+
+        for($ii=0;$ii<5;$ii++){
+            DB::table('info_jugador_dota2')
+                ->where('id', $infoTable[$ii]->id)
+                ->update(['codigo_Jugador' =>$jugadoresE1[$ii]->id ]);
+  
+        }
+        //for para la actualizacion del equipo1
+
+        for($ii=5;$ii<10;$ii++){
+            DB::table('info_jugador_dota2')
+                ->where('id', $infoTable[$ii]->id)
+                ->update(['codigo_Jugador' =>$jugadoresE2[$ii-5]->id ]);
+  
+        }
+
+        if(auth()->id() == null ){
+            return View('sala/info-partida-dota2-externo')
                     ->with('encuentrosTable',$encuentrosTable)
                     ->with('detallesTable',$detallesTable)
                     ->with('infoTable',$infoTable);
+        }else{
+            return View('sala/info-partida-dota2')
+                    ->with('encuentrosTable',$encuentrosTable)
+                    ->with('detallesTable',$detallesTable)
+                    ->with('infoTable',$infoTable);
+        }
 
+
+        
        
     }
 
@@ -191,8 +234,92 @@ class fixtureDota2Controller extends Controller
                          'slot2'=>$request->img2txtj10,'slot3'=>$request->img3txtj10,
                          'slot4'=>$request->img4txtj10,'slot5'=>$request->img5txtj10,
                          'slot6'=>$request->img6txtj10,'slotJunglas'=>$request->img0txtj10]);
+        //ganador del las partidas 
+        DB::table('detalles_partida_dota2')
+                ->where('codigo_Encuentro',"=",$_SESSION["encuentrosTable"][0]->id)
+                ->where('numero_partida',"=",$_SESSION["detallesTable"][0]->numero_partida)
+                ->update(['equipo_Ganador' => $request->teamWinner,'eliminaciones_e1'=>$request->killsequipo1
+                           ,'eliminaciones_e2'=>$request->killsequipo2 ]);
 
-        return $_SESSION["encuentrosTable"][0]->id;
+        //calcular el ganador del encuentro);
+        //tabla de todos los encuentos que tengan como ganador al equipo 1
+        $equipo1Count = DB::table('detalles_partida_dota2')
+                        ->where("codigo_Encuentro","=",$_SESSION["encuentrosTable"][0]->id) 
+                        ->where("equipo_Ganador","=",$_SESSION["encuentrosTable"][0]->equipo_1)
+                        ->get()->count();  
+        //tabla de todos los encuentos que tengan como ganador al equipo 1
+        $equipo2Count = DB::table('detalles_partida_dota2')
+                        ->where("codigo_Encuentro","=",$_SESSION["encuentrosTable"][0]->id) 
+                        ->where("equipo_Ganador","=",$_SESSION["encuentrosTable"][0]->equipo_2)
+                        ->get()->count();  
+        //tabla de todos los encuentos que tengan como ganador al equipo 1
+        $equipoTotal = DB::table('detalles_partida_dota2')
+                        ->where("codigo_Encuentro","=",$_SESSION["encuentrosTable"][0]->id) 
+                        ->where("equipo_Ganador","=","por verificar")
+                        ->get()->count();  
+
+        $ganadorEncuentro="por verificar";
+        if($equipo1Count>$equipo2Count){
+            if($equipo1Count>$equipoTotal){
+                $ganadorEncuentro=$_SESSION["encuentrosTable"][0]->equipo_1;
+            }
+        }elseif ($equipo2Count>$equipoTotal) {
+            $ganadorEncuentro=$_SESSION["encuentrosTable"][0]->equipo_2;
+        }
+
+        //cambiando la tabla al ganador
+        DB::table('encuentros_dota2')
+                        ->where("id","=",$_SESSION["encuentrosTable"][0]->id)   
+                        ->update(['equipo_Ganador' => $ganadorEncuentro]);
+        //actualizando los demas datos
+        $encuentrosTable = DB::table('encuentros_dota2')
+                        ->where("codigo_Sala","=",$_SESSION["encuentrosTable"][0]->codigo_Sala)  
+                        ->get();
+        $salaTable=DB::table('sala_dota_2')
+                        ->where("id","=",$_SESSION["encuentrosTable"][0]->codigo_Sala)  
+                        ->get();
+
+        switch ($salaTable[0]->numero_Equipos) {
+            case '4':
+                DB::table('encuentros_dota2')
+                        ->where("id","=",$encuentrosTable[2]->id)   
+                        ->update(['equipo_1' => $encuentrosTable[0]->equipo_Ganador,
+                                  'equipo_2' => $encuentrosTable[1]->equipo_Ganador]);                
+                //ganador de la sala
+                 DB::table('sala_dota_2')
+                        ->where("id","=",$_SESSION["encuentrosTable"][0]->codigo_Sala)   
+                        ->update(['equipo_Ganador' => $encuentrosTable[2]->equipo_Ganador]); 
+
+                break;
+            case '8':
+                    for($i=0;$i<3;$i++){
+                         DB::table('encuentros_dota2')
+                        ->where("id","=",$encuentrosTable[4+$i]->id)   
+                        ->update(['equipo_1' => $encuentrosTable[0+$i+$i]->equipo_Ganador,
+                                  'equipo_2' => $encuentrosTable[1+$i+$i]->equipo_Ganador]);                                      
+                    }
+                //ganador de la sala
+                 DB::table('sala_dota_2')
+                        ->where("id","=",$_SESSION["encuentrosTable"][0]->codigo_Sala)   
+                        ->update(['equipo_Ganador' => $encuentrosTable[6]->equipo_Ganador]);
+                break;
+            case '16':
+                     for($i=0;$i<7;$i++){
+                         DB::table('encuentros_dota2')
+                        ->where("id","=",$encuentrosTable[8+$i]->id)   
+                        ->update(['equipo_1' => $encuentrosTable[0+$i+$i]->equipo_Ganador,
+                                  'equipo_2' => $encuentrosTable[1+$i+$i]->equipo_Ganador]);                                      
+                    }
+                    //ganador de la sala
+                 DB::table('sala_dota_2')
+                        ->where("id","=",$_SESSION["encuentrosTable"][0]->codigo_Sala)   
+                        ->update(['equipo_Ganador' => $encuentrosTable[14]->equipo_Ganador]);
+                break;
+        }
+
+        echo '<script language="javascript">alert("Guardado!");</script>';
+        $url="http://gamingumpires.test".$_SESSION["url"];
+        header( "refresh:0.5; url=".$url ); 
     }
 
     /**

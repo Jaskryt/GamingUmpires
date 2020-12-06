@@ -24,12 +24,12 @@
 
       <nav id="nav-menu-container" >
         <ul class="nav-menu">
-          <li class="menu-active"><a href="/menu-usuario">Inicio</a></li>
-          <li><a href="seleccion-juego">Crear Sala</a></li>
-          <li><a href="{{ route('Rsalas') }}">Salas Creadas</a></li>
             @if (Route::has('login'))
                     @auth
                       <li><a href="{{ url('/user/profile') }}" class="text-sm text-gray-700 underline">Perfil</a></li>
+                      <li class="menu-active"><a href="/menu-usuario">Inicio</a></li>
+                     <li><a href="seleccion-juego">Crear Sala</a></li>
+                     <li><a href="{{ route('Rsalas') }}">Salas Creadas</a></li>
                     @else
                         <li><a href="{{ route('login') }}" class="text-sm text-gray-700 underline">Login</a></li>
                         @if (Route::has('register'))
