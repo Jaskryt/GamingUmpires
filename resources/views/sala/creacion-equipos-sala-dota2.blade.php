@@ -9,6 +9,7 @@
     <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Allerta+Stencil">
+	<link href="../css/style-dota2.css" rel="stylesheet" >
 </head>
 <body>
 <section id="hero"></section> 
@@ -91,55 +92,7 @@
 
 
 <style type="text/css">
-		.creacion-sala{
-			background-color: black;
-			width: 100%;
-			height: 100vh;
-			background-size: cover;
-		}
-		@font-face{
-			font-family: 'general';
-			src: url(../fuentes/Prisma.otf);
-		}
+		
 
-		.letra{
-			font-family: 'general';
-			background-color: #44D62C;
-			margin-top: 25px;
-		}
-		.cabezera{
-			font-family: 'general';
-			width: 200px;
-			height: 50px;
-			border:10px solid #0d7051;
-			background-color: #49c9a1;
-			text-align: center;
-
-		}
-		.contenido{
-			font-family: 'general';
-			width: 200px;
-			height: 50px;
-			border:10px solid #5bd4ae;
-			background-color: #aafaf2;
-			text-align: center;
-
-		}
-		.titulo{
-			font-family: 'general';
-			background-color: #44D62C;
-			height: 70px;
-			border-top: 100px;
-		}
-
-		.buton{
-			background-color: #44D62C;
-			font-family: 'general';
-			height: 50px;
-			border-radius: 10px;
-		}
-		.buton:hover {
-			  background-color: red;
-		}
 
 </style>

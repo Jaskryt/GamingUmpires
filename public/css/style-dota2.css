@@ -1,0 +1,191 @@
+
+/*seleccion del juego*/
+		.espaciado{
+			height: 166px;
+		}
+		.imagenes{
+			height: 300px;
+		}
+		.imagen-redonda{
+			border-radius: 160px;
+			border:10px solid #ff3c2c;
+		}
+		.imagen-redonda:hover{
+			filter: saturate(180%);
+			border-radius:50%;
+			-webkit-border-radius:50%;
+			box-shadow: 0px 0px 15px 15px #ff3c2c;
+			-webkit-box-shadow: 0px 0px 15px 15px #ff3c2c;
+		}
+		.seleccion-juego{	
+			background-color: #141414;
+			width: 100%;
+			background-size: cover;
+		}
+/**/
+		.creacion-sala{
+			background-color: black;
+			width: 100%;
+			background-size: cover;
+		}
+
+		@font-face{
+			font-family: 'general';
+			src: url(../fuentes/Demoness.otf);
+		}
+
+		.titulo{
+			font-family: 'general';
+			background-color: #c81d1e;
+			text-align: center;
+			color: black;
+		}
+		.letra{
+			font-family: 'general';
+			background-color: #ff3c2c;
+			margin-top: 25px;
+		}
+		.inputxt{
+			margin-top: 25px;
+			font-family: 'general'
+		}
+		.imagenes{
+			margin-top: 25px;
+		}
+		.selector{
+			font-family: 'general';
+			margin-top: 25px;
+			height: 26px;
+		}
+		.buton{
+			background-color: #bb0000;
+			font-family: 'general';
+			height: 50px;
+			border-radius: 10px;
+		}
+		.buton:hover {
+			  background-color: white;
+		}
+		.error{
+			font-family: 'general';
+			background-color: #e29b1b;
+			margin-top: 25px;
+			color: white;
+		}
+	/**/
+	.creacion-equipos{
+			background-color: black;
+			width: 100%;
+			background-size: cover;
+		}
+
+		.cabezera{
+			font-family: 'general';
+			width: 200px;
+			height: 50px;
+			border:10px solid #520000;
+			background-color: #fe3636;
+			text-align: center;
+
+		}
+		.contenido{
+			font-family: 'general';
+			width: 200px;
+			height: 50px;
+			border:10px solid #bf3030;
+			background-color: #fe6f5e;
+			text-align: center;
+
+		}
+/**/
+.revicion-juego{	
+			background-color: #141414;
+			width: 100%;
+			background-size: cover;
+		}
+.logosr{
+			border-radius: 160px;
+			border:10px solid #ff3c2c;
+		}
+.titulor{
+			font-family: 'general';
+			background-color: #c81d1e;
+			text-align: center;
+			color: black;
+			margin-top: 20px;
+		}
+.letrar{
+		font-family: 'general';
+		padding-top: 5px;
+		color: white;
+		font-size: 20px;
+		background-color: #bb0000;
+		margin-top: 10px;   
+		height: 50px;
+		text-align: center;
+		width: 200px;
+}
+.letra2r{
+		font-family: 'general';
+		font-size: 30px;
+		text-align: center;
+		background-color: #dc0000;
+		height: 50px;
+		width: 200px;
+		margin-top: 10px;
+}
+.randomr{
+		font-family: 'general';
+		font-size: 35px;
+		padding-top: 19px;
+		cursor: pointer;
+}
+
+.butonr{
+		background-color: #bb0000;
+		font-family: 'general';
+		height: 50px;	
+		width:  200px;
+		margin-top: 30px;
+		font-size: 15px;
+		text-align: center;	
+		border-radius: 10px;
+	}
+.butonr:hover {
+		 background-color: white;
+   }
+.tablasr{
+	font-family: 'general';
+	width: 200px;
+	text-align: center;
+	height: 40px;
+	border-color: #FE6F5E;
+	border-radius: 20px;
+	border-width: 10px;
+}
+.versusr{
+	width: 50px;
+	height: 50px;
+	border-radius: 20px;
+}
+.tablas2r{
+	font-family: 'general';
+	width: 130px;
+	text-align: center;
+	height: 40px;
+	border-color: #FE6F5E;
+	border-radius: 20px;
+	border-width: 10px;
+}
+.versus2r{
+	width: 40px;
+	height: 40px;
+	border-radius: 20px;
+}
+
+
+.revicion-juego{
+			background-color: black;
+			width: 100%;
+			background-size: cover;
+		}

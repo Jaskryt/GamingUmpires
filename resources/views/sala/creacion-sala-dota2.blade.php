@@ -9,6 +9,7 @@
     <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Allerta+Stencil">
+	<link href="css/style-dota2.css" rel="stylesheet" >
 </head>
 <body>
 <section id="hero"></section> 
@@ -28,7 +29,7 @@
 					<div class="row">
 						<div class="col-12 col-md-3 col-lg-3 col-xl-3 pt-3 d-none  d-md-block"></div>
 						<div class="col-6  col-md-3 col-lg-3 col-xl-3"><p class="letra">logo:</p></div>
-						<div class="col-6  col-md-3 col-lg-3 col-xl-3"><img src="imagenes/LogoFinal2.png" style="width: 200px; height: 200px;" class="imagenes"></div>
+						<div class="col-6  col-md-3 col-lg-3 col-xl-3 " ><img src="../imagenes/LogoFinal2.png" style="width: 200px; height: 200px;" class="imagenes"></div>
 						<div class="col-12 col-md-3 col-lg-3 col-xl-3 pt-3 d-none  d-md-block "></div>
 						<div class="col-12"><input type="file" name="logo" id="logo" accept="image/*" value="{{ old('logo') }}" 
 						class="letra"></div>
@@ -82,51 +83,5 @@
 
 
 <style type="text/css">
-		.creacion-sala{
-			background-color: black;
-			width: 100%;
-			height: 100vh;
-			background-size: cover;
-		}
 
-		@font-face{
-			font-family: 'general';
-			src: url(../fuentes/Demoness.otf);
-		}
-
-		.titulo{
-			font-family: 'general';
-			background-color: #44D62C;
-		}
-		.letra{
-			font-family: 'general';
-			background-color: #44D62C;
-			margin-top: 25px;
-		}
-		.inputxt{
-			margin-top: 25px;
-			font-family: 'general'
-		}
-		.imagenes{
-			margin-top: 25px;
-		}
-		.selector{
-			font-family: 'general';
-			margin-top: 25px;
-			height: 26px;
-		}
-		.buton{
-			background-color: #44D62C;
-			font-family: 'general';
-			height: 50px;
-			border-radius: 10px;
-		}
-		.buton:hover {
-			  background-color: red;
-		}
-		.error{
-			font-family: 'general';
-			background-color: red;
-			margin-top: 25px;
-		}
 </style>
