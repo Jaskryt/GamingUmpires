@@ -82,6 +82,9 @@ Route::view('/sala/info-partida-dota2-externo','sala/info-partida-dota2-externo'
 Route::get('/sala/fixture/guardar/info', [fixtureDota2Controller::class, 'update'])->name('fixturedota2Update');
 //Route::view('/sala/info-partida-dota2','sala/info-partida-dota2')->name('info-show-dota2');
 
+//recibe el codigo de la sala e imprime todos los datos de la partida en un pdf
+Route::view('/sala/Generate-details-dota2','/sala/Generate-details-dota2')->name('generatedota2');
+
 
 //salas world of warcraft
 Route::get('/torneo-wow', [SalawowController::class, 'index'])->name('RCrearTorneo');

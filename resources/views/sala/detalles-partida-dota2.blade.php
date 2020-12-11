@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Allerta+Stencil">
 	<link rel="stylesheet" type="text/css" href="../../css/style-detalles-d2.css">
+	<script src="../../lib/jquery/html2pdf.bundle.min.js"></script>
 </head>
 <body>
 <section id="hero"></section>
@@ -36,7 +37,8 @@
              for ($i=1; $i <=$eliminacion; $i++) { 
              	$options.='<option  value="'.$i.'" >partida:'.$i.'</option>';
              }
-
+             echo '<h1 class="subtitulo"> Codigo de la Sala: '.$salaDatos[0]->id.'</h1>';
+             echo '<h1 class="titulo">'.$salaDatos[0]->nombre_Torneo.'</h1>';
              echo '<input type="hidden" id="numeroE" value="'.$salaDatos[0]->numero_Equipos.'">';
              
 			//fixture de los equipos
@@ -85,7 +87,7 @@
 						     	 			value="'.($encuentrosDatos[1]->equipo_2).'"></td>
 						    	<td></td><td></td><td></td><td></td>
 						    </tr>
-						</table></center><br>dasd<div class="col-12 espaciado"></div>';
+						</table></center><div class="col-12 espaciado"></div>';
 
 							 echo $fixture;
 							break;
@@ -382,7 +384,10 @@
 							break;
 					}
 	?>
-</section>
+	<form action="/sala/Generate-details-dota2">
+		 <input type="hidden" name="id" value="{{ $id }}">
+		<center><button class="butonr" >Generar PDF de los detalles</button></center>
+	</form>
 </body>
 
 <!--script para los botones-->
@@ -539,7 +544,6 @@ if(document.getElementById("numeroE").value	>=8){
 		var numeroEnc=document.getElementById("matchsf").value;
 		window.location.href = "http://gamingumpires.test/sala/fixture/"+equipos1+"&&&"+equipos2+"&&&"+id+"&&&"+numeroEnc;
 	}
-
 </script>
 </html>
 @endsection
