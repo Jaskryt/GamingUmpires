@@ -28,6 +28,7 @@
           <li><a href="#about">Acerca de</a></li>
           <li><a href="#services">Servicios</a></li>
           <li><a href="#team">Equipo</a></li>
+          <li><a href={{ route('Partidasrecientes') }}>Recientes</a></li>
             @if (Route::has('login'))
                     @auth
                       <li><a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 underline">Dashboard</a></li>

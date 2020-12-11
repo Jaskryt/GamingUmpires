@@ -41,7 +41,8 @@ Route::view('sala/seleccion-juego','sala/seleccion-juego')->name('seleccion-jueg
 Route::view('/salas-creadas','sala/salas-creadas')->name('salas-creadas');
 Route::view('sala/salas-creadas','sala/salas-creadas')->name('salas-creadas-sala');
 Route::view('/creacion-sala-dota2','sala/creacion-sala-dota2')->name('creacion-sala-dota2');
-
+//Busca Los recientes
+Route::get('/reciente',[SalasCreadasController::class, 'Recientes'])->name('Partidasrecientes');
 
 //recibe los datos  desde creacion-sala-dota2
 Route::post('/sala/addModelSala','App\Http\Controllers\salaController@index')->name('add-Model-Sala');
@@ -55,6 +56,8 @@ Route::view('/sala/revicion-sala-dota2','sala/revicion-sala-dota2')->name('revic
 
 //Recibe la key para buscar el torneo
 Route::post('/buscar-sala',[SalasCreadasController::class, 'search'])->name('buscaTorneo');
+
+
 
 //recibe los datos desde revision-sala-dota2
 Route::post('/sala/crearTorneo','App\Http\Controllers\salaController@create')->name('createSalaDota2');
