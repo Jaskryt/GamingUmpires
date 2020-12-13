@@ -55,14 +55,14 @@
         <!-- Firstname -->
         <div class="col-span-6 sm:col-span-4">
             <x-jet-label for="firstname" value="{{ __('Nombre') }}" />
-            <x-jet-input id="firstname" type="text" class="mt-1 block w-full" wire:model.defer="state.firstname" autocomplete="firstname" maxlength="30" minlength="3" pattern="[A-Za-z]+" />
+            <x-jet-input id="firstname" type="text" class="mt-1 block w-full" wire:model.defer="state.firstname" autocomplete="firstname" maxlength="30" minlength="3"/>
             <x-jet-input-error for="firstname" class="mt-2" />
         </div>
 
         <!-- Lastname -->
         <div class="col-span-6 sm:col-span-4">
             <x-jet-label for="lastname" value="{{ __('Apellido') }}" />
-            <x-jet-input id="lastname" type="text" class="mt-1 block w-full" wire:model.defer="state.lastname" autocomplete="lastname" maxlength="30" minlength="10" pattern="[A-Za-z]+"/>
+            <x-jet-input id="lastname" type="text" class="mt-1 block w-full" wire:model.defer="state.lastname" autocomplete="lastname" maxlength="30" minlength="10"/>
             <x-jet-input-error for="lastname" class="mt-2" />
         </div>
 
@@ -77,7 +77,7 @@
         <div class="col-span-6 sm:col-span-4">
             <x-jet-label for="name" value="{{ __('NickName') }}" />
             <x-jet-input id="name" type="text" class="mt-1 block w-full" wire:model.defer="state.name" autocomplete="name" />
-            <x-jet-input-error for="name" class="mt-2" maxlength="30" minlength="1"pattern="[A-Za-z]+"/>
+            <x-jet-input-error for="name" class="mt-2" maxlength="30" minlength="1"/>
         </div>
 
         <!-- Email -->

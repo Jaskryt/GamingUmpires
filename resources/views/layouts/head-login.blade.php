@@ -11,7 +11,7 @@
 
     <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <link href="lib/animate/animate.min.css" rel="stylesheet">
-    <link href="css/style-login.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>

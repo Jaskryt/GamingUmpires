@@ -11,17 +11,17 @@
 
             <div>
                 <x-jet-label for="firstname" value="{{ __('Nombre') }}" />
-                <x-jet-input id="firstname" class="block mt-1 w-full" type="text" name="firstname" :value="old('firstname')" required autofocus autocomplete="firstname" maxlength="30" minlength="3" pattern="[A-Za-z]+"/>
+                <x-jet-input id="firstname" class="block mt-1 w-full" type="text" name="firstname" :value="old('firstname')" required autofocus autocomplete="firstname" maxlength="30" minlength="3" />
             </div>
 
             <div>
                 <x-jet-label for="lastname" value="{{ __('Apellidos') }}" />
-                <x-jet-input id="lastname" class="block mt-1 w-full" type="text" name="lastname" :value="old('lastname')" required autofocus autocomplete="lastname" maxlength="30" minlength="10" pattern="[A-Za-z]+"/>
+                <x-jet-input id="lastname" class="block mt-1 w-full" type="text" name="lastname" :value="old('lastname')" required autofocus autocomplete="lastname" maxlength="30" minlength="10" />
             </div>
 
             <div>
                 <x-jet-label for="name" value="{{ __('NickName') }}" />
-                <x-jet-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" maxlength="20" minlength="3" pattern="[A-Za-z]+"/>
+                <x-jet-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" maxlength="20" minlength="3" />
             </div>
 
             <div class="mt-4">

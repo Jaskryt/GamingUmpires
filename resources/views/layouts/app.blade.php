@@ -18,8 +18,8 @@
         <!-- Scripts -->
         <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.7.0/dist/alpine.js" defer></script>
     </head>
-    <body class="font-sans antialiased">
-        <div class="min-h-screen bg-gray-100">
+    <body class="font-sans antialiased" >
+        <div class="min-h-screen bg-gray-100" >
             @livewire('navigation-dropdown')
 
             <!-- Page Heading -->
@@ -30,7 +30,7 @@
             </header>
 
             <!-- Page Content -->
-            <main>
+            <main style="background-image: url('imagenes/background-home.jpg');">
                 {{ $slot }}
             </main>
         </div>

@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-app-layout style="background-image: url('imagenes/background-home.jpg');">
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Perfil') }}
@@ -17,25 +17,6 @@
                 </div>
             @endif
 
-            @if (Laravel\Fortify\Features::canManageTwoFactorAuthentication())
-                <x-jet-section-border />
-
-                <div class="mt-10 sm:mt-0">
-                    @livewire('profile.two-factor-authentication-form')
-                </div>
-            @endif
-
-            <x-jet-section-border />
-
-            <div class="mt-10 sm:mt-0">
-                @livewire('profile.logout-other-browser-sessions-form')
-            </div>
-
-            <x-jet-section-border />
-
-            <div class="mt-10 sm:mt-0">
-                @livewire('profile.delete-user-form')
-            </div>
         </div>
     </div>
 </x-app-layout>
