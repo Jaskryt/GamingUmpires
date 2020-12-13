@@ -7,7 +7,8 @@
 		"attack_type":"Melee",
 		"roles":["Carry","Escape","Nuker"],
 		"img":"https://api.opendota.com/apps/dota2/images/heroes/antimage_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroes/antimage_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroes/antimage_icon.png",
+		"local":"../../imagenes/heroes/hero22.png"
 	},
 	{
 		"id":1,
@@ -17,7 +18,8 @@
 		"attack_type":"Melee",
 		"roles":["Initiator","Durable","Disabler","Jungler"],
 		"img":"https://api.opendota.com/apps/dota2/images/heroes/axe_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroes/axe_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroes/axe_icon.png",
+		"local":"../../imagenes/heroes/hero36.png"
 	},
 	{
 		"id":2,
@@ -27,7 +29,8 @@
 		"attack_type":"Ranged",
 		"roles":["Support","Disabler","Nuker","Durable"],
 		"img":"https://api.opendota.com/apps/dota2/images/heroes/bane_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroes/bane_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroes/bane_icon.png",
+		"local":"../../imagenes/heroes/hero43.png"
 	},
 	{
 		"id":3,
@@ -38,7 +41,8 @@
 		"roles":["Carry","Disabler","Jungler","Nuker","Initiator"],
 		"img":"/apps/dota2/images/heroes/bloodseeker_full.png?",
 		"img":"https://api.opendota.com/apps/dota2/images/heroes/bloodseeker_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroes/bloodseeker_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroes/bloodseeker_icon.png",
+		"local":"../../imagenes/heroes/hero64.png"
 	},
 	{
 		"id":4,
@@ -48,7 +52,8 @@
 		"attack_type":"Ranged",
 		"roles":["Support","Disabler","Nuker","Jungler"],
 		"img":"https://api.opendota.com/apps/dota2/images/heroes/crystal_maiden_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroes/crystal_maiden_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroes/crystal_maiden_icon.png",
+		"local":"../../imagenes/heroes/hero16.png"
 	},
 	{
 		"id":5,
@@ -58,7 +63,8 @@
 		"attack_type":"Ranged",
 		"roles":["Carry","Disabler","Pusher"],
 		"img":"https://api.opendota.com/apps/dota2/images/heroes/drow_ranger_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroes/drow_ranger_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroes/drow_ranger_icon.png",
+		"local":"../../imagenes/heroes/hero65.png"
 	},
 	{
 		"id":6,
@@ -68,7 +74,8 @@
 		"attack_type":"Melee",
 		"roles":["Support","Initiator","Disabler","Nuker"],
 		"img":"https://api.opendota.com/apps/dota2/images/heroes/earthshaker_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroes/earthshaker_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroes/earthshaker_icon.png",
+		"local":"../../imagenes/heroes/hero79.png"
 	 },
 	 {
 	 	"id":7,
@@ -78,7 +85,8 @@
 	 	"attack_type":"Melee",
 	 	"roles":["Carry","Pusher","Escape"],
 	 	"img":"https://api.opendota.com/apps/dota2/images/heroes/juggernaut_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroes/juggernaut_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroes/juggernaut_icon.png",
+		"local":"../../imagenes/heroes/hero45.png"
 	 },
 	 {
 	 	"id":8,
@@ -88,7 +96,8 @@
 		"attack_type":"Ranged",
 		"roles":["Carry","Support","Escape","Nuker","Disabler"],
 		"img":"https://api.opendota.com/apps/dota2/images/heroes/mirana_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroes/mirana_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroes/mirana_icon.png",
+		"local":"../../imagenes/heroes/hero39.png"
 	},
 	{
 		"id":9,
@@ -98,7 +107,8 @@
 		"attack_type":"Ranged",
 		"roles":["Carry","Escape","Durable","Nuker","Disabler"],
 		"img":"https://api.opendota.com/apps/dota2/images/heroes/morphling_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroes/morphling_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroes/morphling_icon.png",
+		"local":"../../imagenes/heroes/hero46.png"
 	},
 	{
 		"id":10,
@@ -108,7 +118,8 @@
 		"attack_type":"Ranged",
 		"roles":["Carry","Nuker"],
 		"img":"https://api.opendota.com/apps/dota2/images/heroes/nevermore_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroes/nevermore_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroes/nevermore_icon.png",
+		"local":"../../imagenes/heroes/hero67.png"
 	},
 	{
 		"id":11,
@@ -118,7 +129,8 @@
 		"attack_type":"Melee",
 		"roles":["Carry","Escape","Pusher","Nuker"],
 		"img":"https://api.opendota.com/apps/dota2/images/heroes/phantom_lancer_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroes/phantom_lancer_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroes/phantom_lancer_icon.png",
+		"local":"../../imagenes/heroes/hero12.png"
 	},
 	{
 		"id":12,
@@ -128,7 +140,8 @@
 		"attack_type":"Ranged",
 		"roles":["Initiator","Disabler","Escape","Nuker"],
 		"img":"https://api.opendota.com/apps/dota2/images/heroes/puck_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroes/puck_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroes/puck_icon.png",
+		"local":"../../imagenes/heroes/hero26.png"
 	},
 	{
 		"id":13,
@@ -138,7 +151,8 @@
 		"attack_type":"Melee",
 		"roles":["Disabler","Initiator","Durable","Nuker"],
 		"img":"https://api.opendota.com/apps/dota2/images/heroes/pudge_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroes/pudge_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroes/pudge_icon.png",
+		"local":"../../imagenes/heroes/hero33.png"
 	},
 	{
 		"id":14,
@@ -148,7 +162,8 @@
 		"attack_type":"Ranged",
 		"roles":["Carry","Durable","Nuker","Pusher"],
 		"img":"https://api.opendota.com/apps/dota2/images/heroes/razor_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroes/razor_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroes/razor_icon.png",
+		"local":"../../imagenes/heroes/hero61.png"
 	},
 	{
 		"id":15,
@@ -158,7 +173,8 @@
 		"attack_type":"Melee",
 		"roles":["Initiator","Disabler","Support","Nuker","Escape","Jungler"],
 		"img":"https://api.opendota.com/apps/dota2/images/heroes/sand_king_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroes/sand_king_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroes/sand_king_icon.png",
+		"local":"../../imagenes/heroes/hero82.png"
 	},
 	{
 		"id":16,
@@ -168,7 +184,8 @@
 		"attack_type":"Ranged",
 		"roles":["Carry","Escape","Nuker","Initiator","Disabler"],
 		"img":"https://api.opendota.com/apps/dota2/images/heroes/storm_spirit_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroes/storm_spirit_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroes/storm_spirit_icon.png",
+		"local":"../../imagenes/heroes/hero55.png"
 	},
 	{
 		"id":17,
@@ -178,7 +195,8 @@
 		"attack_type":"Melee",
 		"roles":["Carry","Disabler","Initiator","Durable","Nuker"],
 		"img":"https://api.opendota.com/apps/dota2/images/heroes/sven_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroes/sven_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroes/sven_icon.png",
+		"local":"../../imagenes/heroes/hero62.png"
 	},
 	{
 		"id":18,
@@ -188,7 +206,8 @@
 		"attack_type":"Melee",
 		"roles":["Carry","Nuker","Pusher","Initiator","Durable","Disabler"],
 		"img":"https://api.opendota.com/apps/dota2/images/heroes/tiny_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroes/tiny_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroes/tiny_icon.png",
+		"local":"../../imagenes/heroes/hero104.png"
 	},
 	{
 		"id":19,
@@ -198,7 +217,8 @@
 		"attack_type":"Ranged",
 		"roles":["Support","Initiator","Disabler","Nuker","Escape"],
 		"img":"https://api.opendota.com/apps/dota2/images/heroes/vengeful_spirit_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroes/vengeful_spirit_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroes/vengeful_spirit_icon.png",
+		"local":"../../imagenes/heroes/hero35.png"
 	},
 	{
 		"id":20,
@@ -208,7 +228,8 @@
 		"attack_type":"Ranged",
 		"roles":["Carry","Support","Disabler","Escape","Nuker"],
 		"img":"https://api.opendota.com/apps/dota2/images/heroes/windrunner_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroes/windrunner_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroes/windrunner_icon.png",
+		"local":"../../imagenes/heroes/hero77.png"
 	},
 	{
 		"id":21,
@@ -218,7 +239,8 @@
 		"attack_type":"Ranged",
 		"roles":["Nuker"],
 		"img":"https://api.opendota.com/apps/dota2/images/heroes/zuus_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroes/zuus_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroes/zuus_icon.png",
+		"local":"../../imagenes/heroes/hero105.png"
 	},
 	{
 		"id":22,
@@ -228,7 +250,8 @@
 		"attack_type":"Melee",
 		"roles":["Carry","Support","Disabler","Initiator","Durable","Nuker"],
 		"img":"https://api.opendota.com/apps/dota2/images/heroes/kunkka_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroes/kunkka_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroes/kunkka_icon.png",
+		"local":"../../imagenes/heroes/hero59.png"
 	},
 	{
 		"id":23,
@@ -238,7 +261,8 @@
 		"attack_type":"Ranged",
 		"roles":["Support","Carry","Nuker","Disabler"],
 		"img":"https://api.opendota.com/apps/dota2/images/heroes/lina_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroes/lina_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroes/lina_icon.png",
+		"local":"../../imagenes/heroes/hero94.png"
 	},
 	{
 		"id":24,
@@ -248,7 +272,8 @@
 		"attack_type":"Ranged",
 		"roles":["Support","Disabler","Nuker","Initiator"],
 		"img":"https://api.opendota.com/apps/dota2/images/heroes/lion_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroes/lion_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroes/lion_icon.png",
+		"local":"../../imagenes/heroes/hero101.png"
 	},
 	{
 		"id":25,
@@ -258,7 +283,8 @@
 		"attack_type":"Ranged",
 		"roles":["Support","Pusher","Disabler","Nuker","Initiator"],
 		"img":"https://api.opendota.com/apps/dota2/images/heroes/shadow_shaman_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroes/shadow_shaman_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroes/shadow_shaman_icon.png",
+		"local":"../../imagenes/heroes/hero96.png"
 	},
 	{
 		"id":26,
@@ -268,7 +294,8 @@
 		"attack_type":"Melee",
 		"roles":["Carry","Durable","Initiator","Disabler","Escape"],
 		"img":"https://api.opendota.com/apps/dota2/images/heroes/slardar_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroes/slardar_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroes/slardar_icon.png",
+		"local":"../../imagenes/heroes/hero20.png"
 	},
 	{
 		"id":27,
@@ -278,7 +305,8 @@
 		"attack_type":"Melee",
 		"roles":["Initiator","Durable","Disabler","Nuker"],
 		"img":"https://api.opendota.com/apps/dota2/images/heroes/tidehunter_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroes/tidehunter_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroes/tidehunter_icon.png",
+		"local":"../../imagenes/heroes/hero90.png"
 	},
 	{
 		"id":28,
@@ -288,7 +316,8 @@
 		"attack_type":"Ranged",
 		"roles":["Support","Nuker","Disabler"],
 		"img":"https://api.opendota.com/apps/dota2/images/heroes/witch_doctor_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroes/witch_doctor_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroes/witch_doctor_icon.png",
+		"local":"../../imagenes/heroes/hero98.png"
 	},
 	{
 		"id":29,
@@ -298,7 +327,8 @@
 		"attack_type":"Ranged",
 		"roles":["Support","Nuker"],
 		"img":"https://api.opendota.com/apps/dota2/images/heroes/lich_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroes/lich_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroes/lich_icon.png",
+		"local":"../../imagenes/heroes/hero80.png"
 	},
 	{
 		"id":30,
@@ -308,7 +338,8 @@
 		"attack_type":"Melee",
 		"roles":["Carry","Escape","Disabler"],
 		"img":"https://api.opendota.com/apps/dota2/images/heroes/riki_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroes/riki_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroes/riki_icon.png",
+		"local":"../../imagenes/heroes/hero68.png"
 	},
 	{
 		"id":31,
@@ -318,7 +349,9 @@
 		"attack_type":"Ranged",
 		"roles":["Disabler","Jungler","Initiator","Pusher"],
 		"img":"https://api.opendota.com/apps/dota2/images/heroes/enigma_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroes/enigma_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroes/enigma_icon.png",
+		"local":"../../imagenes/heroes/hero107.png"
+
 	},
 	{
 		"id":32,
@@ -328,7 +361,8 @@
 		"attack_type":"Ranged",
 		"roles":["Carry","Nuker","Pusher"],
 		"img":"https://api.opendota.com/apps/dota2/images/heroes/tinker_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroes/tinker_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroes/tinker_icon.png",
+		"local":"../../imagenes/heroes/hero97.png"
 	},
 	{
 		"id":33,
@@ -338,7 +372,8 @@
 		"attack_type":"Ranged",
 		"roles":["Carry","Nuker"],
 		"img":"https://api.opendota.com/apps/dota2/images/heroes/sniper_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroes/sniper_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroes/sniper_icon.png",
+		"local":"../../imagenes/heroes/hero34.png"
 	},
 	{
 		"id":34,
@@ -348,7 +383,8 @@
 		"attack_type":"Ranged",
 		"roles":["Carry","Nuker","Durable","Disabler"],
 		"img":"https://api.opendota.com/apps/dota2/images/heroes/necrolyte_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroes/necrolyte_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroes/necrolyte_icon.png",
+		"local":"../../imagenes/heroes/hero60.png"
 	},
 	{
 		"id":35,
@@ -358,7 +394,8 @@
 		"attack_type":"Ranged",
 		"roles":["Support","Initiator","Disabler"],
 		"img":"https://api.opendota.com/apps/dota2/images/heroes/warlock_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroes/warlock_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroes/warlock_icon.png",
+		"local":"../../imagenes/heroes/hero63.png"
 	},
 	{
 		"id":36,
@@ -368,7 +405,8 @@
 		"attack_type":"Melee",
 		"roles":["Initiator","Disabler","Durable","Nuker"],
 		"img":"https://api.opendota.com/apps/dota2/images/heroes/beastmaster_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroes/beastmaster_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroes/beastmaster_icon.png",
+		"local":"../../imagenes/heroes/hero57.png"
 	},
 	{
 		"id":37,
@@ -378,7 +416,8 @@
 		"attack_type":"Ranged",
 		"roles":["Carry","Nuker","Escape"],
 		"img":"https://api.opendota.com/apps/dota2/images/heroes/queenofpain_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroes/queenofpain_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroes/queenofpain_icon.png",
+		"local":"../../imagenes/heroes/hero47.png"
 	},
 	{
 		"id":38,
@@ -388,7 +427,8 @@
 		"attack_type":"Ranged",
 		"roles":["Support","Nuker","Initiator","Pusher","Disabler"],
 		"img":"https://api.opendota.com/apps/dota2/images/heroes/venomancer_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroes/venomancer_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroes/venomancer_icon.png",
+		"local":"../../imagenes/heroes/hero42.png"
 	},
 	{
 		"id":39,
@@ -398,7 +438,8 @@
 		"attack_type":"Melee",
 		"roles":["Carry","Initiator","Disabler","Escape","Durable"],
 		"img":"https://api.opendota.com/apps/dota2/images/heroes/faceless_void_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroes/faceless_void_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroes/faceless_void_icon.png",
+		"local":"../../imagenes/heroes/hero3.png"
 	},
 	{
 		"id":40,
@@ -408,7 +449,8 @@
 		"attack_type":"Melee",
 		"roles":["Carry","Support","Durable","Disabler","Initiator"],
 		"img":"https://api.opendota.com/apps/dota2/images/heroes/skeleton_king_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroes/skeleton_king_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroes/skeleton_king_icon.png",
+		"local":"../../imagenes/heroes/hero6.png"
 	},
 	{
 		"id":41,
@@ -418,7 +460,8 @@
 		"attack_type":"Ranged",
 		"roles":["Carry","Pusher","Nuker","Disabler"],
 		"img":"https://api.opendota.com/apps/dota2/images/heroes/death_prophet_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroes/death_prophet_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroes/death_prophet_icon.png",
+		"local":"../../imagenes/heroes/hero37.png"
 	},
 	{
 		"id":42,
@@ -428,7 +471,8 @@
 		"attack_type":"Melee",
 		"roles":["Carry","Escape"],
 		"img":"https://api.opendota.com/apps/dota2/images/heroes/phantom_assassin_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroes/phantom_assassin_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroes/phantom_assassin_icon.png",
+		"local":"../../imagenes/heroes/hero5.png"
 	},
 	{
 		"id":43,
@@ -438,7 +482,8 @@
 		"attack_type":"Ranged",
 		"roles":["Nuker","Pusher"],
 		"img":"https://api.opendota.com/apps/dota2/images/heroes/pugna_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroes/pugna_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroes/pugna_icon.png",
+		"local":"../../imagenes/heroes/hero40.png"
 	},
 	{
 		"id":44,
@@ -448,7 +493,8 @@
 		"attack_type":"Ranged",
 		"roles":["Carry","Escape"],
 		"img":"https://api.opendota.com/apps/dota2/images/heroes/templar_assassin_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroes/templar_assassin_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroes/templar_assassin_icon.png",
+		"local":"../../imagenes/heroes/hero76.png"
 	},
 	{
 		"id":45,
@@ -458,7 +504,8 @@
 		"attack_type":"Ranged",
 		"roles":["Carry","Durable","Initiator","Disabler"],
 		"img":"https://api.opendota.com/apps/dota2/images/heroes/viper_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroes/viper_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroes/viper_icon.png",
+		"local":"../../imagenes/heroes/hero49.png"
 	},
 	{
 		"id":46,
@@ -468,7 +515,8 @@
 		"attack_type":"Ranged",
 		"roles":["Carry","Nuker","Pusher"],
 		"img":"https://api.opendota.com/apps/dota2/images/heroes/luna_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroes/luna_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroes/luna_icon.png",
+		"local":"../../imagenes/heroes/hero4.png"
 	},
 	{
 		"id":47,
@@ -478,7 +526,8 @@
 		"attack_type":"Melee",
 		"roles":["Carry","Pusher","Durable","Disabler","Initiator","Nuker"],
 		"img":"https://api.opendota.com/apps/dota2/images/heroes/dragon_knight_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroes/dragon_knight_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroes/dragon_knight_icon.png",
+		"local":"../../imagenes/heroes/hero58.png"
 	},
 	{
 		"id":48,
@@ -488,7 +537,8 @@
 		"attack_type":"Ranged",
 		"roles":["Support","Nuker","Disabler"],
 		"img":"https://api.opendota.com/apps/dota2/images/heroes/dazzle_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroes/dazzle_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroes/dazzle_icon.png",
+		"local":"../../imagenes/heroes/hero30.png"
 	},
 	{
 		"id":49,
@@ -498,7 +548,8 @@
 		"attack_type":"Melee",
 		"roles":["Initiator","Disabler","Durable","Nuker"],
 		"img":"https://api.opendota.com/apps/dota2/images/heroes/rattletrap_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroes/rattletrap_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroes/rattletrap_icon.png",
+		"local":"../../imagenes/heroes/hero54.png"
 	},
 	{
 		"id":50,
@@ -508,7 +559,8 @@
 		"attack_type":"Ranged",
 		"roles":["Carry","Support","Nuker","Pusher","Disabler"],
 		"img":"https://api.opendota.com/apps/dota2/images/heroes/leshrac_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroes/leshrac_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroes/leshrac_icon.png",
+		"local":"../../imagenes/heroes/hero73.png"
 	},
 	{
 		"id":51,
@@ -518,7 +570,8 @@
 		"attack_type":"Ranged",
 		"roles":["Carry","Jungler","Pusher","Escape","Nuker"],
 		"img":"https://api.opendota.com/apps/dota2/images/heroes/furion_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroes/furion_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroes/furion_icon.png",
+		"local":"../../imagenes/heroes/hero10.png"
 	},
 	{
 		"id":52,
@@ -528,7 +581,8 @@
 		"attack_type":"Melee",
 		"roles":["Carry","Durable","Jungler","Escape","Disabler"],
 		"img":"https://api.opendota.com/apps/dota2/images/heroes/life_stealerp_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroes/life_stealer_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroes/life_stealer_icon.png",
+		"local":"../../imagenes/heroes/hero87.png"
 	},
 	{
 		"id":53,
@@ -538,7 +592,8 @@
 		"attack_type":"Melee",
 		"roles":["Initiator","Jungler","Escape","Disabler"],
 		"img":"https://api.opendota.com/apps/dota2/images/heroes/dark_seer_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroes/dark_seer_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroes/dark_seer_icon.png",
+		"local":"../../imagenes/heroes/hero23.png"
 	},
 	{
 		"id":54,
@@ -548,7 +603,8 @@
 		"attack_type":"Ranged",
 		"roles":["Carry","Escape","Pusher"],
 		"img":"https://api.opendota.com/apps/dota2/images/heroes/clinkz_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroes/clinkz_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroes/clinkz_icon.png",
+		"local":"../../imagenes/heroes/hero9.png"
 	},
 	{
 		"id":55,
@@ -558,7 +614,8 @@
 		"attack_type":"Melee",
 		"roles":["Support","Durable","Nuker"],
 		"img":"https://api.opendota.com/apps/dota2/images/heroes/omniknight_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroes/omniknight_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroes/omniknight_icon.png",
+		"local":"../../imagenes/heroes/hero102.png"
 	},
 	{
 		"id":56,
@@ -568,7 +625,8 @@
 		"attack_type":"Ranged",
 		"roles":["Support","Jungler","Pusher","Durable","Disabler"],
 		"img":"https://api.opendota.com/apps/dota2/images/heroes/enchantress_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroes/enchantress_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroes/enchantress_icon.png",
+		"local":"../../imagenes/heroes/hero100.png"
 	},
 	{
 		"id":57,
@@ -578,7 +636,8 @@
 		"attack_type":"Ranged",
 		"roles":["Carry","Durable","Initiator"],
 		"img":"https://api.opendota.com/apps/dota2/images/heroes/huskar_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroes/huskar_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroes/huskar_icon.png",
+		"local":"../../imagenes/heroes/hero24.png"
 	},
 	{
 		"id":58,
@@ -588,7 +647,8 @@
 		"attack_type":"Melee",
 		"roles":["Carry","Initiator","Durable","Disabler","Nuker"],
 		"img":"https://api.opendota.com/apps/dota2/images/heroes/night_stalker_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroes/night_stalker_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroes/night_stalker_icon.png",
+		"local":"../../imagenes/heroes/hero74.png"
 	},
 	{
 		"id":59,
@@ -598,7 +658,8 @@
 		"attack_type":"Melee",
 		"roles":["Carry","Pusher","Escape","Nuker"],
 		"img":"https://api.opendota.com/apps/dota2/images/heroes/broodmother_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroes/broodmother_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroes/broodmother_icon.png",
+		"local":"../../imagenes/heroes/hero92.png"
 	},
 	{
 		"id":60,
@@ -608,7 +669,8 @@
 		"attack_type":"Melee",
 		"roles":["Escape","Nuker"],
 		"img":"https://api.opendota.com/apps/dota2/images/heroes/bounty_hunter_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroes/bounty_hunter_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroes/bounty_hunter_icon.png",
+		"local":"../../imagenes/heroes/hero71.png"
 	},
 	{
 		"id":61,
@@ -618,7 +680,8 @@
 		"attack_type":"Ranged",
 		"roles":["Carry","Escape"],
 		"img":"https://api.opendota.com/apps/dota2/images/heroes/weaver_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroes/weaver_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroes/weaver_icon.png",
+		"local":"../../imagenes/heroes/hero70.png"
 	},
 	{
 		"id":62,
@@ -628,7 +691,8 @@
 		"attack_type":"Ranged",
 		"roles":["Support","Nuker","Pusher","Disabler"],
 		"img":"https://api.opendota.com/apps/dota2/images/heroes/jakiro_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroesjakiro_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroesjakiro_icon.png",
+		"local":"../../imagenes/heroes/hero38.png"
 	},
 	{
 		"id":63,
@@ -638,7 +702,8 @@
 		"attack_type":"Ranged",
 		"roles":["Initiator","Jungler","Disabler","Escape"],
 		"img":"https://api.opendota.com/apps/dota2/images/heroes/batrider_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroes/batrider_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroes/batrider_icon.png",
+		"local":"../../imagenes/heroes/hero50.png"
 	},
 	{
 		"id":64,
@@ -648,7 +713,8 @@
 		"attack_type":"Ranged",
 		"roles":["Support","Jungler","Pusher"],
 		"img":"https://api.opendota.com/apps/dota2/images/heroes/chen_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroes/chen_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroes/chen_icon.png",
+		"local":"../../imagenes/heroes/hero2.png"
 	},
 	{
 		"id":65,
@@ -658,7 +724,8 @@
 		"attack_type":"Melee",
 		"roles":["Carry","Durable","Escape"],
 		"img":"https://api.opendota.com/apps/dota2/images/heroes/spectre_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroes/spectre_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroes/spectre_icon.png",
+		"local":"../../imagenes/heroes/hero41.png"
 	},
 	{
 		"id":66,
@@ -668,7 +735,8 @@
 		"attack_type":"Ranged",
 		"roles":["Support","Disabler","Nuker"],
 		"img":"https://api.opendota.com/apps/dota2/images/heroes/ancient_apparition_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroes/ancient_apparition_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroes/ancient_apparition_icon.png",
+		"local":"../../imagenes/heroes/hero15.png"
 	},
 	{
 		"id":67,
@@ -677,7 +745,8 @@
 		"primary_attr":"str",
 		"attack_type":"Melee",
 		"img":"https://api.opendota.com/apps/dota2/images/heroes/doom_bringer_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroes/doom_bringer_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroes/doom_bringer_icon.png",
+		"local":"../../imagenes/heroes/hero51.png"
 	},
 	{
 		"id":68,
@@ -687,7 +756,8 @@
 		"attack_type":"Melee",
 		"roles":["Carry","Jungler","Durable","Disabler"],
 		"img":"https://api.opendota.com/apps/dota2/images/heroes/ursa_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroes/ursa_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroes/ursa_icon.png",
+		"local":"../../imagenes/heroes/hero28.png"
 	},
 	{
 		"id":69,
@@ -697,7 +767,8 @@
 		"attack_type":"Melee",
 		"roles":["Carry","Initiator","Disabler","Durable","Escape"],
 		"img":"https://api.opendota.com/apps/dota2/images/heroes/spirit_breaker_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroes/spirit_breaker_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroes/spirit_breaker_icon.png",
+		"local":"../../imagenes/heroes/hero48.png"
 	},
 	{
 		"id":70,
@@ -707,7 +778,8 @@
 		"attack_type":"Ranged",
 		"roles":["Carry","Nuker","Disabler"],
 		"img":"https://api.opendota.com/apps/dota2/images/heroes/gyrocopter_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroes/gyrocopter_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroes/gyrocopter_icon.png",
+		"local":"../../imagenes/heroes/hero17.png"
 	},
 	{
 		"id":71,
@@ -717,7 +789,8 @@
 		"attack_type":"Melee",
 		"roles":["Carry","Support","Durable","Disabler","Initiator","Nuker"],
 		"img":"https://api.opendota.com/apps/dota2/images/heroes/alchemist_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroes/alchemist_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroes/alchemist_icon.png",
+		"local":"../../imagenes/heroes/hero8.png"
 	},
 	{
 		"id":72,
@@ -727,7 +800,8 @@
 		"attack_type":"Ranged",
 		"roles":["Carry","Nuker","Disabler","Escape","Pusher"],
 		"img":"https://api.opendota.com/apps/dota2/images/heroes/invoker_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroes/invoker_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroes/invoker_icon.png",
+		"local":"../../imagenes/heroes/hero31.png"
 	},
 	{
 		"id":73,
@@ -737,7 +811,8 @@
 		"attack_type":"Ranged",
 		"roles":["Carry","Support","Disabler","Initiator","Nuker"],
 		"img":"https://api.opendota.com/apps/dota2/images/heroes/silencer_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroes/silencer_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroes/silencer_icon.png",
+		"local":"../../imagenes/heroes/hero110.png"
 	},
 	{
 		"id":74,
@@ -747,7 +822,8 @@
 		"attack_type":"Ranged",
 		"roles":["Carry","Nuker","Disabler"],
 		"img":"https://api.opendota.com/apps/dota2/images/heroes/obsidian_destroyer_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroes/obsidian_destroyer_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroes/obsidian_destroyer_icon.png",
+		"local":"../../imagenes/heroes/hero88.png"
 	},
 	{
 		"id":75,
@@ -757,7 +833,8 @@
 		"attack_type":"Melee",
 		"roles":["Carry","Pusher","Jungler","Durable","Escape"],
 		"img":"https://api.opendota.com/apps/dota2/images/heroes/lycan_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroes/lycan_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroes/lycan_icon.png",
+		"local":"../../imagenes/heroes/hero11.png"
 	},
 	{
 		"id":76,
@@ -767,7 +844,8 @@
 		"attack_type":"Melee",
 		"roles":["Carry","Initiator","Durable","Disabler","Nuker"],
 		"img":"https://api.opendota.com/apps/dota2/images/heroes/brewmaster_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroes/brewmaster_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroes/brewmaster_icon.png",
+		"local":"../../imagenes/heroes/hero78.png"
 	},
 	{
 		"id":77,
@@ -777,7 +855,8 @@
 		"attack_type":"Ranged",
 		"roles":["Support","Disabler","Initiator","Nuker"],
 		"img":"https://api.opendota.com/apps/dota2/images/heroes/shadow_demon_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroes/shadow_demon_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroes/shadow_demon_icon.png",
+		"local":"../../imagenes/heroes/hero89.png"
 	},
 	{
 		"id":78,
@@ -787,7 +866,8 @@
 		"attack_type":"Ranged",
 		"roles":["Carry","Pusher","Jungler","Durable"],
 		"img":"https://api.opendota.com/apps/dota2/images/heroes/lone_druid_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroes/lone_druid_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroes/lone_druid_icon.png",
+		"local":"../../imagenes/heroes/hero108.png"
 	},
 	{
 		"id":79,
@@ -797,7 +877,8 @@
 		"attack_type":"Melee",
 		"roles":["Carry","Disabler","Durable","Pusher","Initiator"],
 		"img":"https://api.opendota.com/apps/dota2/images/heroes/chaos_knight_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroes/chaos_knight_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroes/chaos_knight_icon.png",
+		"local":"../../imagenes/heroes/hero106.png"
 	},
 	{
 		"id":80,
@@ -807,7 +888,8 @@
 		"attack_type":"Melee",
 		"roles":["Carry","Escape","Nuker","Disabler","Initiator","Pusher"],
 		"img":"https://api.opendota.com/apps/dota2/images/heroes/meepo_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroes/meepo_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroes/meepo_icon.png",
+		"local":"../../imagenes/heroes/hero32.png"
 	},
 	{
 		"id":81,
@@ -817,7 +899,8 @@
 		"attack_type":"Melee",
 		"roles":["Support","Initiator","Durable","Disabler","Escape"],
 		"img":"https://api.opendota.com/apps/dota2/images/heroes/treant_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroes/treant_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroes/treant_icon.png",
+		"local":"../../imagenes/heroes/hero111.png"
 	},
 	{
 		"id":82,
@@ -827,7 +910,8 @@
 		"attack_type":"Melee",
 		"roles":["Support","Nuker","Disabler","Durable","Initiator"],
 		"img":"https://api.opendota.com/apps/dota2/images/heroes/ogre_magi_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroes/ogre_magi_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroes/ogre_magi_icon.png",
+		"local":"../../imagenes/heroes/hero95.png"
 	},
 	{
 		"id":83,
@@ -837,7 +921,8 @@
 		"attack_type":"Melee",
 		"roles":["Support","Durable","Disabler","Nuker"],
 		"img":"https://api.opendota.com/apps/dota2/images/heroes/undying_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroes/undying_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroes/undying_icon.png",
+		"local":"../../imagenes/heroes/hero21.png"
 	},
 	{
 		"id":84,
@@ -847,7 +932,8 @@
 		"attack_type":"Ranged",
 		"roles":["Support","Disabler","Nuker"],
 		"img":"https://api.opendota.com/apps/dota2/images/heroes/rubick_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroes/rubick_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroes/rubick_icon.png",
+		"local":"../../imagenes/heroes/hero75.png"
 	},
 	{
 		"id":85,
@@ -857,7 +943,8 @@
 		"attack_type":"Ranged",
 		"roles":["Support","Disabler","Nuker","Initiator"],
 		"img":"https://api.opendota.com/apps/dota2/images/heroes/disruptor_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroes/disruptor_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroes/disruptor_icon.png",
+		"local":"../../imagenes/heroes/hero44.png"
 	},
 	{
 		"id":86,
@@ -867,7 +954,8 @@
 		"attack_type":"Melee",
 		"roles":["Disabler","Nuker","Initiator","Escape"],
 		"img":"https://api.opendota.com/apps/dota2/images/heroes/nyx_assassin_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroes/nyx_assassin_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroes/nyx_assassin_icon.png",
+		"local":"../../imagenes/heroes/hero81.png"
 	},
 	{
 		"id":87,
@@ -877,7 +965,8 @@
 		"attack_type":"Melee",
 		"roles":["Carry","Support","Pusher","Disabler","Initiator","Escape"],
 		"img":"https://api.opendota.com/apps/dota2/images/heroes/naga_siren_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroes/naga_siren_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroes/naga_siren_icon.png",
+		"local":"../../imagenes/heroes/hero53.png"
 	},
 	{
 		"id":88,
@@ -887,7 +976,8 @@
 		"attack_type":"Ranged",
 		"roles":["Support","Nuker","Disabler","Jungler"],
 		"img":"https://api.opendota.com/apps/dota2/images/heroes/keeper_of_the_light_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroes/keeper_of_the_light_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroes/keeper_of_the_light_icon.png",
+		"local":"../../imagenes/heroes/hero52.png"
 	},
 	{
 		"id":89,
@@ -897,7 +987,8 @@
 		"attack_type":"Ranged",
 		"roles":["Support","Escape","Nuker"],
 		"img":"https://api.opendota.com/apps/dota2/images/heroes/wisp_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroes/wisp_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroes/wisp_icon.png",
+		"local":"../../imagenes/heroes/hero91.png"
 	},
 	{
 		"id":90,
@@ -907,7 +998,8 @@
 		"attack_type":"Ranged",
 		"roles":["Support","Nuker","Durable","Disabler","Pusher"],
 		"img":"https://api.opendota.com/apps/dota2/images/heroes/visage_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroes/visage_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroes/visage_icon.png",
+		"local":"../../imagenes/heroes/hero56.png"
 	},
 	{
 		"id":91,
@@ -917,7 +1009,8 @@
 		"attack_type":"Melee",
 		"roles":["Carry","Escape","Disabler","Nuker"],
 		"img":"https://api.opendota.com/apps/dota2/images/heroes/slark_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroes/slark_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroes/slark_icon.png",
+		"local":"../../imagenes/heroes/hero27.png"
 	},
 	{
 		"id":92,
@@ -927,7 +1020,8 @@
 		"attack_type":"Ranged",
 		"roles":["Carry","Disabler","Durable"],
 		"img":"https://api.opendota.com/apps/dota2/images/heroes/medusa_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroes/medusa_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroes/medusa_icon.png",
+		"local":"../../imagenes/heroes/hero25.png"
 	},
 	{
 		"id":93,
@@ -937,7 +1031,8 @@
 		"attack_type":"Ranged",
 		"roles":["Carry","Pusher","Disabler","Durable"],
 		"img":"https://api.opendota.com/apps/dota2/images/heroes/troll_warlord_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroes/troll_warlord_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroes/troll_warlord_icon.png",
+		"local":"../../imagenes/heroes/hero7.png"
 	},
 	{
 		"id":94,
@@ -947,7 +1042,8 @@
 		"attack_type":"Melee",
 		"roles":["Durable","Initiator","Disabler","Nuker","Escape"],
 		"img":"https://api.opendota.com/apps/dota2/images/heroes/centaur_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroes/centaur_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroes/centaur_icon.png",
+		"local":"../../imagenes/heroes/hero99.png"
 	},
 	{
 		"id":95,
@@ -956,7 +1052,8 @@
 		"primary_attr":"str",
 		"attack_type":"Melee",
 		"img":"https://api.opendota.com/apps/dota2/images/heroes/magnataur_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroes/magnataur_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroes/magnataur_icon.png",
+		"local":"../../imagenes/heroes/hero18.png"
 	},
 	{
 		"id":96,
@@ -966,7 +1063,8 @@
 		"attack_type":"Melee",
 		"roles":["Nuker","Durable","Escape"],
 		"img":"https://api.opendota.com/apps/dota2/images/heroes/shredder_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroes/shredder_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroes/shredder_icon.png",
+		"local":"../../imagenes/heroes/hero103.png"
 	},
 	{
 		"id":97,
@@ -976,7 +1074,8 @@
 		"attack_type":"Melee",
 		"roles":["Carry","Durable","Initiator","Nuker"],
 		"img":"https://api.opendota.com/apps/dota2/images/heroes/bristleback_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroes/bristleback_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroes/bristleback_icon.png",
+		"local":"../../imagenes/heroes/hero85.png"
 	},
 	{
 		"id":98,
@@ -986,7 +1085,8 @@
 		"attack_type":"Melee",
 		"roles":["Initiator","Disabler","Nuker"],
 		"img":"https://api.opendota.com/apps/dota2/images/heroes/tusk_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroes/tusk_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroes/tusk_icon.png",
+		"local":"../../imagenes/heroes/hero14.png"
 	},
 	{
 		"id":99,
@@ -996,7 +1096,8 @@
 		"attack_type":"Ranged",
 		"roles":["Support","Nuker","Disabler"],
 		"img":"https://api.opendota.com/apps/dota2/images/heroes/skywrath_mage_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroes/skywrath_mage_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroes/skywrath_mage_icon.png",
+		"local":"../../imagenes/heroes/hero13.png"
 	},
 	{
 		"id":100,
@@ -1006,7 +1107,8 @@
 		"attack_type":"Melee",
 		"roles":["Support","Carry","Durable"],
 		"img":"https://api.opendota.com/apps/dota2/images/heroes/abaddon_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroes/abaddon_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroes/abaddon_icon.png",
+		"local":"../../imagenes/heroes/hero1.png"
 	},
 	{
 		"id":101,
@@ -1016,7 +1118,8 @@
 		"attack_type":"Melee",
 		"roles":["Initiator","Disabler","Nuker","Durable"],
 		"img":"https://api.opendota.com/apps/dota2/images/heroes/elder_titan_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroes/elder_titan_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroes/elder_titan_icon.png",
+		"local":"../../imagenes/heroes/hero86.png"
 	},
 	{
 		"id":102,
@@ -1026,7 +1129,8 @@
 		"attack_type":"Melee",
 		"roles":["Carry","Disabler","Initiator","Durable","Nuker"],
 		"img":"https://api.opendota.com/apps/dota2/images/heroes/legion_commander_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroes/legion_commander_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroes/legion_commander_icon.png",
+		"local":"../../imagenes/heroes/hero66.png"
 	},
 	{
 		"id":103,
@@ -1036,7 +1140,8 @@
 		"attack_type":"Ranged",
 		"roles":["Nuker","Disabler"],
 		"img":"https://api.opendota.com/apps/dota2/images/heroes/techies_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroes/techies_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroes/techies_icon.png",
+		"local":"../../imagenes/heroes/hero69.png"
 	},
 	{
 		"id":104,
@@ -1046,7 +1151,8 @@
 		"attack_type":"Melee",
 		"roles":["Carry","Escape","Nuker","Disabler","Initiator"],
 		"img":"https://api.opendota.com/apps/dota2/images/heroes/ember_spirit_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroes/ember_spirit_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroes/ember_spirit_icon.png",
+		"local":"../../imagenes/heroes/hero93.png"
 	},
 	{
 		"id":105,
@@ -1056,7 +1162,8 @@
 		"attack_type":"Melee",
 		"roles":["Nuker","Escape","Disabler","Initiator","Durable"],
 		"img":"https://api.opendota.com/apps/dota2/images/heroes/earth_spirit_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroes/earth_spirit_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroes/earth_spirit_icon.png",
+		"local":"../../imagenes/heroes/hero72.png"
 	},
 	{
 		"id":106,
@@ -1066,7 +1173,8 @@
 		"attack_type":"Melee",
 		"roles":["Support","Nuker","Disabler","Durable","Escape"],
 		"img":"https://api.opendota.com/apps/dota2/images/heroes/abyssal_underlord_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroes/abyssal_underlord_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroes/abyssal_underlord_icon.png",
+		"local":"../../imagenes/heroes/hero113.png"
 	},
 	{
 		"id":107,
@@ -1076,7 +1184,8 @@
 		"attack_type":"Melee",
 		"roles":["Carry","Pusher","Nuker"],
 		"img":"https://api.opendota.com/apps/dota2/images/heroes/terrorblade_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroes/terrorblade_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroes/terrorblade_icon.png",
+		"local":"../../imagenes/heroes/hero83.png"
 	},
 	{
 		"id":108,
@@ -1086,7 +1195,8 @@
 		"attack_type":"Ranged",
 		"roles":["Support","Nuker","Initiator","Escape","Disabler"],
 		"img":"https://api.opendota.com/apps/dota2/images/heroes/phoenix_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroes/phoenix_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroes/phoenix_icon.png",
+		"local":"../../imagenes/heroes/hero19.png"
 	},
 	{
 		"id":109,
@@ -1096,7 +1206,8 @@
 		"attack_type":"Ranged",
 		"roles":["Support","Nuker","Disabler","Escape"],
 		"img":"https://api.opendota.com/apps/dota2/images/heroes/oracle_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroes/oracle_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroes/oracle_icon.png",
+		"local":"../../imagenes/heroes/hero109.png"
 	},
 	{
 		"id":110,
@@ -1106,7 +1217,8 @@
 		"attack_type":"Ranged",
 		"roles":["Support","Disabler","Nuker"],
 		"img":"https://api.opendota.com/apps/dota2/images/heroes/winter_wyvern_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroes/winter_wyvern_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroes/winter_wyvern_icon.png",
+		"local":"../../imagenes/heroes/hero84.png"
 	},
 	{
 		"id":111,
@@ -1116,7 +1228,8 @@
 		"attack_type":"Ranged",
 		"roles":["Carry","Escape","Nuker"],
 		"img":"https://api.opendota.com/apps/dota2/images/heroes/arc_warden_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroes/arc_warden_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroes/arc_warden_icon.png",
+		"local":"../../imagenes/heroes/hero29.png"
 	},
 	{
 		"id":112,
@@ -1126,7 +1239,8 @@
 		"attack_type":"Melee",
 		"roles":["Carry","Escape","Disabler","Initiator"],
 		"img":"https://api.opendota.com/apps/dota2/images/heroes/monkey_king_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroes/monkey_king_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroes/monkey_king_icon.png",
+		"local":"../../imagenes/heroes/hero114.png"
 	},
 	{
 		"id":113,
@@ -1136,7 +1250,8 @@
 		"attack_type":"Ranged",
 		"roles":["Support","Nuker","Disabler","Escape"],
 		"img":"https://api.opendota.com/apps/dota2/images/heroes/dark_willow_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroes/dark_willow_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroes/dark_willow_icon.png",
+		"local":"../../imagenes/heroes/hero115.png"
 	},
 	{
 		"id":114,
@@ -1146,7 +1261,8 @@
 		"attack_type":"Melee",
 		"roles":["Carry","Nuker","Disabler","Durable","Escape","Initiator"],
 		"img":"https://api.opendota.com/apps/dota2/images/heroes/pangolier_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroes/pangolier_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroes/pangolier_icon.png",
+		"local":"../../imagenes/heroes/hero116.png"
 	},
 	{
 		"id":115,
@@ -1156,7 +1272,8 @@
 		"attack_type":"Ranged",
 		"roles":["Support","Nuker","Disabler","Escape"],
 		"img":"https://api.opendota.com/apps/dota2/images/heroes/grimstroke_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroes/grimstroke_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroes/grimstroke_icon.png",
+		"local":"../../imagenes/heroes/hero117.png"
 	},
 	{
 		"id":116,
@@ -1166,7 +1283,8 @@
 		"attack_type":"Melee",
 		"roles":["Carry","Escape","Nuker","Disabler"],
 		"img":"https://api.opendota.com/apps/dota2/images/heroes/void_spirit_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroes/void_spirit_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroes/void_spirit_icon.png",
+		"local":"../../imagenes/heroes/hero118.png"
 	},
 	{
 		"id":117,
@@ -1176,7 +1294,8 @@
 		"attack_type":"Ranged",
 		"roles":["Support","Nuker","Disabler","Escape"],
 		"img":"https://api.opendota.com/apps/dota2/images/heroes/snapfire_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroes/snapfire_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroes/snapfire_icon.png",
+		"local":"../../imagenes/heroes/hero119.png"
 	},
 	{
 		"id":118,
@@ -1186,6 +1305,7 @@
 		"attack_type":"Melee",
 		"roles":["Carry","Initiator","Disabler","Durable"],
 		"img":"https://api.opendota.com/apps/dota2/images/heroes/mars_full.png?",
-		"icon":"https://api.opendota.com/apps/dota2/images/heroes/mars_icon.png"
+		"icon":"https://api.opendota.com/apps/dota2/images/heroes/mars_icon.png",
+		"local":"../../imagenes/heroes/hero120.png"
 	}
 ]

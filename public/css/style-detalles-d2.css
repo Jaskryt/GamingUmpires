@@ -1,5 +1,17 @@
+.titulo{
+			font-family: 'general';
+			background-color: #c81d1e;
+			text-align: center;
+			color: black;
+		}
+.subtitulo{
+			font-family: 'general';
+			background-color: #c81d1e;
+			color: black;
+			padding-left: 10px;
+		}	
 .espaciado{
-			height: 200px;
+			height: 50px;
 		}
 
 .detalles-partida{
@@ -83,3 +95,16 @@
 	background-color: #ec2300;
 	color: black;
 }
+.butonr{
+		background-color: #bb0000;
+		font-family: 'general';
+		height: 50px;	
+		width:  200px;
+		margin-top: 30px;
+		font-size: 15px;
+		text-align: center;	
+		border-radius: 10px;
+	}
+.butonr:hover {
+		 background-color: white;
+   }
