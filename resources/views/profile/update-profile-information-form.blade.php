@@ -1,6 +1,6 @@
 <x-jet-form-section submit="updateProfileInformation">
     <x-slot name="title">
-        {{ __('Profile Information') }}
+        {{ __('Información de Perfil') }}
     </x-slot>
 
     <x-slot name="description">
@@ -39,12 +39,12 @@
                 </div>
 
                 <x-jet-secondary-button class="mt-2 mr-2" type="button" x-on:click.prevent="$refs.photo.click()">
-                    {{ __('Select A New Photo') }}
+                    {{ __('Seleccionar Nueva Foto') }}
                 </x-jet-secondary-button>
 
                 @if ($this->user->profile_photo_path)
                     <x-jet-secondary-button type="button" class="mt-2" wire:click="deleteProfilePhoto">
-                        {{ __('Remove Photo') }}
+                        {{ __('Remover Foto') }}
                     </x-jet-secondary-button>
                 @endif
 
@@ -55,14 +55,14 @@
         <!-- Firstname -->
         <div class="col-span-6 sm:col-span-4">
             <x-jet-label for="firstname" value="{{ __('Nombre') }}" />
-            <x-jet-input id="firstname" type="text" class="mt-1 block w-full" wire:model.defer="state.firstname" autocomplete="firstname" />
+            <x-jet-input id="firstname" type="text" class="mt-1 block w-full" wire:model.defer="state.firstname" autocomplete="firstname" maxlength="30" minlength="3" pattern="[A-Za-z]+" />
             <x-jet-input-error for="firstname" class="mt-2" />
         </div>
 
         <!-- Lastname -->
         <div class="col-span-6 sm:col-span-4">
             <x-jet-label for="lastname" value="{{ __('Apellido') }}" />
-            <x-jet-input id="lastname" type="text" class="mt-1 block w-full" wire:model.defer="state.lastname" autocomplete="lastname" />
+            <x-jet-input id="lastname" type="text" class="mt-1 block w-full" wire:model.defer="state.lastname" autocomplete="lastname" maxlength="30" minlength="10" pattern="[A-Za-z]+"/>
             <x-jet-input-error for="lastname" class="mt-2" />
         </div>
 
@@ -77,7 +77,7 @@
         <div class="col-span-6 sm:col-span-4">
             <x-jet-label for="name" value="{{ __('NickName') }}" />
             <x-jet-input id="name" type="text" class="mt-1 block w-full" wire:model.defer="state.name" autocomplete="name" />
-            <x-jet-input-error for="name" class="mt-2" />
+            <x-jet-input-error for="name" class="mt-2" maxlength="30" minlength="1"pattern="[A-Za-z]+"/>
         </div>
 
         <!-- Email -->
@@ -94,7 +94,7 @@
         </x-jet-action-message>
 
         <x-jet-button wire:loading.attr="disabled" wire:target="photo">
-            {{ __('Save') }}
+            {{ __('Guardar') }}
         </x-jet-button>
     </x-slot>
 </x-jet-form-section>

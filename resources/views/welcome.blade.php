@@ -13,7 +13,7 @@
 <h2>Código de Torneo</h2>
       <form action="{{ route('buscaTorneo')}}" method="post" class="form-inline">
         @csrf
-                <input type="text" placeholder="Buscar" name="searchText" class="form-control mr-sm-2" required>
+                <input type="text" placeholder="Buscar" name="searchText" class="form-control mr-sm-2" required maxlength="15" minlength="1" pattern="[A-Za-z0-9]+">
                 <select class="form-control" id="selectGame" name="selectGame">
                     <option class="dropdown-item" value="D2">Dota 2</option>
                     <option class="dropdown-item" value="WOW">WOW</option>
