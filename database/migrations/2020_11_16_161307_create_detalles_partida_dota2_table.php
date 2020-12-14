@@ -19,7 +19,6 @@ class CreateDetallesPartidaDota2Table extends Migration
             $table->foreign('codigo_Encuentro')->references('id')->on('encuentros_dota2');
             $table->integer('eliminaciones_e1');
             $table->integer('eliminaciones_e2');
-            $table->boolean('fasepickban');
             $table->integer('numero_partida');
             $table->string('equipo_Ganador');
         });

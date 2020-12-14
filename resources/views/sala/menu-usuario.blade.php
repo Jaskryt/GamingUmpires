@@ -181,4 +181,22 @@
   </footer>
 </body>
 </html>
+<?php
+  use App\Models\sala;
+  use Carbon\Carbon;
+  $salas= DB::table('sala_dota_2')
+                ->where("codigo_Usuario","=",auth()->id())
+                ->get();
+   $now=Carbon::now();
+   foreach($salas as $indivSala){
+        $feachaBD=date_create($indivSala->fecha_Creacion);
+        date_add($feachaBD,date_interval_create_from_date_string("14 days"));
+        $fecha_Actual=date_format($feachaBD,"Y-m-d");
+        if($now->format('Y-m-d')>$fecha_Actual){
+          DB::table('sala_dota_2')
+                        ->where("id","=",$indivSala->id)   
+                        ->update(['estado' => 0]);
+        }
+   }
+?>
 @endsection

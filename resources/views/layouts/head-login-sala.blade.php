@@ -43,4 +43,5 @@
   </header>
   @yield('Cuerpo')
 </body>
+<script src="js/andy.js"></script>
 </html>

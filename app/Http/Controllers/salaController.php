@@ -13,6 +13,8 @@ use App\Models\picks_dota2;
 use App\Models\bans_dota2;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
+session_start();
+
 
 class salaController extends Controller
 {
@@ -54,7 +56,7 @@ class salaController extends Controller
                 if(!file_exists($archivo)){
                     $resultado=@move_uploaded_file($_FILES['logo']['tmp_name'],$archivo);
                     if($resultado){
-                         echo '<script language="javascript">alert("guardado");</script>';
+                         echo '<script language="javascript">alert("Imagen Guardada Con Exito!!");</script>';
                     }else{
                          echo '<script language="javascript">alert("no guadado");</script>';
                     }
@@ -74,9 +76,8 @@ class salaController extends Controller
          $sala->numero_Equipos= request('numeroEquipos');
          //el equipo ganador no existe aun
          $sala->equipo_ganador= "por concluir";
-
+          unset($_SESSION["creacionD2"]);
         return View('sala/creacion-equipos-sala-dota2')->with('sala',$sala);
-
 
     }
 
@@ -98,6 +99,7 @@ class salaController extends Controller
         $sala->equipo_Ganador= $request->equipo_ganador;
         $now=Carbon::now();
         $sala->fecha_Creacion=$now->format('y-m-d');
+        $sala->estado=true;
         $sala->save();
 
         //almacenando los equipos en la BD
@@ -199,7 +201,6 @@ class salaController extends Controller
                           $detalles->codigo_Encuentro=$codigoEnc;
                           $detalles->eliminaciones_e1=0;
                           $detalles->eliminaciones_e2=0;
-                          $detalles->fasepickban=$picksban;
                           $detalles->numero_partida=$j;
                           $detalles->equipo_Ganador='por verificar';
                           $detalles->save();
@@ -293,7 +294,6 @@ class salaController extends Controller
                           $detalles->codigo_Encuentro=$codigoEnc;
                           $detalles->eliminaciones_e1=0;
                           $detalles->eliminaciones_e2=0;
-                          $detalles->fasepickban=$picksban;
                           $detalles->numero_partida=$j;
                           $detalles->equipo_Ganador='por verificar';
                           $detalles->save();
@@ -365,7 +365,6 @@ class salaController extends Controller
                           $detalles->codigo_Encuentro=$codigoEnc;
                           $detalles->eliminaciones_e1=0;
                           $detalles->eliminaciones_e2=0;
-                          $detalles->fasepickban=$picksban;
                           $detalles->numero_partida=$k;
                           $detalles->equipo_Ganador='por verificar';
                           $detalles->save();
@@ -430,7 +429,6 @@ class salaController extends Controller
                           $detalles->codigo_Encuentro=$codigoEnc;
                           $detalles->eliminaciones_e1=0;
                           $detalles->eliminaciones_e2=0;
-                          $detalles->fasepickban=$picksban;
                           $detalles->numero_partida=$s;
                           $detalles->equipo_Ganador='por verificar';
                           $detalles->save();
@@ -502,7 +500,6 @@ class salaController extends Controller
                           $detalles->codigo_Encuentro=$codigoEnc;
                           $detalles->eliminaciones_e1=0;
                           $detalles->eliminaciones_e2=0;
-                          $detalles->fasepickban=$picksban;
                           $detalles->numero_partida=$k;
                           $detalles->equipo_Ganador='por verificar';
                           $detalles->save();
@@ -596,7 +593,6 @@ class salaController extends Controller
                           $detalles->codigo_Encuentro=$codigoEnc;
                           $detalles->eliminaciones_e1=0;
                           $detalles->eliminaciones_e2=0;
-                          $detalles->fasepickban=$picksban;
                           $detalles->numero_partida=$s;
                           $detalles->equipo_Ganador='por verificar';
                           $detalles->save();
@@ -771,6 +767,18 @@ class salaController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+
+    public function cookie(){
+       
+         if(auth()->id()==null){
+            return view('welcome');
+         }else{
+            return View('sala/creacion-sala-dota2');
+         }
+         
+
     }
 
 

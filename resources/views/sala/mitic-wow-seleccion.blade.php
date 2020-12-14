@@ -1,4 +1,4 @@
-@extends('layouts/head-login')
+@extends('layouts/head-login-sala')
 
 
 @section('Cuerpo')
@@ -10,6 +10,8 @@
 			echo $tarjetas;
 		?>
 	</div>
+	<?php
+		echo $puntajes;
+	?>
 </div>
-
 @endsection

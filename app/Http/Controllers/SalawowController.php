@@ -7,6 +7,7 @@ use App\Models\salaswow;
 use App\Models\jugadores_wow;
 use App\Models\equipos_wow;
 use App\Models\partida_wow;
+use App\Models\jugador_equipo_wow;
 use Illuminate\Support\Facades\storage;
 use Illuminate\Support\Facades\DB;
 
@@ -44,7 +45,7 @@ class SalawowController extends Controller
             echo '<script language="javascript">alert("error al cargar el archivos");</script>';
         }else{
             $permitidos= array("image/gif","image/png","image/jpg");
-            $limite_kb=10000;
+            $limite_kb=1000000;
             if(in_array($_FILES['logo']['type'],$permitidos) && $_FILES['logo']['size'] <= $limite_kb*1024){
 
                 $url='C:\laragon\www\ProyectoGulag\public\logos_wow_torneos/'.$user.'/';
@@ -99,6 +100,23 @@ class SalawowController extends Controller
                     else{
                         $jugadores_wow_array[] = $nombreJuga->nickname;
                     }
+                    $equipoCompuesto=new jugador_equipo_wow;
+                    $salaID = DB::table('salaswow')
+                        ->where("nombreSala","=",request('nombreTorneo'))
+                        ->first();
+                    $IDSa=$salaID->id;
+                    $equipoCompuesto->idsala=$IDSa;
+                    $equipoID = DB::table('equipos_wow')
+                        ->where("nombreSEquipo","=",$equipo)
+                        ->first();
+                    $IDEq=$equipoID->id;
+                    $equipoCompuesto->idequipo=$IDEq;
+                    $jugadorID = DB::table('jugadores_wow')
+                        ->where("nickname","=",$njugador)
+                        ->first();
+                    $IDJu = $jugadorID->id;
+                    $equipoCompuesto->idjugador=$IDJu;
+                    $equipoCompuesto->save();
                 }
             }
             else{
@@ -107,8 +125,18 @@ class SalawowController extends Controller
         }
         $fases = count($equipos_wow_array);
         $fasesDiv = $fases/2;
+        if($fases/2==2){
+            $fase=2;
+        }
+        if($fases/2==4){
+            $fase=3;
+        }
+        if($fases/2==8){
+            $fase=3;
+        }
         $countEqui = 0;
         $arraySorteado=array_rand($equipos_wow_array,$fases);
+        $nro=0;
         shuffle($arraySorteado);
         for($a=0;$a<$fasesDiv;$a++){
             $partida=new partida_wow;
@@ -117,7 +145,7 @@ class SalawowController extends Controller
                         ->where("nombreSala","=",$nSala)
                         ->first();
             $partida->idsala = $salaid->id;
-            $partida->fase = $fasesDiv;
+            $partida->fase = $fase;
             $equipo1 = $equipos_wow_array[$arraySorteado[$countEqui]];
             $idequipoFirst = DB::table('equipos_wow')
                         ->where("nombreSEquipo","=",$equipo1)
@@ -132,6 +160,23 @@ class SalawowController extends Controller
             $partida->nroPartida = $a+1;
             $countEqui=$countEqui+1;
             $partida->save();
+            $nro=$a+1;
+        }
+        for ($i=$fase-1; $i > 0; $i--) {
+            for ($j=$i; $j > 0; $j--) {
+                $nro=$nro+1;
+                $partida1=new partida_wow;
+                $nSala = request('nombreTorneo');
+                $salaid = DB::table('salaswow')
+                            ->where("nombreSala","=",$nSala)
+                            ->first();
+                $partida1->idsala = $salaid->id;
+                $partida1->fase = $i;
+                $partida1->idequipo1 = 0;
+                $partida1->idequipo2 = 0;
+                $partida1->nroPartida = $nro;
+                $partida1->save();
+            }
         }
         return redirect()->route('Rsalas');
         //return redirect()->route('Rfixturewow')->with('arrayTorneo',$countEqui);
