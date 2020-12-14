@@ -95,7 +95,15 @@ Route::get('/salas-creadas', [SalasCreadasController::class, 'index'])->name('Rs
 
 Route::get('/fixture-wow-{idsala}', [FixtureWowController::class, 'index'])->name('RFixture');
 
+Route::get('/crear-siguiente-partida-wow-{idpartida}', [FixtureWowController::class, 'create'])->name('RFixtureAgregar');
+
+
 Route::get('/mytic-seleccion-wow-{idmytic}', [MyticSelectionController::class, 'index'])->name('RMytic');
+
+Route::get('/mytic-detalle-wow-{Partida}-{Mitic}', [MyticSelectionController::class, 'create'])->name('RMyticDetalle');
+
+Route::post('/encuentro-partida-guardada', [MyticSelectionController::class, 'update'])->name('RGuardarDetalles');
+
 
 
 

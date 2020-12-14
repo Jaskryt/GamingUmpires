@@ -10,6 +10,8 @@
 			echo $tarjetas;
 		?>
 	</div>
+	<?php
+		echo $puntajes;
+	?>
 </div>
-
 @endsection

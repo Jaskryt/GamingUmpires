@@ -234,7 +234,7 @@ public function search(Request $request){
             foreach($torneo as $indivSala){
             $li3.='
                    <li class="list-group-item redisenio-card-border">
-                    <a href="seleccion-juego">
+                    <a href="'.route('RFixture',$torneo->id).'">
                       <div class="row redisenio-card-center">
                         <div class="col-xl-3 redisenio-img-content">
                           <img class="redisenio-img" src="'.$indivSala->logo.'" alt="Card image">
@@ -242,7 +242,11 @@ public function search(Request $request){
                         <div class="col-xl-6 align-self-center text-center">
                           <div class="row">
                             <div class="mx-auto">
+<<<<<<< Updated upstream
                               <h4 class="texto-card">'.$indivSala->nombre_Torneo.'</h4>
+=======
+                              <h4 class="texto-card">'.$torneo->nombreSala.'</h4>
+>>>>>>> Stashed changes
                             </div>
                           </div>
                           <div class="row">
@@ -251,6 +255,7 @@ public function search(Request $request){
                             </div>
                           </div>
                         </div>
+<<<<<<< Updated upstream
                         <div class="col-xl-3 align-self-center text-center">
                           <div class="mx-auto">
                           <form method="post" action="'.url("/sala/detalles-partida-dota2/".$indivSala->id).'">
@@ -258,6 +263,8 @@ public function search(Request $request){
                             <button type="submit" class="btn btn-dark texto-card">Ver Detalles</button></form>
                           </div>
                         </div>
+=======
+>>>>>>> Stashed changes
                       </div>
                     </a>
                   </li><br>

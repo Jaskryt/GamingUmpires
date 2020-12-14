@@ -340,8 +340,24 @@ h1, h2, h3, h4, h5, h6 {a
   width: 290px;
   border-radius: 10px;
 }
-
-
+.bordes-jugadores{
+  padding: 10px ;
+  border:5px solid black;
+  border-radius: 10px;
+}
+.bordes-jugadores-detalles{
+  padding: 10px ;
+  border:5px solid black;
+}
+.textarea-design{
+  width: 100%;
+}
+.tamanio_caja_numero{
+  width: 70px;
+}
+.tamanio_caja_nivel_mitica{
+  width: 50px;
+}
 
 
 /*
