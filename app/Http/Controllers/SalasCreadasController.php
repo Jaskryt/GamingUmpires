@@ -56,12 +56,16 @@ class SalasCreadasController extends Controller
         $arbitrodota2=auth()->id();
         $salas = DB::table('sala_dota_2')
                 ->where("codigo_Usuario","=",$arbitrodota2)
+                ->where("estado","=",true)
                 ->get();
             $li2 ='';
             foreach($salas as $indivSala){
+                $feachaBD=date_create($indivSala->fecha_Creacion);
+                date_add($feachaBD,date_interval_create_from_date_string("14 days"));
+                $fecha_Actual=date_format($feachaBD,"d-m-Y");
                 $li2.='
                    <li class="list-group-item redisenio-card-border">
-                    <a href="seleccion-juego">
+                    <a href="">
                       <div class="row redisenio-card-center">
                         <div class="col-xl-3 redisenio-img-content">
                           <img class="redisenio-img" src="'.$indivSala->logo.'" alt="Card image">
@@ -74,7 +78,7 @@ class SalasCreadasController extends Controller
                           </div>
                           <div class="row">
                             <div class="mx-auto">
-                              <p class="card-text text-danger">Vencimiento del torneo: </p>
+                              <p class="card-text text-danger">Vencimiento del torneo:'.$fecha_Actual.'  </p>
                             </div>
                           </div>
                         </div>
@@ -102,9 +106,12 @@ public function Recientes(){
   $torneowow =DB::table('salaswow')->orderby('id','desc')->limit(10)->get();
   if(isset($torneoD2)){
     foreach($torneoD2 as $indivSala){
+             $feachaBD=date_create($indivSala->fecha_Creacion);
+                date_add($feachaBD,date_interval_create_from_date_string("14 days"));
+                $fecha_Actual=date_format($feachaBD,"d-m-Y");
             $li5.='
                    <li class="list-group-item redisenio-card-border">
-                    <a href="seleccion-juego">
+                    <a href="">
                       <div class="row redisenio-card-center">
                         <div class="col-xl-3 redisenio-img-content">
                           <img class="redisenio-img" src="'.$indivSala->logo.'" alt="Card image">
@@ -117,7 +124,7 @@ public function Recientes(){
                           </div>
                           <div class="row">
                             <div class="mx-auto">
-                              <p class="card-text text-danger">Vencimiento del torneo: </p>
+                              <p class="card-text text-danger">Vencimiento del torneo:'.$fecha_Actual.' </p>
                             </div>
                           </div>
                         </div>
@@ -141,7 +148,7 @@ public function Recientes(){
       foreach($torneowow as $indivSala){
             $li6.='
                    <li class="list-group-item redisenio-card-border">
-                    <a href="seleccion-juego">
+                    <a href="">
                       <div class="row redisenio-card-center">
                         <div class="col-xl-3 redisenio-img-content">
                           <img class="redisenio-img" src="'.$indivSala->logo.'" alt="Card image">
@@ -187,12 +194,15 @@ public function search(Request $request){
         if($var == 'D2'){
           $li4 = 'DOTA 2';
           $query = Request('searchText');
-          $torneo =DB::table('sala_dota_2')->where('id','=',$query)->orWhere('nombre_Torneo', 'LIKE','%'.$query.'%')->get();
+          $torneo =DB::table('sala_dota_2')->where('id','=',$query)->where("estado","=",true)->orWhere('nombre_Torneo', 'LIKE','%'.$query.'%')->get();
           if(isset($torneo)){
             foreach($torneo as $indivSala){
+              $feachaBD=date_create($indivSala->fecha_Creacion);
+                date_add($feachaBD,date_interval_create_from_date_string("14 days"));
+                $fecha_Actual=date_format($feachaBD,"d-m-Y");
             $li3.='
                    <li class="list-group-item redisenio-card-border">
-                    <a href="seleccion-juego">
+                    <a href="">
                       <div class="row redisenio-card-center">
                         <div class="col-xl-3 redisenio-img-content">
                           <img class="redisenio-img" src="'.$indivSala->logo.'" alt="Card image">
@@ -205,7 +215,7 @@ public function search(Request $request){
                           </div>
                           <div class="row">
                             <div class="mx-auto">
-                              <p class="card-text text-danger">Vencimiento del torneo: </p>
+                              <p class="card-text text-danger">Vencimiento del torneo:'.$fecha_Actual.' </p>
                             </div>
                           </div>
                         </div>
@@ -231,10 +241,10 @@ public function search(Request $request){
           $query = Request('searchText');
           $torneo =DB::table('salaswow')->where('id','=',$query)->orWhere('nombreSala', 'LIKE','%'.$query.'%')->get();
           if(isset($torneo)){
-            foreach($torneo as $indivSala){
+            foreach($torneo as $indivSala){             
             $li3.='
                    <li class="list-group-item redisenio-card-border">
-                    <a href="'.route('RFixture',$torneo->id).'">
+                    <a href="">
                       <div class="row redisenio-card-center">
                         <div class="col-xl-3 redisenio-img-content">
                           <img class="redisenio-img" src="'.$indivSala->logo.'" alt="Card image">
@@ -242,11 +252,7 @@ public function search(Request $request){
                         <div class="col-xl-6 align-self-center text-center">
                           <div class="row">
                             <div class="mx-auto">
-<<<<<<< Updated upstream
                               <h4 class="texto-card">'.$indivSala->nombre_Torneo.'</h4>
-=======
-                              <h4 class="texto-card">'.$torneo->nombreSala.'</h4>
->>>>>>> Stashed changes
                             </div>
                           </div>
                           <div class="row">
@@ -255,7 +261,6 @@ public function search(Request $request){
                             </div>
                           </div>
                         </div>
-<<<<<<< Updated upstream
                         <div class="col-xl-3 align-self-center text-center">
                           <div class="mx-auto">
                           <form method="post" action="'.url("/sala/detalles-partida-dota2/".$indivSala->id).'">
@@ -263,8 +268,6 @@ public function search(Request $request){
                             <button type="submit" class="btn btn-dark texto-card">Ver Detalles</button></form>
                           </div>
                         </div>
-=======
->>>>>>> Stashed changes
                       </div>
                     </a>
                   </li><br>

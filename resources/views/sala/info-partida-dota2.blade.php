@@ -49,8 +49,8 @@
                         ->get();
              echo "<h2 class='subtitulo'>MODO DE JUEGO: ".$salaTable[0]->modo_Juego."</h2>";
              echo "<h3 class='letra'>Ganador:</h3> <select id='teamWinner' name='teamWinner' class='select'>
-	             	   <option value=".$encuentrosTable[0]->equipo_1.">".$encuentrosTable[0]->equipo_1."</option>
-	             	   <option value=".$encuentrosTable[0]->equipo_2.">".$encuentrosTable[0]->equipo_2."</option>
+	             	   <option value='1'>".$encuentrosTable[0]->equipo_1."</option>
+	             	   <option value='2'>".$encuentrosTable[0]->equipo_2."</option>
              	   </select></td>";
             //nombres de los heroes en un listbox
              $listaHeros="";
@@ -76,12 +76,13 @@
 				</div>
 				<div class="col-2  col-md-2 col-lg-2 col-xl-2 pt-2 d-none  d-md-block"></div>
 				<div class="col-3  col-md-1 col-lg-1 col-xl-1"><p class="letrakills">kills Totales:</p></div>
-				<div class="col-3  col-md-1 col-lg-1 col-xl-1"><input type="number" name="killsequipo1" class="cajasT" required
+				<div class="col-3  col-md-1 col-lg-1 col-xl-1"><input type="number" min="0" max="99" maxlength="2" onkeydown="if(event.key==='.'){event.preventDefault();}"  oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+					name="killsequipo1" class="cajasT" required
 					value="{{ $detallesTable[0]->eliminaciones_e1 }}"></div>
 				<div class="col-2  col-md-2 col-lg-2 col-xl-2 pt-2 d-none  d-md-block"></div>
 				<div class="col-2  col-md-2 col-lg-2 col-xl-2 pt-2 d-none  d-md-block"></div>
 				<div class="col-3  col-md-1 col-lg-1 col-xl-1"><p class="letrakills">kills Totales:</p></div>
-				<div class="col-3  col-md-1 col-lg-1 col-xl-1"><input type="number" name="killsequipo2" class="cajasT" required
+				<div class="col-3  col-md-1 col-lg-1 col-xl-1"><input type="number" min="0" max="99" maxlength="2" onkeydown="if(event.key==='.'){event.preventDefault();}"  oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" name="killsequipo2" class="cajasT" required
 					value="{{ $detallesTable[0]->eliminaciones_e2 }}"></div>
 				<div class="col-2  col-md-2 col-lg-2 col-xl-2 pt-2 d-none  d-md-block"></div>
 			</div>
@@ -101,10 +102,10 @@
 					<option value="{{$infoTable[0]->personaje}}">
 						<?php echo $heros[$infoTable[0]->personaje]["localized_name"]; ?></option>
 					<?php echo $listaHeros; ?></select>
-					<a class="team1ltr"><a class="team1ltr">nivel:</a></a><input type="number" name="nivelj1t1" value="{{ $infoTable[0]->nivel }}"class="team1ct"><br>
-						<a class="team1ltr"><a class="team1ltr">k:</a></a><input type="number" name="asesinatosj1t1" value="{{ $infoTable[0]->asesinatos}}" class="team1ct">
-						<a class="team1ltr"><a class="team1ltr">D:</a></a><input type="number" name="muertesj1t1" value="{{ $infoTable[0]->muertes }}" class="team1ct">
-						<a class="team1ltr"><a class="team1ltr">A:</a></a><input type="number" name="asistenciasj1t1" value="{{ $infoTable[0]->asistencias}}" class="team1ct">
+					<a class="team1ltr"><a class="team1ltr">nivel:</a></a><input type="number" min="0" max="30" maxlength="2" onkeydown="if(event.key==='.'){event.preventDefault();}"  oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"   name="nivelj1t1" value="{{ $infoTable[0]->nivel }}"class="team1ct"><br>
+						<a class="team1ltr"><a class="team1ltr">k:</a></a><input type="number"  min="0" max="99" maxlength="2" onkeydown="if(event.key==='.'){event.preventDefault();}"  oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" name="asesinatosj1t1" value="{{ $infoTable[0]->asesinatos}}" class="team1ct">
+						<a class="team1ltr"><a class="team1ltr">D:</a></a><input type="number" min="0" max="99" maxlength="2" onkeydown="if(event.key==='.'){event.preventDefault();}"  oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" name="muertesj1t1" value="{{ $infoTable[0]->muertes }}" class="team1ct">
+						<a class="team1ltr"><a class="team1ltr">A:</a></a><input type="number"  min="0" max="99" maxlength="2" onkeydown="if(event.key==='.'){event.preventDefault();}"  oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"name="asistenciasj1t1" value="{{ $infoTable[0]->asistencias}}" class="team1ct">
 					items:
 					<select id="itemj1t1" class="team1slct2" onchange="verItems('1','itemj1t1')"><?php echo $listaItems; ?></select>
 					<table>
@@ -165,10 +166,10 @@
 					<option value="{{$infoTable[5]->personaje}}">
 						<?php echo $heros[$infoTable[5]->personaje]["localized_name"]; ?></option>
 					<?php echo $listaHeros; ?></select>
-						<a class="team2ltr">nivel:</a><input type="number" name="nivelj1t2" value="{{ $infoTable[5]->nivel }}" class="team1ct"><br>
-						<a class="team2ltr">k:</a><input type="number" name="asesinatosj1t2" value="{{ $infoTable[5]->asesinatos}}" class="team1ct">
-						<a class="team2ltr">D:</a><input type="number" name="muertesj1t2" value="{{ $infoTable[5]->muertes }}" class="team1ct">
-						<a class="team2ltr">A:</a><input type="number" name="asistenciasj1t2" value="{{ $infoTable[5]->asistencias}}" class="team1ct">
+						<a class="team2ltr">nivel:</a><input type="number"  min="0" max="30" maxlength="2" onkeydown="if(event.key==='.'){event.preventDefault();}"  oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" name="nivelj1t2" value="{{ $infoTable[5]->nivel }}" class="team1ct"><br>
+						<a class="team2ltr">k:</a><input type="number"  min="0" max="99" maxlength="2" onkeydown="if(event.key==='.'){event.preventDefault();}"  oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" name="asesinatosj1t2" value="{{ $infoTable[5]->asesinatos}}" class="team1ct">
+						<a class="team2ltr">D:</a><input type="number"  min="0" max="99" maxlength="2" onkeydown="if(event.key==='.'){event.preventDefault();}"  oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" name="muertesj1t2" value="{{ $infoTable[5]->muertes }}" class="team1ct">
+						<a class="team2ltr">A:</a><input type="number" min="0" max="99" maxlength="2" onkeydown="if(event.key==='.'){event.preventDefault();}"  oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"  name="asistenciasj1t2" value="{{ $infoTable[5]->asistencias}}" class="team1ct">
 					items:
 					<select id="itemj1t2" class="team2slct2" onchange="verItems('6','itemj1t2')"><?php echo $listaItems; ?></select>
 					<table>
@@ -233,10 +234,10 @@
 					<option value="{{$infoTable[1]->personaje}}">
 						<?php echo $heros[$infoTable[1]->personaje]["localized_name"]; ?></option>
 					<?php echo $listaHeros; ?></select>
-						<a class="team1ltr">nivel:</a><input type="number" name="nivelj2t1" value="{{ $infoTable[1]->nivel }}" class="team1ct"><br>
-						<a class="team1ltr">k:</a><input type="number" name="asesinatosj2t1" value="{{ $infoTable[1]->asesinatos}}" class="team1ct">
-						<a class="team1ltr">D:</a><input type="number" name="muertesj2t1" value="{{ $infoTable[1]->muertes }}" class="team1ct">
-						<a class="team1ltr">A:</a><input type="number" name="asistenciasj2t1" value="{{ $infoTable[1]->asistencias}}" class="team1ct">
+						<a class="team1ltr">nivel:</a><input type="number"  min="0" max="30" maxlength="2" onkeydown="if(event.key==='.'){event.preventDefault();}"  oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" name="nivelj2t1" value="{{ $infoTable[1]->nivel }}" class="team1ct"><br>
+						<a class="team1ltr">k:</a><input type="number" min="0" max="99" maxlength="2" onkeydown="if(event.key==='.'){event.preventDefault();}"  oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"  name="asesinatosj2t1" value="{{ $infoTable[1]->asesinatos}}" class="team1ct">
+						<a class="team1ltr">D:</a><input type="number" min="0" max="99" maxlength="2" onkeydown="if(event.key==='.'){event.preventDefault();}"  oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"  name="muertesj2t1" value="{{ $infoTable[1]->muertes }}" class="team1ct">
+						<a class="team1ltr">A:</a><input type="number" min="0" max="99" maxlength="2" onkeydown="if(event.key==='.'){event.preventDefault();}"  oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"  name="asistenciasj2t1" value="{{ $infoTable[1]->asistencias}}" class="team1ct">
 					items:
 					<select id="itemj2t1" class="team1slct2" onchange="verItems('2','itemj2t1')"><?php echo $listaItems; ?></select>
 					<table>
@@ -297,10 +298,10 @@
 					<option value="{{$infoTable[6]->personaje}}">
 						<?php echo $heros[$infoTable[6]->personaje]["localized_name"]; ?></option>
 					<?php echo $listaHeros; ?></select>
-						<a class="team2ltr">nivel:</a><input type="number" name="nivelj2t2" value="{{ $infoTable[6]->nivel }}" class="team1ct"><br>
-						<a class="team2ltr">k:</a><input type="number" name="asesinatosj2t2" value="{{ $infoTable[6]->asesinatos}}" class="team1ct">
-						<a class="team2ltr">D:</a><input type="number" name="muertesj2t2" value="{{ $infoTable[6]->muertes }}" class="team1ct">
-						<a class="team2ltr">A:</a><input type="number" name="asistenciasj2t2" value="{{ $infoTable[6]->asistencias}}" class="team1ct">
+						<a class="team2ltr">nivel:</a><input type="number" min="0" max="30" maxlength="2" onkeydown="if(event.key==='.'){event.preventDefault();}"  oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"  name="nivelj2t2" value="{{ $infoTable[6]->nivel }}" class="team1ct"><br>
+						<a class="team2ltr">k:</a><input type="number"  min="0" max="99" maxlength="2" onkeydown="if(event.key==='.'){event.preventDefault();}"  oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" name="asesinatosj2t2" value="{{ $infoTable[6]->asesinatos}}" class="team1ct">
+						<a class="team2ltr">D:</a><input type="number"  min="0" max="99" maxlength="2" onkeydown="if(event.key==='.'){event.preventDefault();}"  oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" name="muertesj2t2" value="{{ $infoTable[6]->muertes }}" class="team1ct">
+						<a class="team2ltr">A:</a><input type="number"  min="0" max="99" maxlength="2" onkeydown="if(event.key==='.'){event.preventDefault();}"  oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" name="asistenciasj2t2" value="{{ $infoTable[6]->asistencias}}" class="team1ct">
 					items:
 					<select id="itemj2t2" class="team2slct2" onchange="verItems('7','itemj2t2')"><?php echo $listaItems; ?></select>
 					<table>
@@ -365,10 +366,10 @@
 					<option value="{{$infoTable[2]->personaje}}">
 						<?php echo $heros[$infoTable[2]->personaje]["localized_name"]; ?></option>
 					<?php echo $listaHeros; ?></select>
-						<a class="team1ltr">nivel:</a><input type="number" name="nivelj3t1" value="{{ $infoTable[2]->nivel }}" class="team1ct"><br>
-						<a class="team1ltr">k:</a><input type="number" name="asesinatosj3t1" value="{{ $infoTable[2]->asesinatos}}" class="team1ct">
-						<a class="team1ltr">D:</a><input type="number" name="muertesj3t1" value="{{ $infoTable[2]->muertes }}" class="team1ct">
-						<a class="team1ltr">A:</a><input type="number" name="asistenciasj3t1" value="{{ $infoTable[2]->asistencias}}" class="team1ct">
+						<a class="team1ltr">nivel:</a><input type="number"  min="0" max="30" maxlength="2" onkeydown="if(event.key==='.'){event.preventDefault();}"  oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" name="nivelj3t1" value="{{ $infoTable[2]->nivel }}" class="team1ct"><br>
+						<a class="team1ltr">k:</a><input type="number"  min="0" max="99" maxlength="2" onkeydown="if(event.key==='.'){event.preventDefault();}"  oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" name="asesinatosj3t1" value="{{ $infoTable[2]->asesinatos}}" class="team1ct">
+						<a class="team1ltr">D:</a><input type="number" min="0" max="99" maxlength="2" onkeydown="if(event.key==='.'){event.preventDefault();}"  oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"  name="muertesj3t1" value="{{ $infoTable[2]->muertes }}" class="team1ct">
+						<a class="team1ltr">A:</a><input type="number"  min="0" max="99" maxlength="2" onkeydown="if(event.key==='.'){event.preventDefault();}"  oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" name="asistenciasj3t1" value="{{ $infoTable[2]->asistencias}}" class="team1ct">
 					items:
 					<select id="itemj3t1" class="team1slct2" onchange="verItems('3','itemj3t1')"><?php echo $listaItems; ?></select>
 					<table>
@@ -429,10 +430,10 @@
 					<option value="{{$infoTable[7]->personaje}}">
 						<?php echo $heros[$infoTable[7]->personaje]["localized_name"]; ?></option>
 					<?php echo $listaHeros; ?></select>
-						<a class="team2ltr">nivel:</a><input type="number" name="nivelj3t2" value="{{ $infoTable[7]->nivel }}" class="team1ct"><br>
-						<a class="team2ltr">k:</a><input type="number" name="asesinatosj3t2" value="{{ $infoTable[7]->asesinatos}}" class="team1ct">
-						<a class="team2ltr">D:</a><input type="number" name="muertesj3t2" value="{{ $infoTable[7]->muertes }}" class="team1ct">
-						<a class="team2ltr">A:</a><input type="number" name="asistenciasj3t2" value="{{ $infoTable[7]->asistencias}}" class="team1ct">
+						<a class="team2ltr">nivel:</a><input type="number" min="0" max="30" maxlength="2" onkeydown="if(event.key==='.'){event.preventDefault();}"  oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"  name="nivelj3t2" value="{{ $infoTable[7]->nivel }}" class="team1ct"><br>
+						<a class="team2ltr">k:</a><input type="number" min="0" max="99" maxlength="2" onkeydown="if(event.key==='.'){event.preventDefault();}"  oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"  name="asesinatosj3t2" value="{{ $infoTable[7]->asesinatos}}" class="team1ct">
+						<a class="team2ltr">D:</a><input type="number" min="0" max="99" maxlength="2" onkeydown="if(event.key==='.'){event.preventDefault();}"  oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"  name="muertesj3t2" value="{{ $infoTable[7]->muertes }}" class="team1ct">
+						<a class="team2ltr">A:</a><input type="number"  min="0" max="99" maxlength="2" onkeydown="if(event.key==='.'){event.preventDefault();}"  oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" name="asistenciasj3t2" value="{{ $infoTable[7]->asistencias}}" class="team1ct">
 					items:
 					<select id="itemj3t2" class="team2slct2" onchange="verItems('8','itemj3t2')"><?php echo $listaItems; ?></select>
 					<table>
@@ -497,10 +498,10 @@
 					<option value="{{$infoTable[3]->personaje}}">
 						<?php echo $heros[$infoTable[3]->personaje]["localized_name"]; ?></option>
 					<?php echo $listaHeros; ?></select>
-						<a class="team1ltr">nivel:</a><input type="number" name="nivelj4t1" value="{{ $infoTable[3]->nivel }}" class="team1ct"><br>
-						<a class="team1ltr">k:</a><input type="number" name="asesinatosj4t1" value="{{ $infoTable[3]->asesinatos}}" class="team1ct">
-						<a class="team1ltr">D:</a><input type="number" name="muertesj4t1" value="{{ $infoTable[3]->muertes }}" class="team1ct">
-						<a class="team1ltr">A:</a><input type="number" name="asistenciasj4t1" value="{{ $infoTable[3]->asistencias}}" class="team1ct">
+						<a class="team1ltr">nivel:</a><input type="number" min="0" max="30" maxlength="2" onkeydown="if(event.key==='.'){event.preventDefault();}"  oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"  name="nivelj4t1" value="{{ $infoTable[3]->nivel }}" class="team1ct"><br>
+						<a class="team1ltr">k:</a><input type="number" min="0" max="99" maxlength="2" onkeydown="if(event.key==='.'){event.preventDefault();}"  oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"  name="asesinatosj4t1" value="{{ $infoTable[3]->asesinatos}}" class="team1ct">
+						<a class="team1ltr">D:</a><input type="number"  min="0" max="99" maxlength="2" onkeydown="if(event.key==='.'){event.preventDefault();}"  oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" name="muertesj4t1" value="{{ $infoTable[3]->muertes }}" class="team1ct">
+						<a class="team1ltr">A:</a><input type="number"  min="0" max="99" maxlength="2" onkeydown="if(event.key==='.'){event.preventDefault();}"  oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" name="asistenciasj4t1" value="{{ $infoTable[3]->asistencias}}" class="team1ct">
 					items:
 					<select id="itemj4t1" class="team1slct2" onchange="verItems('4','itemj4t1')"><?php echo $listaItems; ?></select>
 					<table>
@@ -561,10 +562,10 @@
 					<option value="{{$infoTable[8]->personaje}}">
 						<?php echo $heros[$infoTable[8]->personaje]["localized_name"]; ?></option>
 					<?php echo $listaHeros; ?></select>
-						<a class="team2ltr">nivel:</a><input type="number" name="nivelj4t2" value="{{ $infoTable[8]->nivel }}" class="team1ct"><br>
-						<a class="team2ltr">k:</a><input type="number" name="asesinatosj4t2" value="{{ $infoTable[8]->asesinatos}}" class="team1ct">
-						<a class="team2ltr">D:</a><input type="number" name="muertesj4t2" value="{{ $infoTable[8]->muertes }}" class="team1ct">
-						<a class="team2ltr">A:</a><input type="number" name="asistenciasj4t2" value="{{ $infoTable[8]->asistencias}}" class="team1ct">
+						<a class="team2ltr">nivel:</a><input type="number"  min="0" max="30" maxlength="2" onkeydown="if(event.key==='.'){event.preventDefault();}"  oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" name="nivelj4t2" value="{{ $infoTable[8]->nivel }}" class="team1ct"><br>
+						<a class="team2ltr">k:</a><input type="number"  min="0" max="99" maxlength="2" onkeydown="if(event.key==='.'){event.preventDefault();}"  oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" name="asesinatosj4t2" value="{{ $infoTable[8]->asesinatos}}" class="team1ct">
+						<a class="team2ltr">D:</a><input type="number"  min="0" max="99" maxlength="2" onkeydown="if(event.key==='.'){event.preventDefault();}"  oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" name="muertesj4t2" value="{{ $infoTable[8]->muertes }}" class="team1ct">
+						<a class="team2ltr">A:</a><input type="number"  min="0" max="99" maxlength="2" onkeydown="if(event.key==='.'){event.preventDefault();}"  oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" name="asistenciasj4t2" value="{{ $infoTable[8]->asistencias}}" class="team1ct">
 					items:
 					<select id="itemj4t2" class="team2slct2" onchange="verItems('9','itemj4t2')"><?php echo $listaItems; ?></select>
 					<table>
@@ -629,10 +630,10 @@
 					<option value="{{$infoTable[4]->personaje}}">
 						<?php echo $heros[$infoTable[4]->personaje]["localized_name"]; ?></option>
 					<?php echo $listaHeros; ?></select>
-						<a class="team1ltr">nivel:</a><input type="number" name="nivelj5t1" value="{{ $infoTable[4]->nivel }}" class="team1ct"><br>
-						<a class="team1ltr">k:</a><input type="number" name="asesinatosj5t1" value="{{ $infoTable[4]->asesinatos}}" class="team1ct">
-						<a class="team1ltr">D:</a><input type="number" name="muertesj5t1" value="{{ $infoTable[4]->muertes }}" class="team1ct">
-						<a class="team1ltr">A:</a><input type="number" name="asistenciasj5t1" value="{{ $infoTable[4]->asistencias}}" class="team1ct">
+						<a class="team1ltr">nivel:</a><input type="number"  min="0" max="30" maxlength="2" onkeydown="if(event.key==='.'){event.preventDefault();}"  oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" name="nivelj5t1" value="{{ $infoTable[4]->nivel }}" class="team1ct"><br>
+						<a class="team1ltr">k:</a><input type="number"  min="0" max="99" maxlength="2" onkeydown="if(event.key==='.'){event.preventDefault();}"  oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" name="asesinatosj5t1" value="{{ $infoTable[4]->asesinatos}}" class="team1ct">
+						<a class="team1ltr">D:</a><input type="number" min="0" max="99" maxlength="2" onkeydown="if(event.key==='.'){event.preventDefault();}"  oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"  name="muertesj5t1" value="{{ $infoTable[4]->muertes }}" class="team1ct">
+						<a class="team1ltr">A:</a><input type="number" min="0" max="99" maxlength="2" onkeydown="if(event.key==='.'){event.preventDefault();}"  oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"  name="asistenciasj5t1" value="{{ $infoTable[4]->asistencias}}" class="team1ct">
 					items:
 					<select id="itemj5t1" class="team1slct2" onchange="verItems('5','itemj5t1')"><?php echo $listaItems; ?></select>
 					<table>
@@ -693,10 +694,10 @@
 					<option value="{{$infoTable[9]->personaje}}">
 						<?php echo $heros[$infoTable[9]->personaje]["localized_name"]; ?></option>
 					<?php echo $listaHeros; ?></select>
-						<a class="team2ltr">nivel:</a><input type="number" name="nivelj5t2" value="{{ $infoTable[9]->nivel }}" class="team1ct"><br>
-						<a class="team2ltr">k:</a><input type="number" name="asesinatosj5t2" value="{{ $infoTable[9]->asesinatos}}" class="team1ct">
-						<a class="team2ltr">D:</a><input type="number" name="muertesj5t2" value="{{ $infoTable[9]->muertes }}" class="team1ct">
-						<a class="team2ltr">A:</a><input type="number" name="asistenciasj5t2" value="{{ $infoTable[9]->asistencias}}" class="team1ct">
+						<a class="team2ltr">nivel:</a><input type="number" min="0" max="30" maxlength="2" onkeydown="if(event.key==='.'){event.preventDefault();}"  oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"  name="nivelj5t2" value="{{ $infoTable[9]->nivel }}" class="team1ct"><br>
+						<a class="team2ltr">k:</a><input type="number"  min="0" max="99" maxlength="2" onkeydown="if(event.key==='.'){event.preventDefault();}"  oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" name="asesinatosj5t2" value="{{ $infoTable[9]->asesinatos}}" class="team1ct">
+						<a class="team2ltr">D:</a><input type="number" min="0" max="99" maxlength="2" onkeydown="if(event.key==='.'){event.preventDefault();}"  oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"  name="muertesj5t2" value="{{ $infoTable[9]->muertes }}" class="team1ct">
+						<a class="team2ltr">A:</a><input type="number" min="0" max="99" maxlength="2" onkeydown="if(event.key==='.'){event.preventDefault();}"  oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"  name="asistenciasj5t2" value="{{ $infoTable[9]->asistencias}}" class="team1ct">
 					items:
 					<select id="itemj5t2" class="team2slct2"onchange="verItems('10','itemj5t2')"><?php echo $listaItems; ?></select>
 					<table>

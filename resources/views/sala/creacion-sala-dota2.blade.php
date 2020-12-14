@@ -22,7 +22,7 @@
 					<div class="row">
 						<div class="col-12 col-md-3 col-lg-3 col-xl-3 pt-3 d-none  d-md-block"></div>
 						<div class="col-6  col-md-3 col-lg-3 col-xl-3"><p class="letra">Nombre del torneo: </p></div>
-						<div class="col-6  col-md-3 col-lg-3 col-xl-3"><input type="text" name="nombreTorneo" id="nombreTorneo" value="{{ old('nombreTorneo') }}" class="inputxt" ></div>
+						<div class="col-6  col-md-3 col-lg-3 col-xl-3"><input type="text" name="nombreTorneo" id="nombreTorneo" value="{{ old('nombreTorneo') }}" class="inputxt" maxlength="50"></div>
 						<div class="col-12"><p class="error">{{ $errors->first('nombreTorneo') }}</p></div>
 						<div class="col-12 col-md-3 col-lg-3 col-xl-3 pt-3 d-none  d-md-block "></div>
 					</div>	
@@ -81,7 +81,3 @@
 @endsection
 
 
-
-<style type="text/css">
-
-</style>

@@ -379,14 +379,22 @@
 							 	 		class="tablas"	value="'.($encuentrosDatos[7]->equipo_2).'"></td>
 						    	<td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
 						    </tr>
-						</table><br><br><br><br>';
+						</table>';
 							 echo $fixture;
 							break;
 					}
 	?>
 	<form action="/sala/Generate-details-dota2">
 		 <input type="hidden" name="id" value="{{ $id }}">
-		<center><button class="butonr" >Generar PDF de los detalles</button></center>
+		 <?php
+		 	$boolT="disabled";
+		 	$title="el torneo debe culminar para poder generar un PDF con los detalles";
+		 	if($salaDatos[0]->equipo_Ganador!="por verificar"&& $salaDatos[0]->equipo_Ganador!="por concluir"){
+		 		$boolT="";
+		 		$title="torneo concluido presione para generar un PDF con los detalles";
+		 	}
+		 ?>
+		 <center><button class='butonr' {{ $boolT }} title="{{ $title }}" >Generar PDF de los detalles</button></center>
 	</form>
 </body>
 

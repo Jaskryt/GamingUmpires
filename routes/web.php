@@ -6,7 +6,7 @@ use App\Http\Controllers\SalasCreadasController;
 use App\Http\Controllers\FixtureWowController;
 use App\Http\Controllers\MyticSelectionController;
 use App\Http\Controllers\fixtureDota2Controller;
-
+use App\Http\Controllers\salaController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -41,7 +41,11 @@ Route::view('/seleccion-juego','sala/seleccion-juego')->name('seleccion-juego');
 Route::view('sala/seleccion-juego','sala/seleccion-juego')->name('seleccion-juego-sala');
 Route::view('/salas-creadas','sala/salas-creadas')->name('salas-creadas');
 Route::view('sala/salas-creadas','sala/salas-creadas')->name('salas-creadas-sala');
-Route::view('/creacion-sala-dota2','sala/creacion-sala-dota2')->name('creacion-sala-dota2');
+
+
+Route::get('/creacion-sala-dota2',[salaController::class,'cookie'])->name('creacion-sala-dota2');
+
+Route::view('/creacion-sala-dota2-show','sala/creacion-sala-dota2');
 //Busca Los recientes
 Route::get('/reciente',[SalasCreadasController::class, 'Recientes'])->name('Partidasrecientes');
 

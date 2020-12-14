@@ -24,6 +24,7 @@ class CreateSalaDota2Table extends Migration
             $table->integer('numero_Equipos');
             $table->string('equipo_Ganador');
             $table->date('fecha_Creacion');
+            $table->boolean('estado');
 
         });
     }

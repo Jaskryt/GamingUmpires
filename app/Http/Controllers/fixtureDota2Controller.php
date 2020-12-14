@@ -74,7 +74,11 @@ class fixtureDota2Controller extends Controller
   
         }
 
-        if(auth()->id() == null ){
+         $saladota2 = DB::table('sala_dota_2')
+                        ->where("id","=",$encuentrosTable[0]->codigo_Sala)
+                        ->get();
+
+        if(auth()->id() == null || auth()->id()!=$saladota2[0]->codigo_Usuario){
             return View('sala/info-partida-dota2-externo')
                     ->with('encuentrosTable',$encuentrosTable)
                     ->with('detallesTable',$detallesTable)
@@ -234,11 +238,23 @@ class fixtureDota2Controller extends Controller
                          'slot2'=>$request->img2txtj10,'slot3'=>$request->img3txtj10,
                          'slot4'=>$request->img4txtj10,'slot5'=>$request->img5txtj10,
                          'slot6'=>$request->img6txtj10,'slotJunglas'=>$request->img0txtj10]);
+        
+       $ganadorSalas= DB::table('encuentros_dota2')
+                        ->where("id","=",$_SESSION["encuentrosTable"][0]->id)   
+                        ->get();
+
+        $ganador="";           
+        if($request->teamWinner=="1"){
+            $ganador=$ganadorSalas[0]->equipo_1;
+        }else{
+            $ganador=$ganadorSalas[0]->equipo_2;
+        }
+
         //ganador del las partidas 
         DB::table('detalles_partida_dota2')
                 ->where('codigo_Encuentro',"=",$_SESSION["encuentrosTable"][0]->id)
                 ->where('numero_partida',"=",$_SESSION["detallesTable"][0]->numero_partida)
-                ->update(['equipo_Ganador' => $request->teamWinner,'eliminaciones_e1'=>$request->killsequipo1
+                ->update(['equipo_Ganador' => $ganador,'eliminaciones_e1'=>$request->killsequipo1
                            ,'eliminaciones_e2'=>$request->killsequipo2 ]);
 
         //calcular el ganador del encuentro);
@@ -266,6 +282,8 @@ class fixtureDota2Controller extends Controller
         }elseif ($equipo2Count>$equipoTotal) {
             $ganadorEncuentro=$_SESSION["encuentrosTable"][0]->equipo_2;
         }
+
+
 
         //cambiando la tabla al ganador
         DB::table('encuentros_dota2')

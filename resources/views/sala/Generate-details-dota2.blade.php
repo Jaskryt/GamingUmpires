@@ -7,9 +7,6 @@
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Allerta+Stencil">
 	<link rel="stylesheet" type="text/css" href="../../css/fixure-dota2.css">
 	<script src="../../lib/jquery/html2pdf.bundle.min.js"></script>
-	<script src="../../lib/jquery/jquery.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.2.0/jspdf.umd.min.js"></script>
 </head>
 <body>
 				
@@ -363,7 +360,7 @@
 </html>
 
 <script type="text/javascript">
-/*
+
 	const $elementoParaConvertir = document.body; // <-- Aquí puedes elegir cualquier elemento del DOM
 		html2pdf()	
 		    .set({
@@ -386,9 +383,9 @@
 		    .from($elementoParaConvertir)
 		    .save()
 		    .catch(err => console.log(err))
-		   // setTimeout ("Back()", 350);
+		   setTimeout ("Back()", 1000);
 
 function Back(){
      javascript:history.back();
-}*/
+}
 </script>
