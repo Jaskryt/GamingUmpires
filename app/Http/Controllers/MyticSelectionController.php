@@ -166,7 +166,7 @@ class MyticSelectionController extends Controller
                     $conteoBoton++;
                     $puntajes.='
                             <div class="col-xl-4 mx-auto">
-                                Los ganadores del encuentro son '.$equipo_miticas2->nombreSEquipo.'
+                                Los ganadores del encuentro son '.$equipo_miticas1->nombreSEquipo.'
                             </div>
                     ';
                 }

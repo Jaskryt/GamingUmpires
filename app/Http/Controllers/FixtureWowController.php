@@ -85,14 +85,42 @@ class FixtureWowController extends Controller
                     ';
                 $count=$count+1;
             }
-
         }
 
+        $extras = array();
+        $partidas = DB::table('salaswow')
+                ->where("id","=",$id)
+                ->first();
+        $final = DB::table('partida_wow')
+                ->where("idsala","=",$id)->where("fase","=",1)
+                ->first();
 
-        return view('sala/sala-fixture-wow',compact('fixture'));
+
+        $infotorneo="<div class='row'>
+                        <div class='col-xl-2'><img class='imagenfixture' src='".$partidas->logo."'></div>
+                        <div class='col-xl-3'>
+                            <h3>Numero de sala: ".$id."</h3><br>
+                            <h3>Torneo ".$partidas->nombreSala."</h3>
+                        </div>
+                        <div class='col-xl-4'></div>
+                    </div>
+                    ";
+        $ganador="
+                <img class='imagenfixture' src='../imagenes/trofeo/oro.jpg'><br>
+                <h4>El ganador es:</h4>
+                <img class='imagenfixture' src='../imagenes/trofeo/plata.jpg'>
+                <h4>El segundo lugar es para:</h4>
+                ";
+        $extras[]=$infotorneo;
+        $extras[]=$ganador;
+
+        return view('sala/sala-fixture-wow',compact('fixture'),compact('extras'));
     }
 
     /**
+    <div class='row'>
+                        <div class='col-xl-2'></div>
+                    </div>
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
