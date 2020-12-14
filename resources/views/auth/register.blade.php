@@ -20,7 +20,7 @@
             </div>
 
             <div>
-                <x-jet-label for="name" value="{{ __('NickName') }}" />
+                <x-jet-label for="name" value="{{ __('Nombre de Usuario') }}" />
                 <x-jet-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" maxlength="20" minlength="3" />
             </div>
 
@@ -30,7 +30,7 @@
             </div>
 
             <div class="mt-4">
-                <x-jet-label for="email" value="{{ __('Email') }}" />
+                <x-jet-label for="email" value="{{ __('Correo') }}" />
                 <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
             </div>
 
