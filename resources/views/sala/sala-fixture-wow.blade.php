@@ -18,7 +18,10 @@
 	</div>
 	<div class="col-xl-4">
 		<?php
-			echo $extras[1];
+			if(count($extras)==2){
+				echo $extras[1];
+			}
+			//echo $extras[1];
 		?>
 	</div>
 </div>

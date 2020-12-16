@@ -1,4 +1,4 @@
-@extends('layouts/head-login-sala')
+@extends('layouts/head-wow')
 
 
 @section('Cuerpo')

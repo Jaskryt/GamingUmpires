@@ -21,8 +21,12 @@ class FixtureWowController extends Controller
         $fixture ='';
         $faseP2=0;
         $count=1;
+
+        $variable = array();
+        $countG=0;
         foreach($partidas as $partida){
             $faseP1=$partida->fase;
+            $var=[];
             if($faseP1!=$faseP2){
                 if($faseP2==0){
                     $fixture.='
@@ -45,24 +49,142 @@ class FixtureWowController extends Controller
             $equipo2 = DB::table('equipos_wow')
                 ->where("id","=",$partida->idequipo2)
                 ->first();
-            $fixture.='
-                <li class="game game-top">'.$equipo1->nombreSEquipo.'<span>0</span></li>';
-            if($equipo1->nombreSEquipo=="N/D" || $equipo2->nombreSEquipo=="N/D"){
-                $fixture.='
-                    <li class="game game-spacer">&nbsp;</li>';
-            }
-            else{
-                $fixture.='
-                    <a href="'.route('RMytic',$partida->id).'"><li class="game game-spacer">&nbsp;</li><li class="game game-spacer">&nbsp;</li></a></a>';
 
-            }
-            $fixture.='
-                <li class="game game-bottom ">'.$equipo2->nombreSEquipo.'<span>0</span></li>
+                //mostrar puntajes
+                $puntajesText = DB::table('partida_wow_mitics')
+                        ->where("idpartida","=",$partida->id)->where("ganadorIdEquipo","!=",0)->where("perdedorIdEquipo","!=",0)->get();
+                foreach ($puntajesText as $pun) {
+                    if($pun->ganadorIdEquipo!=0 && $pun->perdedorIdEquipo!=0){
+                        $var[]=$pun->ganadorIdEquipo;
+                    }
+                }
+                if(count($var)==3){
+                    $variable[]= $var;
+                    $ganador=0;
+                    $perdedor=0;
+                    $countG=0;
+                    if($var[0]==$var[1]){
+                        $ganador=$var[0];
+                        $perdedor=$var[2];
+                        $countG=2;
+                    }elseif ($var[0]==$var[2]) {
+                        $ganador=$var[0];
+                        $perdedor=$var[1];
+                        $countG=2;
+                    }elseif ($var[1]==$var[2]) {
+                        $ganador=$var[1];
+                        $perdedor=$var[0];
+                        $countG=2;
+                    }
+                    if($var[1]==$var[2] && $var[0]==$var[2]){
+                        $countG=3;
+                    }
+                    $variable[]=$countG;
+                    $equipo1P = DB::table('equipos_wow')
+                            ->where("id","=",$ganador)
+                            ->first();
+                    $equipo2P = DB::table('equipos_wow')
+                            ->where("id","=",$perdedor)
+                            ->first();
 
-                <li class="spacer">&nbsp;</li>
-                ';
+                    //crear puntajes
+                    if($equipo1->id==$ganador && $countG==2){
+                        $fixture.='
+                            <li class="game game-top">'.$equipo1->nombreSEquipo.'<span>2</span></li>';
+                        if($equipo1->nombreSEquipo=="N/D" || $equipo2->nombreSEquipo=="N/D"){
+                            $fixture.='
+                                <li class="game game-spacer">&nbsp;</li>';
+                        }
+                        else{
+                            $fixture.='
+                                <a href="'.route('RMytic',$partida->id).'"><li class="game game-spacer">&nbsp;</li><li class="game game-spacer">&nbsp;</li></a></a>';
+
+                        }
+                        $fixture.='
+                            <li class="game game-bottom ">'.$equipo2->nombreSEquipo.'<span>1</span></li>
+
+                            <li class="spacer">&nbsp;</li>
+                            ';
+                    }
+                    if($equipo2->id==$ganador && $countG==2){
+                        $fixture.='
+                            <li class="game game-top">'.$equipo1->nombreSEquipo.'<span>1</span></li>';
+                        if($equipo1->nombreSEquipo=="N/D" || $equipo2->nombreSEquipo=="N/D"){
+                            $fixture.='
+                                <li class="game game-spacer">&nbsp;</li>';
+                        }
+                        else{
+                            $fixture.='
+                                <a href="'.route('RMytic',$partida->id).'"><li class="game game-spacer">&nbsp;</li><li class="game game-spacer">&nbsp;</li></a></a>';
+
+                        }
+                        $fixture.='
+                            <li class="game game-bottom ">'.$equipo2->nombreSEquipo.'<span>2</span></li>
+
+                            <li class="spacer">&nbsp;</li>
+                            ';
+                    }
+                    if($equipo1->id==$ganador && $countG==3){
+                        $fixture.='
+                            <li class="game game-top">'.$equipo1->nombreSEquipo.'<span>3</span></li>';
+                        if($equipo1->nombreSEquipo=="N/D" || $equipo2->nombreSEquipo=="N/D"){
+                            $fixture.='
+                                <li class="game game-spacer">&nbsp;</li>';
+                        }
+                        else{
+                            $fixture.='
+                                <a href="'.route('RMytic',$partida->id).'"><li class="game game-spacer">&nbsp;</li><li class="game game-spacer">&nbsp;</li></a></a>';
+
+                        }
+                        $fixture.='
+                            <li class="game game-bottom ">'.$equipo2->nombreSEquipo.'<span>0</span></li>
+
+                            <li class="spacer">&nbsp;</li>
+                            ';
+                    }
+                    if($equipo2->id==$ganador && $countG==3){
+                        $fixture.='
+                            <li class="game game-top">'.$equipo1->nombreSEquipo.'<span>0</span></li>';
+                        if($equipo1->nombreSEquipo=="N/D" || $equipo2->nombreSEquipo=="N/D"){
+                            $fixture.='
+                                <li class="game game-spacer">&nbsp;</li>';
+                        }
+                        else{
+                            $fixture.='
+                                <a href="'.route('RMytic',$partida->id).'"><li class="game game-spacer">&nbsp;</li><li class="game game-spacer">&nbsp;</li></a></a>';
+
+                        }
+                        $fixture.='
+                            <li class="game game-bottom ">'.$equipo2->nombreSEquipo.'<span>3</span></li>
+
+                            <li class="spacer">&nbsp;</li>
+                            ';
+                    }
+                }
+                else{
+                         $fixture.='
+                            <li class="game game-top">'.$equipo1->nombreSEquipo.'<span>0</span></li>';
+                        if($equipo1->nombreSEquipo=="N/D" || $equipo2->nombreSEquipo=="N/D"){
+                            $fixture.='
+                                <li class="game game-spacer">&nbsp;</li>';
+                        }
+                        else{
+                            $fixture.='
+                                <a href="'.route('RMytic',$partida->id).'"><li class="game game-spacer">&nbsp;</li><li class="game game-spacer">&nbsp;</li></a></a>';
+
+                        }
+                        $fixture.='
+                            <li class="game game-bottom ">'.$equipo2->nombreSEquipo.'<span>0</span></li>
+
+                            <li class="spacer">&nbsp;</li>
+                            ';
+                    }
+
+
+
             $faseP2=$faseP1;
         }
+
         $fixture.='
             </ul>
             ';
@@ -88,13 +210,51 @@ class FixtureWowController extends Controller
         }
 
         $extras = array();
+        $partidaFinal = DB::table('partida_wow')
+                        ->where("idsala","=",$id)->where("fase","=",1)->first();
+        $comprobar = DB::table('partida_wow_mitics')
+                        ->where("idpartida","=",$partidaFinal->id)->exists();
+        if($comprobar!=false){
+            $miticas = DB::table('partida_wow_mitics')
+                        ->where("idpartida","=",$partidaFinal->id)->where("ganadorIdEquipo","!=",0)->where("perdedorIdEquipo","!=",0)->get();
+
+            foreach ($miticas as $encuentro) {
+                if($encuentro->ganadorIdEquipo!=0 && $encuentro->perdedorIdEquipo!=0){
+                    $Wins[]=$encuentro->ganadorIdEquipo;
+                }
+            }
+            $ganador=0;
+            $perdedor=0;
+
+            if($Wins[0]==$Wins[1]){
+                $ganador=$Wins[0];
+                $perdedor=$Wins[2];
+            }elseif ($Wins[0]==$Wins[2]) {
+                $ganador=$Wins[0];
+                $perdedor=$Wins[1];
+            }elseif ($Wins[1]==$Wins[2]) {
+                $ganador=$Wins[1];
+                $perdedor=$Wins[0];
+            }
+            $equipo1 = DB::table('equipos_wow')
+                    ->where("id","=",$ganador)
+                    ->first();
+            $equipo2 = DB::table('equipos_wow')
+                    ->where("id","=",$perdedor)
+                    ->first();
+            $ganador="
+                <img class='imagenfixture' src='../imagenes/trofeo/oro.jpg'><br>
+                <h4>El ganador es: $equipo1->nombreSEquipo</h4>
+                <img class='imagenfixture' src='../imagenes/trofeo/plata.jpg'>
+                <h4>El segundo lugar es para: $equipo2->nombreSEquipo</h4>
+                ";
+
+            $extras[1]=$ganador;
+        }
+
         $partidas = DB::table('salaswow')
                 ->where("id","=",$id)
                 ->first();
-        $final = DB::table('partida_wow')
-                ->where("idsala","=",$id)->where("fase","=",1)
-                ->first();
-
 
         $infotorneo="<div class='row'>
                         <div class='col-xl-2'><img class='imagenfixture' src='".$partidas->logo."'></div>
@@ -105,15 +265,7 @@ class FixtureWowController extends Controller
                         <div class='col-xl-4'></div>
                     </div>
                     ";
-        $ganador="
-                <img class='imagenfixture' src='../imagenes/trofeo/oro.jpg'><br>
-                <h4>El ganador es:</h4>
-                <img class='imagenfixture' src='../imagenes/trofeo/plata.jpg'>
-                <h4>El segundo lugar es para:</h4>
-                ";
-        $extras[]=$infotorneo;
-        $extras[]=$ganador;
-
+        $extras[0]=$infotorneo;
         return view('sala/sala-fixture-wow',compact('fixture'),compact('extras'));
     }
 

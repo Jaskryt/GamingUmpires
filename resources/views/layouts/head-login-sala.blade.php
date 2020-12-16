@@ -31,7 +31,7 @@
                      <li><a href="seleccion-juego">Crear Sala</a></li>
                      <li><a href="{{ route('Rsalas') }}">Salas Creadas</a></li>
                     @else
-                        <li><a href="{{ route('login') }}" class="text-sm text-gray-700 underline">Login</a></li>
+                        <li><a href="{{ route('login') }}" class="text-sm text-gray-700 underline">Inicio de sesion</a></li>
                         @if (Route::has('register'))
                             <li><a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 underline">Registro</a></li>
                         @endif

@@ -291,74 +291,6 @@ h1, h2, h3, h4, h5, h6 {a
 
 }
 
-/* Andy CSS */
-.redisenio-img{
-  width: 180px;
-  height: 120px;
-  border-radius: 10px 0 0 10px;
-}
-.redisenio-img-content{
-  padding-left: 0;
-}
-.redisenio-imput-card{
-  margin: 0 0 10px 0;
-}
-.text-margin-redisenio{
-  margin: 0 0 10px 0;
-}
-.redisenio-card-border{
-  background-image: linear-gradient(to right, yellow,blue,red,black);
-}
-.redisenio-card-center{
-  background-color: #151515;
-  border-radius: 10px;
-}
-.texto-card{
-  color:white;
-}
-.card-plus-tamanio{
-    height: 292px;
-}
-.card-border-redisenio{
-    position: relative;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    min-width: 0;
-    word-wrap: break-word;
-    background-color: #fff;
-    background-clip: border-box;
-    border-style: dotted;
-    border-radius: .25rem;
-}
-.img-mityc-redisenio{
-  height: 200px;
-  width: 290px;
-  border-radius: 10px;
-}
-.bordes-jugadores{
-  padding: 10px ;
-  border:5px solid black;
-  border-radius: 10px;
-}
-.bordes-jugadores-detalles{
-  padding: 10px ;
-  border:5px solid black;
-}
-.textarea-design{
-  width: 100%;
-}
-.tamanio_caja_numero{
-  width: 70px;
-}
-.tamanio_caja_nivel_mitica{
-  width: 50px;
-}
-
 
 /*
  *  Flex Layout Specifics
@@ -417,7 +349,104 @@ li.game{
   }
 
 /*andy*/
+.redisenio-img{
+  width: 180px;
+  height: 120px;
+  border-radius: 10px 0 0 10px;
+}
+.redisenio-img-content{
+  padding-left: 0;
+}
+.redisenio-imput-card{
+  margin: 0 0 10px 0;
+}
+.text-margin-redisenio{
+  margin: 0 0 10px 0;
+}
+.redisenio-card-border{
+  background-image: linear-gradient(to right, yellow,blue,red,black);
+}
+.redisenio-card-center{
+  background-color: #151515;
+  border-radius: 10px;
+}
+.texto-card{
+  color:white;
+}
+.card-plus-tamanio{
+    height: 304px;
+}
+.card-border-redisenio{
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border-style: dotted;
+    color: white;
+    border:5px solid white;
+    background-color: #1b2735;
+    border-radius: .25rem;
+}
+.img-mityc-redisenio{
+  height: 200px;
+  width: 290px;
+  border-radius: 10px;
+}
+.bordes-jugadores{
+  padding: 10px ;
+  border:5px solid black;
+  border-radius: 10px;
+}
+.bordes-jugadores-detalles{
+  padding: 10px ;
+  border:5px solid black;
+}
+.textarea-design{
+  width: 100%;
+}
+.tamanio_caja_numero{
+  width: 70px;
+}
+.tamanio_caja_nivel_mitica{
+  width: 50px;
+}
 .imagenfixture{
   width: 200px;
   height: 150px;
+}
+.bakcgr{
+  background-image: url("../resources_wow/background_wow.jpg");
+  background-size: 100% 100%;
+}
+.padding_cards{
+  margin-bottom: 20px;
+}
+.cards_design_creacion{
+  color: white;
+  border:5px solid white;
+  background-color: #1b2735;
+  border-radius: .25rem;
+}
+.cards_design_creacion2{
+  color: white;
+  border:5px solid white;
+  background-color: #083460;
+  border-radius: .25rem;
+}
+.letra_blanca{
+  color: white;
+}
+.boton_cracion_design{
+  width: 100%;
+}
+.padding_input{
+  margin-bottom:5px;
 }
