@@ -396,18 +396,23 @@ li.game{
     border-radius: .25rem;
 }
 .img-mityc-redisenio{
-  height: 200px;
-  width: 290px;
+  height: 220px;
+  width: 350px;
   border-radius: 10px;
 }
 .bordes-jugadores{
+  color: white;
   padding: 10px ;
-  border:5px solid black;
+  border:5px solid #F5D00D;
   border-radius: 10px;
+  background:#083460;
 }
 .bordes-jugadores-detalles{
+  color: white;
   padding: 10px ;
-  border:5px solid black;
+  border:5px solid #F5D00D;
+  background:#211510;
+  border-radius: .25rem;
 }
 .textarea-design{
   width: 100%;
@@ -419,8 +424,12 @@ li.game{
   width: 50px;
 }
 .imagenfixture{
-  width: 200px;
-  height: 150px;
+  width: 320px;
+  height: 200px;
+}
+.imagenfixture2{
+  width: 270px;
+  height: 200px;
 }
 .bakcgr{
   background-image: url("../resources_wow/background_wow.jpg");
@@ -449,4 +458,32 @@ li.game{
 }
 .padding_input{
   margin-bottom:5px;
+}
+.titulo_fixture{
+  color: #F5D00D;
+  background:#211510;
+  text-align: center;
+  border:5px dotted #F5D00D;
+}
+.torneo_desing{
+  background-color: white;
+}
+.text_miticas{
+  text-align: center;
+  background-color:#141414;
+  color: white;
+  border:5px solid white;
+  border-radius: .25rem;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 5px;
+}
+.img_afijo{
+  width: 50px;
+  height: 50px;
+}
+.caja_pdf{
+  border:5px solid white;
+  background-color: #1b2735;
+  border-radius: .25rem;
 }

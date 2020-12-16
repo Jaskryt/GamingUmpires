@@ -145,7 +145,9 @@
           <div class="col-lg-3 col-md-6">
             <div class="member">
               <div class="pic"><img src="imagenes/andy.jpeg" alt=""></div>
-              <h4>Andy Henry Alejandro Cores Andrade</h4>
+              <h4>Andy Henry Alejandro Cores Andrade</h4><br>
+
+  <a href="{{ Route("Rpdf",18)}}"><button>pdf</button></a>
               <div class="social">
                 <a href=""><i class="fa fa-facebook"></i></a>
               </div>

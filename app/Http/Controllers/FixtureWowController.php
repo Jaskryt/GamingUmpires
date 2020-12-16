@@ -257,10 +257,10 @@ class FixtureWowController extends Controller
                 ->first();
 
         $infotorneo="<div class='row'>
-                        <div class='col-xl-2'><img class='imagenfixture' src='".$partidas->logo."'></div>
-                        <div class='col-xl-3'>
-                            <h3>Numero de sala: ".$id."</h3><br>
-                            <h3>Torneo ".$partidas->nombreSala."</h3>
+                        <div class='col-xl-4'><img class='imagenfixture' src='".$partidas->logo."'></div>
+                        <div class='col-xl-4'>
+                            <h3 class='titulo_fixture'>Numero de sala: ".$id."</h3><br>
+                            <h3 class='titulo_fixture'>Torneo ".$partidas->nombreSala."</h3>
                         </div>
                         <div class='col-xl-4'></div>
                     </div>

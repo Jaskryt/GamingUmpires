@@ -13,6 +13,8 @@
     <link href="../lib/animate/animate.min.css" rel="stylesheet">
     <link href="../css/style-login.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <script src="../../lib/jquery/html2pdf.bundle.min.js"></script>
 </head>
 <body class="bakcgr">
     <header id="header">

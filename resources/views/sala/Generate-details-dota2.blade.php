@@ -9,7 +9,7 @@
 	<script src="../../lib/jquery/html2pdf.bundle.min.js"></script>
 </head>
 <body>
-				
+
 <section class="detalles-partida" id="cuerpo">
 	<?php
 
@@ -26,7 +26,7 @@
             //lista de los equipos y encuentros
              $encuentrosDatos = DB::table('encuentros_dota2')
                                             ->where("codigo_Sala","=",$id)
-                                            ->get();   
+                                            ->get();
              //convirtiendo el tipo de eliminacion a numero
              $eliminacion=1;
              if($salaDatos[0]->tipo_Eliminacion=='BO3'){
@@ -37,7 +37,7 @@
 
              //opciones para ver los detalles de una partida
              $options='';
-             for ($i=1; $i <=$eliminacion; $i++) { 
+             for ($i=1; $i <=$eliminacion; $i++) {
              	$options.='<option  value="'.$i.'" >partida:'.$i.'</option>';
              }
              echo '<h1 class="subtitulo"> Codigo de la Sala: '.$salaDatos[0]->id.'</h1>';
@@ -45,7 +45,7 @@
              echo '<center><img src="'.$salaDatos[0]->logo.'" class="imagenes imagen-redonda"></center>';
              echo '<h1 class="titulo">'.$salaDatos[0]->modo_Juego.'</h1>';
              echo '<input type="hidden" id="numeroE" value="'.$salaDatos[0]->numero_Equipos.'">';
-             
+
 			//fixture de los equipos
 					switch ($salaDatos[0]->numero_Equipos) {
 						case 4:
@@ -316,22 +316,22 @@
              	$eliminacion=5;
              }
 		//toda la informacion de los equipos
-		for ($i=0; $i <$salaDatos[0]->numero_Equipos -1 ; $i++) { 
+		for ($i=0; $i <$salaDatos[0]->numero_Equipos -1 ; $i++) {
 			  echo "<h1 class='encuentro'>Encuentro: ".$encuentrosDatos[$i]->equipo_1." VS ".$encuentrosDatos[$i]->equipo_2."</h1>";
 			  echo "<h1 class='ganadore'>Ganador del Encuentro: ".$encuentrosDatos[$i]->equipo_Ganador."</h1>";
 			  $detallesTable = DB::table('detalles_partida_dota2')
                         ->where("codigo_Encuentro","=",$encuentrosDatos[$i]->id)
                         ->get();
-			  for ($j=0; $j < $eliminacion ; $j++) { 
+			  for ($j=0; $j < $eliminacion ; $j++) {
 			  	 echo "<h1 class='partida'>Partida N°".$detallesTable[$j]->numero_partida."</h1>";
 			  	 echo "<h1 class='ganadore'>Ganador de la partida: ".$detallesTable[$j]->equipo_Ganador."</h1>";
-			  	 echo  "<div class='row letra'><div class='col-1'></div>"; 
+			  	 echo  "<div class='row letra'><div class='col-1'></div>";
 			  	 		$infoTable = DB::table('info_jugador_dota2')
-                        				->where("codigo_DetalleP","=",$detallesTable[$j]->id)   
+                        				->where("codigo_DetalleP","=",$detallesTable[$j]->id)
                         				->get();
-			  	 		for ($k=0; $k < 10 ; $k++) { 
+			  	 		for ($k=0; $k < 10 ; $k++) {
 			  	 			$jugadorTable = DB::table('jugadores_dota_2')
-                        				->where("id","=",$infoTable[$k]->codigo_Jugador)   
+                        				->where("id","=",$infoTable[$k]->codigo_Jugador)
                         				->get();
 			  	 			echo "<div class='col-1 '>".$jugadorTable[0]->nickname." nivel-".$infoTable[$k]->nivel."
 			  	 			<img class='imagen-hero' src=".$heros[$infoTable[$k]->personaje]["local"].">
@@ -344,7 +344,7 @@
 			  	 			<img class='imagen-item' src=".$items[$infoTable[$k]->slot6]["local"].">
 			  	 			<img class='imagen-item' src=".$items[$infoTable[$k]->slot1]["local"]."></div>";
 			  	 		}
-			  	  	  
+
 			  	  echo "<div class='col-1'></div></div>";
 			  }
 		}
@@ -362,10 +362,10 @@
 <script type="text/javascript">
 
 	const $elementoParaConvertir = document.body; // <-- Aquí puedes elegir cualquier elemento del DOM
-		html2pdf()	
+		html2pdf()
 		    .set({
 		        margin: 0,
-		        filename: 'Fixture_GamingUmpire.pdf',
+		        filename: 'Fixture_GamingUmpire_mitica.pdf',
 		        image: {
 		            type: 'jpeg',
 		            quality: 0.98

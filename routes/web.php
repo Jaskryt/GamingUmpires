@@ -7,6 +7,8 @@ use App\Http\Controllers\FixtureWowController;
 use App\Http\Controllers\MyticSelectionController;
 use App\Http\Controllers\fixtureDota2Controller;
 use App\Http\Controllers\salaController;
+use App\Http\Controllers\VistaUsuario;
+use App\Http\Controllers\PDFwow;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -109,11 +111,14 @@ Route::get('/mytic-detalle-wow-{Partida}-{Mitic}', [MyticSelectionController::cl
 Route::post('/encuentro-partida-guardada', [MyticSelectionController::class, 'update'])->name('RGuardarDetalles');
 
 
+Route::get('/vista-fixture-{variable}', [VistaUsuario::class, 'index'])->name('RFixtureVista');
+
+Route::get('/vista--miticas{variable2}', [VistaUsuario::class, 'create'])->name('RMyticVista');
+
+Route::get('/vista-encuentro-{Partida}-{Mitic}', [VistaUsuario::class, 'store'])->name('RMyticDetalleVista');
 
 
-
-
-
+Route::get('/PDF-WOW-MITICS-{idsala}', [PDFwow::class, 'convertirPDF'])->name('Rpdf');
 
 
 

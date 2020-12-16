@@ -147,7 +147,6 @@ public function Recientes(){
       foreach($torneowow as $indivSala){
             $li6.='
                    <li class="list-group-item redisenio-card-border">
-                    <a href="">
                       <div class="row redisenio-card-center">
                         <div class="col-xl-3 redisenio-img-content">
                           <img class="redisenio-img" src="'.$indivSala->logo.'" alt="Card image">
@@ -155,7 +154,7 @@ public function Recientes(){
                         <div class="col-xl-6 align-self-center text-center">
                           <div class="row">
                             <div class="mx-auto">
-                              <h4 class="texto-card">'.$indivSala->nombre_Torneo.'</h4>
+                              <h4 class="texto-card">'.$indivSala->nombreSala.'</h4>
                             </div>
                           </div>
                           <div class="row">
@@ -166,13 +165,10 @@ public function Recientes(){
                         </div>
                         <div class="col-xl-3 align-self-center text-center">
                           <div class="mx-auto">
-                          <form method="post" action="'.url("/sala/detalles-partida-dota2/".$indivSala->id).'">
-                            '.csrf_field().'
-                            <button type="submit" class="btn btn-dark texto-card">Ver Detalles</button></form>
+                          <a href="'.route('RFixtureVista',$indivSala->id).'"><button class="btn btn-dark texto-card">Ver Torneo</button></a>
                           </div>
                         </div>
                       </div>
-                    </a>
                   </li><br>
                   ';
                 }
@@ -188,6 +184,7 @@ public function search(Request $request){
     if($request){
 
         $var = $request->get('selectGame');
+        $idwow=request("searchText");
         $li4 = '';
         $li3 = '';
         if($var == 'D2'){
@@ -201,7 +198,6 @@ public function search(Request $request){
                 $fecha_Actual=date_format($feachaBD,"d-m-Y");
             $li3.='
                    <li class="list-group-item redisenio-card-border">
-                    <a href="">
                       <div class="row redisenio-card-center">
                         <div class="col-xl-3 redisenio-img-content">
                           <img class="redisenio-img" src="'.$indivSala->logo.'" alt="Card image">
@@ -209,7 +205,7 @@ public function search(Request $request){
                         <div class="col-xl-6 align-self-center text-center">
                           <div class="row">
                             <div class="mx-auto">
-                              <h4 class="texto-card">'.$indivSala->nombre_Torneo.'</h4>
+                              <h4 class="texto-card">'.$indivSala->nombreSala.'</h4>
                             </div>
                           </div>
                           <div class="row">
@@ -226,7 +222,6 @@ public function search(Request $request){
                           </div>
                         </div>
                       </div>
-                    </a>
                   </li><br>
                   ';
                 }
@@ -243,7 +238,6 @@ public function search(Request $request){
             foreach($torneo as $indivSala){
             $li3.='
                    <li class="list-group-item redisenio-card-border">
-                    <a href="">
                       <div class="row redisenio-card-center">
                         <div class="col-xl-3 redisenio-img-content">
                           <img class="redisenio-img" src="'.$indivSala->logo.'" alt="Card image">
@@ -251,7 +245,7 @@ public function search(Request $request){
                         <div class="col-xl-6 align-self-center text-center">
                           <div class="row">
                             <div class="mx-auto">
-                              <h4 class="texto-card">'.$indivSala->nombre_Torneo.'</h4>
+                              <h4 class="texto-card">'.$indivSala->nombreSala.'</h4>
                             </div>
                           </div>
                           <div class="row">
@@ -262,13 +256,10 @@ public function search(Request $request){
                         </div>
                         <div class="col-xl-3 align-self-center text-center">
                           <div class="mx-auto">
-                          <form method="post" action="'.url("/sala/detalles-partida-dota2/".$indivSala->id).'">
-                            '.csrf_field().'
-                            <button type="submit" class="btn btn-dark texto-card">Ver Detalles</button></form>
+                            <a href="'.route('RFixtureVista',$idwow).'"><button class="btn btn-dark texto-card">Ver Torneo</button></a>
                           </div>
                         </div>
                       </div>
-                    </a>
                   </li><br>
                   ';
                 }

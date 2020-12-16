@@ -136,14 +136,14 @@ class MyticSelectionController extends Controller
 
                 $tarjetas.='
                         <div class="col-xl-4">
-                            <h5>'.$des["name"].'</h5>
+                            <h5 class="text_miticas">'.$des["name"].'</h5>
                         ';
 
                 foreach ($wow["assets"] as $img) {
                     $Mitic_partida =$mitica->mitica;
                     $tarjetas.='
                                 <a href="'.route('RMyticDetalle',['Partida'=> $idmytic ,'Mitic'=>$Mitic_partida]).'"><img src="'.$img["value"].'" class="img-mityc-redisenio"></a><br>
-                                <label class="img-mityc-redisenio">'.$des["description"].'</label>
+                                <label class="img-mityc-redisenio text_miticas">'.$des["description"].'</label>
                             </div>
                             ';
                 }
@@ -165,14 +165,14 @@ class MyticSelectionController extends Controller
                 if($equipo_miticas2->nombreSEquipo!="N/D"){
                     $conteoBoton++;
                     $puntajes.='
-                            <div class="col-xl-4 mx-auto">
-                                Los ganadores del encuentro son '.$equipo_miticas1->nombreSEquipo.'
+                            <div class="col-xl-4 mx-auto text_miticas">
+                                El Gandor del Encuentro es: '.$equipo_miticas1->nombreSEquipo.'
                             </div>
                     ';
                 }
                 else{
                     $puntajes.='
-                            <div class="col-xl-4 mx-auto">
+                            <div class="col-xl-4 mx-auto text_miticas">
                                 El encuentro esta en curso
                             </div>
                     ';
@@ -180,7 +180,7 @@ class MyticSelectionController extends Controller
             }
             else{
                 $puntajes.='
-                            <div class="col-xl-4 mx-auto">
+                            <div class="col-xl-4 mx-auto text_miticas">
                                 El encuentro esta en curso
                             </div>
                     ';
@@ -195,8 +195,8 @@ class MyticSelectionController extends Controller
             $puntajes.='
                     <div class="row">
                         <div class="col-xl-4"></div>
-                        <div class="col-xl-4 mx-auto">
-                            <a href="'.route('RFixtureAgregar',$idmytic).'"><button>Concluir Partida</button></a>
+                        <div class="col-xl-4 align-self-center text-center">
+                            <a href="'.route('RFixtureAgregar',$idmytic).'"><button class="btn btn-dark">Concluir Partida</button></a>
                         </div>
                         <div class="col-xl-4"></div>
                     </div>
@@ -249,6 +249,7 @@ class MyticSelectionController extends Controller
         );
         $tokkenWOW=$accessTokenResponse['access_token'];
         $expansion=499;//shadowlands
+
 
         $miticas = DB::table('jugadores_personaje')
                         ->where("idpartida","=",$Partida)->where("mitica","=",$Mitic)->exists();
@@ -323,7 +324,23 @@ class MyticSelectionController extends Controller
                                         </table>
                                     </div>
                                     <div class="col-xl-6">
-                                        Afijos de la semana:
+                                        <label>Afijos de la semana:</label><br>';
+
+            $afijosRequest = Http::GET('https://raider.io/api/v1/mythic-plus/affixes?region=us');
+            $afijosDecode = json_decode( $afijosRequest, true );
+            foreach ($afijosDecode["affix_details"] as $afijos) {
+                $requestAfijo = Http::GET(
+                'https://us.api.blizzard.com/data/wow/media/keystone-affix/'.$afijos["id"].'?namespace=static-us&locale=es_MX&access_token='.$tokkenWOW
+                );
+                $media_afijo = json_decode( $requestAfijo, true );
+                $imgAfijoRequest=$media_afijo["assets"];
+                $imgAfijoREQ=$imgAfijoRequest[0];
+                $imgAfijo=$imgAfijoREQ["value"];
+                $pagina.='
+                    <img src="'.$imgAfijo.'" class="img_afijo">
+                ';
+            }
+            $pagina.='
                                     </div>
                                 </div>
                             </div>
@@ -696,7 +713,23 @@ class MyticSelectionController extends Controller
                                         </table>
                                     </div>
                                     <div class="col-xl-6">
-                                        Afijos de la semana:
+                                        <label>Afijos de la semana:</label><br>';
+
+            $afijosRequest = Http::GET('https://raider.io/api/v1/mythic-plus/affixes?region=us');
+            $afijosDecode = json_decode( $afijosRequest, true );
+            foreach ($afijosDecode["affix_details"] as $afijos) {
+                $requestAfijo = Http::GET(
+                'https://us.api.blizzard.com/data/wow/media/keystone-affix/'.$afijos["id"].'?namespace=static-us&locale=es_MX&access_token='.$tokkenWOW
+                );
+                $media_afijo = json_decode( $requestAfijo, true );
+                $imgAfijoRequest=$media_afijo["assets"];
+                $imgAfijoREQ=$imgAfijoRequest[0];
+                $imgAfijo=$imgAfijoREQ["value"];
+                $pagina.='
+                    <img src="'.$imgAfijo.'" class="img_afijo">
+                ';
+            }
+            $pagina.='
                                     </div>
                                 </div>
                             </div>
