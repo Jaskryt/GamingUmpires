@@ -400,6 +400,7 @@
 
 <!--script para los botones-->
 <script type="text/javascript">
+	
 	if(document.getElementById("numeroE").value==16){
 	//clasificacion e1ye2
 	document.getElementById("clasie1ye2").onclick=function(){

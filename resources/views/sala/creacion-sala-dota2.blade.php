@@ -29,7 +29,7 @@
 					<div class="row">
 						<div class="col-12 col-md-3 col-lg-3 col-xl-3 pt-3 d-none  d-md-block"></div>
 						<div class="col-6  col-md-3 col-lg-3 col-xl-3"><p class="letra">logo:</p></div>
-						<div class="col-6  col-md-3 col-lg-3 col-xl-3 " ><img src="../imagenes/LogoFinal2.png" style="width: 200px; height: 200px;" class="imagenes"></div>
+						<div class="col-6  col-md-3 col-lg-3 col-xl-3 " ><img src="../imagenes/LogoFinal2.png" style="width: 200px; height: 200px;" class="imagenes imagen-redonda"></div>
 						<div class="col-12 col-md-3 col-lg-3 col-xl-3 pt-3 d-none  d-md-block "></div>
 						<div class="col-12"><input type="file" name="logo" id="logo" accept="image/*" value="{{ old('logo') }}" 
 						class="letra"></div>

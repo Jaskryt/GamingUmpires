@@ -18,7 +18,7 @@
 		<h1 class="titulo">Configure Los Equipos</h1>
 		<form method="post" action="{{ route('add-Model-Equipos') }}" enctype="multipart/form-data">
 		@csrf 
-			<div class="container-fluid creacion-sala table-responsive">
+			<div class="container-fluid creacion-equipos table-responsive">
 			<table class="table">
 			 <?php
 

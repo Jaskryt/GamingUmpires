@@ -317,14 +317,14 @@
              }
 		//toda la informacion de los equipos
 		for ($i=0; $i <$salaDatos[0]->numero_Equipos -1 ; $i++) { 
-			  echo "<h1 class='titulo'>Encuentro: ".$encuentrosDatos[$i]->equipo_1." VS ".$encuentrosDatos[$i]->equipo_2."</h1>";
-			  echo "<h1 class='titulo'>Ganador del Encuentro: ".$encuentrosDatos[$i]->equipo_Ganador."</h1>";
+			  echo "<h1 class='encuentro'>Encuentro: ".$encuentrosDatos[$i]->equipo_1." VS ".$encuentrosDatos[$i]->equipo_2."</h1>";
+			  echo "<h1 class='ganadore'>Ganador del Encuentro: ".$encuentrosDatos[$i]->equipo_Ganador."</h1>";
 			  $detallesTable = DB::table('detalles_partida_dota2')
                         ->where("codigo_Encuentro","=",$encuentrosDatos[$i]->id)
                         ->get();
 			  for ($j=0; $j < $eliminacion ; $j++) { 
-			  	 echo "<h1 class='titulo'>Partida N°".$detallesTable[$j]->numero_partida."</h1>";
-			  	 echo "<h1 class='titulo'>Ganador de la partida: ".$detallesTable[$j]->equipo_Ganador."</h1>";
+			  	 echo "<h1 class='partida'>Partida N°".$detallesTable[$j]->numero_partida."</h1>";
+			  	 echo "<h1 class='ganadore'>Ganador de la partida: ".$detallesTable[$j]->equipo_Ganador."</h1>";
 			  	 echo  "<div class='row letra'><div class='col-1'></div>"; 
 			  	 		$infoTable = DB::table('info_jugador_dota2')
                         				->where("codigo_DetalleP","=",$detallesTable[$j]->id)   

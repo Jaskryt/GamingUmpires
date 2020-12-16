@@ -52,4 +52,10 @@
 
 </body>
 </html>
+<style type="text/css">
+  body{
+          background-image: url("../imagenes/background-home.jpg");
+          background-size: cover;
+  }
+</style>
 @endsection

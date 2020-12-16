@@ -16,14 +16,14 @@
 <div class="container-fluid seleccion-juego">
 
 	<div class="row justify-content-center">
-		<div class="col-12  mt-5 pt-5 titulo">
+		<div class="col-12  mt-5 pt-5 titulocs">
 			<h1 class="w-100">Seleccione un juego para la creacion de la sala</h1>
 		</div>
 	</div>
 	<div class="row">
 		<div class="col-12 col-md-2 col-lg-2 col-xl-3 pt-3 d-none  d-md-block imagenes"></div>
 		<div class="col-12 col-md-4 col-lg-4 col-xl-3 pt-3  imagenes">
-			<a href="{{ route('RCrearTorneo') }}"><img class="mx-auto d-block imagen-redonda" width="250" height="250"  
+			<a href="{{ route('RCrearTorneo') }}"><img class="mx-auto d-block imagen-redondaw" width="250" height="250"  
 				id="imagen_redonda"   src="../imagenes/wowlogo.jpg" ></a>
 		</div>		
 		<div class="col-none col-md-4 col-lg-4 col-xl-3 pt-3 imagenes">

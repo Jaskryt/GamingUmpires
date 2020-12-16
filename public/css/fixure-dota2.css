@@ -1,12 +1,37 @@
 .titulo{
 			font-family: 'general';
-			background-color: #c81d1e;
+			background-image: url(../imagenes/rub.jpg);
+			text-align: center;
+
+			color: black;
+		}
+.encuentro{
+			font-family: 'general';
+			background-image: url(../imagenes/azul.jpg);
+			text-align: center;
+			color: white;
+			box-shadow: 0px 0px 5px 5px #4bd8fb;
+			-webkit-box-shadow: 0px 0px 5px 5px #4bd8fb;
+		}
+.ganadore{
+			font-family: 'general';
+			background-image: url(../imagenes/oro.jpg);
 			text-align: center;
 			color: black;
+			box-shadow: 0px 0px 10px 10px #fafd1b;
+			-webkit-box-shadow: 0px 0px 10px 10px #fafd1b;
+		}
+.partida{
+			font-family: 'general';
+			background-image: url(../imagenes/neon.jpg);
+			text-align: center;
+			color: white;
+			box-shadow: 0px 0px 10px 10px #fafd1b;
+			-webkit-box-shadow: 0px 0px 10px 10px #fafd1b;
 		}
 .subtitulo{
 			font-family: 'general';
-			background-color: #c81d1e;
+			background-image: url(../imagenes/rock.jpg);
 			color: black;
 			padding-left: 10px;
 		}
