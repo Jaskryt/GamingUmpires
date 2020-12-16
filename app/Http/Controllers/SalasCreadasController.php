@@ -24,7 +24,6 @@ class SalasCreadasController extends Controller
             foreach($salaswow as $lista){
               $li.='
                <li class="list-group-item redisenio-card-border">
-                <a href="'.route('RFixture',$lista->id).'">
                   <div class="row redisenio-card-center">
                     <div class="col-xl-3 redisenio-img-content">
                       <img class="redisenio-img" src="'.$lista->logo.'" alt="Card image">
@@ -43,11 +42,11 @@ class SalasCreadasController extends Controller
                     </div>
                     <div class="col-xl-3 align-self-center text-center">
                       <div class="mx-auto">
-                        <button class="btn btn-dark texto-card">Borrar Torneo</button>
+
+                      <a href="'.route('RFixture',$lista->id).'"><button class="btn btn-dark texto-card">Ver Torneo</button></a>
                       </div>
                     </div>
                   </div>
-                </a>
               </li><br>
               ';
           }
@@ -241,7 +240,7 @@ public function search(Request $request){
           $query = Request('searchText');
           $torneo =DB::table('salaswow')->where('id','=',$query)->orWhere('nombreSala', 'LIKE','%'.$query.'%')->get();
           if(isset($torneo)){
-            foreach($torneo as $indivSala){             
+            foreach($torneo as $indivSala){
             $li3.='
                    <li class="list-group-item redisenio-card-border">
                     <a href="">
